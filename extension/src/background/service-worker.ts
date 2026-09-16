@@ -1,12 +1,34 @@
-// Phase 3 sẽ viết logic thật ở đây. Phase 2 chỉ cần file tồn tại để manifest load được.
+// =============================================================================
+// Service Worker — background script của Extension.
+// Phase 3: nhận request từ Content Script, log ra console (chưa gọi Backend).
+// =============================================================================
+
+import { onMessage } from "../shared/messaging/message-bus";
+
+console.log("[Service Worker] Loaded");
 
 chrome.runtime.onInstalled.addListener(() => {
   console.log("[Service Worker] Extension installed/updated");
 
-  // Bật side panel mở khi bấm icon extension
   chrome.sidePanel
     .setPanelBehavior({ openPanelOnActionClick: true })
-    .catch((err) => console.error("[Service Worker] setPanelBehavior error:", err));
+    .catch((err: unknown) =>
+      console.error("[Service Worker] setPanelBehavior error:", err)
+    );
 });
 
-console.log("[Service Worker] Loaded");
+// ---- Phase 3: chỉ log. Phase 5-6 sẽ gọi backend ở đây. ----
+onMessage("REQUEST_EXPLAIN", (payload) => {
+  console.log("[Service Worker] REQUEST_EXPLAIN →", payload);
+  return { ok: true };
+});
+
+onMessage("REQUEST_GRAMMAR", (payload) => {
+  console.log("[Service Worker] REQUEST_GRAMMAR →", payload);
+  return { ok: true };
+});
+
+onMessage("REQUEST_REWRITE", (payload) => {
+  console.log("[Service Worker] REQUEST_REWRITE →", payload);
+  return { ok: true };
+});
