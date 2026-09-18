@@ -21,7 +21,12 @@
 - Không có
 
 ### Track B (TV2)
-- Chưa bắt đầu Phase 4.1
+### Track B (TV2)
+- ✅ Phase 4.1: `candidate-finder.ts` — tìm candidates theo PRIORITY_TAGS
+- ✅ Phase 4.2: `block-scorer.ts` — chấm điểm heuristic (base + length + density + distance)
+- ✅ Cài Vitest + jsdom cho testing
+- ✅ 13 unit test PASS (7 candidate-finder + 6 block-scorer)
+- ⏳ Phase 4.3 (sentence-context) — chờ tuần sau
 
 ### Track C (TV3)
 - Chưa bắt đầu Phase 5.1
