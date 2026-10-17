@@ -1,6 +1,7 @@
 """Entry point FastAPI cho Context-Aware Assistant Backend."""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.routes import explain as explain_route
 
 from app.core.config import settings
 
@@ -19,6 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(explain_route.router, prefix="/api")
 
 @app.get("/health", tags=["system"])
 async def health() -> dict:

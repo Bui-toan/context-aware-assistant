@@ -28,8 +28,12 @@
 - ✅ 13 unit test PASS (7 candidate-finder + 6 block-scorer)
 - ⏳ Phase 4.3 (sentence-context) — chờ tuần sau
 
-### Track C (TV3)
-- Chưa bắt đầu Phase 5.1
+### Track C (Phú)
+- ✅ Phase 5.1: LLMProvider interface + MockProvider
+- ✅ Phase 5.1: explain_service.py với build_prompt tách 4 phần
+- ✅ Phase 5.1: route POST /api/explain + validate EMPTY_TEXT
+- ✅ 3 Postman request PASS (valid, empty text, empty context)
+- ⏳ Phase 5.2 (real provider) — chờ người dùng cấp API key
 
 ### Track D (TV4)
 - Chưa setup Postman collection Phase 2-3

@@ -1,23 +1,13 @@
 """Đọc cấu hình từ .env bằng pydantic-settings."""
-try:
-    from pydantic_settings import BaseSettings, SettingsConfigDict
-except ImportError:
-    from pydantic import BaseSettings
-    SettingsConfigDict = None
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    if SettingsConfigDict is not None:
-        model_config = SettingsConfigDict(
-            env_file=".env",
-            env_file_encoding="utf-8",
-            extra="ignore",
-        )
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        extra = "ignore"
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
     # AI Provider
     ai_provider_name: str = "openai"
