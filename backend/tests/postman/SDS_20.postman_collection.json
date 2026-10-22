@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "de84c121-eb91-4029-9098-0240c17e546e",
-    "name": "SDS_20",
+    "_postman_id": "0877028f-5279-4450-9148-a6c24afa65df",
+    "name": "SDS_20 Copy",
     "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "59018941",
-    "_collection_link": "https://go.postman.co/collection/59018941-de84c121-eb91-4029-9098-0240c17e546e?source=collection_link"
+    "_exporter_id": "47585105",
+    "_collection_link": "https://go.postman.co/collection/47585105-0877028f-5279-4450-9148-a6c24afa65df?source=collection_link"
   },
   "item": [
     {
@@ -125,6 +125,17 @@
             "api",
             "explain"
           ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/explain — empty context",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
         }
       },
       "response": []
