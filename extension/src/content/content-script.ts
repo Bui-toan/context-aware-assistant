@@ -56,12 +56,23 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
 return true;
 });
 
+let isProcessing = false;
+
 onAction(async (action: FloatingActionType, info) => {
+
+  if (isProcessing) {
+    console.log("Đang xử lý, vui lòng chờ...");
+    return;
+  }
+  isProcessing = true;
+
   // Lấy cài đặt từ storage
   const settings = await new Promise<any>((resolve) => {
     chrome.storage.local.get(["language", "defaultRewriteMode"], (res) => {
       resolve(res);
     });
+  
+  setTimeout(() => { isProcessing = false; }, 3000);
   });
 
   const lang = settings.language || "vi";

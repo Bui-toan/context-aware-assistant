@@ -8,6 +8,7 @@ from app.schemas.error import ErrorBody, ErrorResponse
 from app.schemas.explain import ExplainRequest, ExplainResponse
 from app.services.explain_service import explain
 from app.services.llm_provider import GeminiProvider, MockProvider
+from app.security.validation import validate_explain_input
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -36,6 +37,7 @@ _provider = _build_provider()
 )
 async def explain_route(req: ExplainRequest) -> ExplainResponse:
     # ---- Validate: text rỗng ----
+    validate_explain_input(req.text, req.context)
     if not req.text or not req.text.strip():
         raise HTTPException(
             status_code=400,
