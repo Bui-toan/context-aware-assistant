@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import explain as explain_route
-
+from app.api.routes import search as search_route
 from app.core.config import settings
 
 app = FastAPI(
@@ -22,6 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(explain_route.router, prefix="/api")
+app.include_router(search_route.router, prefix="/api") 
 
 @app.get("/health", tags=["system"])
 async def health() -> dict:
