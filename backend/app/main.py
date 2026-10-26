@@ -12,9 +12,10 @@ app = FastAPI(
 )
 
 # CORS — cho phép Extension gọi từ chrome-extension://
+origins = settings.allowed_origins.split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],          # MVP: mở hết, siết lại ở Phase 14
+    allow_origins=origins,
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],

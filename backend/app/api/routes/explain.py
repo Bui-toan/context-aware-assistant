@@ -1,15 +1,28 @@
 """Route POST /api/explain."""
+import logging
+import traceback
+
 from fastapi import APIRouter, HTTPException
 
 from app.schemas.error import ErrorBody, ErrorResponse
 from app.schemas.explain import ExplainRequest, ExplainResponse
 from app.services.explain_service import explain
-from app.services.llm_provider import MockProvider
+from app.services.llm_provider import GeminiProvider, MockProvider
 
+logger = logging.getLogger(__name__)
 router = APIRouter()
 
-# MVP: dùng MockProvider. Phase 5.2 sẽ đổi sang provider thật.
-_provider = MockProvider()
+
+def _build_provider():
+    """Tạo provider 1 lần khi khởi động server; thiếu key/model thì dùng Mock và ghi cảnh báo."""
+    try:
+        return GeminiProvider()
+    except Exception as e:
+        logger.warning("Không khởi tạo được GeminiProvider (%s), dùng MockProvider", type(e).__name__)
+        return MockProvider()
+
+
+_provider = _build_provider()
 
 
 @router.post(
@@ -32,13 +45,19 @@ async def explain_route(req: ExplainRequest) -> ExplainResponse:
     # ---- Gọi service ----
     try:
         return await explain(req, _provider)
+    except TimeoutError:
+        raise HTTPException(
+            status_code=504,
+            detail={"code": "AI_TIMEOUT", "message": "AI phản hồi quá chậm, vui lòng thử lại."},
+        )
     except ValueError as e:
         raise HTTPException(
             status_code=500,
-            detail=ErrorBody(code="AI_PROVIDER_ERROR", message=str(e)).model_dump(),
+            detail={"code": "AI_PROVIDER_ERROR", "message": str(e)},
         )
     except Exception as e:
+        traceback.print_exc()
         raise HTTPException(
             status_code=500,
-            detail=ErrorBody(code="INTERNAL_ERROR", message=str(e)).model_dump(),
+            detail={"code": "AI_PROVIDER_ERROR", "message": str(e)},
         )

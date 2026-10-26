@@ -65,6 +65,12 @@
 - Toolbar tính vị trí bằng getBoundingClientRect + scroll offset
 - Debounce selectionchange bằng requestAnimationFrame
 - Content Script export {} cuối file để không bị tree-shake
+- AI Provider: Google Gemini (Free tier). Model đọc từ biến môi trường GEMINI_MODEL.
+- Giới hạn context: 500 ký tự (MAX_CONTEXT_LENGTH).
+- Số block tối đa: 300 (MAX_BLOCKS).
+- Ngưỡng similarity: 0.75 (SIMILARITY_THRESHOLD).
+- API_BASE_URL của extension đọc từ Vite env (VITE_API_BASE_URL).
+- Timeout AI đọc từ env (AI_TIMEOUT).
 
 ## Vấn đề/lỗi đang gặp
 - Không có
