@@ -91,3 +91,15 @@ onMessage("REQUEST_EXPLAIN", async (payload) => {
     return { ok: false };
   }
 });
+
+onMessage("HIGHLIGHT_CHUNK", async (payload) => {
+  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (tabs[0]?.id) {
+    chrome.tabs.sendMessage(tabs[0].id, {
+      type: "HIGHLIGHT_CHUNK",
+      requestId: crypto.randomUUID(),
+      payload
+    });
+  }
+  return { ok: true };
+});

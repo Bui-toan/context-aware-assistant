@@ -4,6 +4,7 @@ import { sendMessage } from "../shared/messaging/message-bus";
 import { extractContext } from "./context-extraction";
 import { extractPageText } from "./search/page-text-extractor";
 import { clearChunkMap } from "./search/chunk-mapper";
+import { highlightChunk } from "./search/highlighter";
 
 console.log("[Content Script] Loaded on:", window.location.href);
 
@@ -17,10 +18,17 @@ onSelectionChange((info) => {
 
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message.type === "GET_PAGE_CHUNKS") {
-    clearChunkMap(); // Xóa map cũ trước khi quét mới
+    clearChunkMap();
     const chunks = extractPageText();
     sendResponse({ chunks });
   }
+  
+  // Thêm đoạn này để nhận lệnh Highlight từ Service Worker
+  if (message.type === "HIGHLIGHT_CHUNK") {
+    highlightChunk(message.payload.chunkId);
+    sendResponse({ ok: true });
+  }
+  
   return true;
 });
 
