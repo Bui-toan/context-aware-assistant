@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ExplainView from "./views/ExplainView";
 import SearchView from "./views/SearchView";
 import type { ExplainResponse } from "../shared/api/types";
-import { onTabMessage } from "../shared/messaging/message-bus";
+import { onTabMessage, sendMessage } from "../shared/messaging/message-bus"; // Thêm sendMessage
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<"explain" | "search">("explain");
@@ -12,7 +12,8 @@ export default function App() {
   const [explainData, setExplainData] = useState<ExplainResponse | null>(null);
   
   // State cho Search
-  const [_searchResults, setSearchResults] = useState<any[] | null>(null);
+  const [searchResults, setSearchResults] = useState<any[] | null>(null);
+  const [searchChunks, setSearchChunks] = useState<Record<string, string>>({}); // Lưu id -> text
 
   useEffect(() => {
     onTabMessage("REQUEST_EXPLAIN", () => {
@@ -27,6 +28,13 @@ export default function App() {
         setLoading(false);
       } else if (payload.actionType === "search") {
         setSearchResults(payload.data.results);
+        
+        // Chuyển mảng originalChunks thành object { [chunkId]: text } để tra cứu nhanh
+        const map: Record<string, string> = {};
+        payload.data.originalChunks.forEach((c: any) => {
+          map[c.chunkId] = c.text;
+        });
+        setSearchChunks(map);
         setLoading(false);
       }
     });
@@ -36,6 +44,19 @@ export default function App() {
       setLoading(false);
     });
   }, []);
+
+  // Hàm xử lý khi bấm nút Search
+  const handleSearch = async (query: string) => {
+    setLoading(true);
+    setError(null);
+    setSearchResults(null);
+    try {
+      await sendMessage("REQUEST_SEARCH", { query, topK: 5 });
+    } catch (err: any) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", height: "100vh", display: "flex", flexDirection: "column" }}>
@@ -67,7 +88,13 @@ export default function App() {
         )}
 
         {activeTab === "search" && (
-          <SearchView />
+          <SearchView 
+            onSearch={handleSearch}
+            loading={loading}
+            error={error}
+            results={searchResults}
+            chunks={searchChunks}
+          />
         )}
       </div>
     </div>
