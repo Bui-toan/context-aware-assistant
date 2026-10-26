@@ -10,6 +10,7 @@ export interface SelectionInfo {
   text: string;
   rect: DOMRect | null;
   source: SelectionSource;
+  node: Node | null;
 }
 
 type SelectionCallback = (info: SelectionInfo | null) => void;
@@ -37,6 +38,7 @@ export function getCurrentSelection(): SelectionInfo | null {
             text,
             rect: el.getBoundingClientRect(),
             source: tag === "input" ? "input" : "textarea",
+            node: el, // <--- ĐÃ THÊM NODE VÀO ĐÂY (Trả về chính thẻ input/textarea)
           };
         }
       }
@@ -64,7 +66,12 @@ export function getCurrentSelection(): SelectionInfo | null {
     }
   }
 
-  return { text, rect, source };
+  return { 
+    text, 
+    rect, 
+    source,
+    node: anchor // <--- ĐÃ THÊM NODE VÀO ĐÂY (Trả về node bắt đầu bôi đen)
+  };
 }
 
 /**

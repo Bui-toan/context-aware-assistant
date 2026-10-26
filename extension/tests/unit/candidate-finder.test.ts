@@ -15,7 +15,7 @@ describe("candidate-finder", () => {
     expect(candidates.length).toBe(1);
     expect(candidates[0].tagName).toBe("p");
     expect(candidates[0].priority).toBe(0);
-    expect(candidates[0].distance).toBe(1); // text → p
+    expect(candidates[0].distance).toBe(1);
   });
 
   it("trả về nhiều candidates khi có nesting", () => {
@@ -28,7 +28,6 @@ describe("candidate-finder", () => {
     const textNode = p.firstChild!;
 
     const candidates = findContextCandidates(textNode);
-    // text → p → article → body (body không có trong PRIORITY_TAGS)
     expect(candidates.length).toBe(2);
     expect(candidates[0].tagName).toBe("p");
     expect(candidates[1].tagName).toBe("article");
@@ -67,7 +66,7 @@ describe("candidate-finder", () => {
 
     const candidates = findContextCandidates(textNode);
     expect(candidates[0].tagName).toBe("div");
-    expect(candidates[0].priority).toBe(7); // div là index cuối
+    expect(candidates[0].priority).toBe(7);
   });
 
   it("trả về mảng rỗng nếu node đứng ngoài document", () => {
