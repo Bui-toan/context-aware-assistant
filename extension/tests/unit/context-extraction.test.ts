@@ -11,7 +11,7 @@ describe("Context Extraction Engine", () => {
     document.body.innerHTML = `<p id="p1">Câu một. Đây là câu hai. Câu ba.</p>`;
     const p = document.getElementById("p1")!;
     
-    const context = extractContext(p.firstChild, "Đây là câu hai.");
+    const context = extractContext(p.firstChild!, "Đây là câu hai.");
     expect(context).toBe("Câu một. Đây là câu hai. Câu ba.");
   });
 
@@ -20,7 +20,7 @@ describe("Context Extraction Engine", () => {
     document.body.innerHTML = `<p id="p1">${longText}</p>`;
     const p = document.getElementById("p1")!;
     
-    const context = extractContext(p.firstChild, "Câu này rất dài.");
+    const context = extractContext(p.firstChild!, "Câu này rất dài.");
     expect(context.length).toBeLessThanOrEqual(504); // 500 + "..."
   });
 
@@ -32,7 +32,7 @@ describe("Context Extraction Engine", () => {
   
   it("Tìm đúng candidate cha", () => {
     document.body.innerHTML = `<div><p id="p1">Test</p></div>`;
-    const candidates = findContextCandidates(document.getElementById("p1")!.firstChild);
+    const candidates = findContextCandidates(document.getElementById("p1")!.firstChild!);
     expect(candidates[0].tagName).toBe("p");
   });
 });
