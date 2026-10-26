@@ -1,34 +1,42 @@
-// =============================================================================
-// Service Worker — background script của Extension.
-// Phase 3: nhận request từ Content Script, log ra console (chưa gọi Backend).
-// =============================================================================
-
-import { onMessage } from "../shared/messaging/message-bus";
+import { onMessage, sendMessage } from "../shared/messaging/message-bus";
+import { postExplain } from "../shared/api/client";
+import type { ExplainRequestPayload } from "../shared/messaging/types";
 
 console.log("[Service Worker] Loaded");
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("[Service Worker] Extension installed/updated");
-
-  chrome.sidePanel
-    .setPanelBehavior({ openPanelOnActionClick: true })
-    .catch((err: unknown) =>
-      console.error("[Service Worker] setPanelBehavior error:", err)
-    );
+  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(console.error);
 });
 
-// ---- Phase 3: chỉ log. Phase 5-6 sẽ gọi backend ở đây. ----
-onMessage("REQUEST_EXPLAIN", (payload) => {
-  console.log("[Service Worker] REQUEST_EXPLAIN →", payload);
-  return { ok: true };
-});
+// ---- Xử lý REQUEST_EXPLAIN ----
+onMessage("REQUEST_EXPLAIN", async (payload) => {
+  const req = payload as ExplainRequestPayload;
+  console.log("[Service Worker] REQUEST_EXPLAIN →", req);
 
-onMessage("REQUEST_GRAMMAR", (payload) => {
-  console.log("[Service Worker] REQUEST_GRAMMAR →", payload);
-  return { ok: true };
-});
+  // 1. Thử mở Side Panel (Bọc trong try/catch riêng để không block API)
+  try {
+    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (tabs[0]?.windowId) {
+      await chrome.sidePanel.open({ windowId: tabs[0].windowId });
+    }
+  } catch (e) {
+    console.warn("[Service Worker] Không thể tự mở Side Panel do Chrome chặn (cần user gesture). Hãy mở thủ công.");
+  }
 
-onMessage("REQUEST_REWRITE", (payload) => {
-  console.log("[Service Worker] REQUEST_REWRITE →", payload);
-  return { ok: true };
+  // 2. Gọi Backend
+  try {
+    const result = await postExplain(req);
+    await sendMessage("RESULT_READY", {
+      actionType: "explain",
+      data: result,
+    });
+    return { ok: true };
+  } catch (err: any) {
+    console.error("[Service Worker] Explain error:", err);
+    await sendMessage("ERROR", {
+      code: "AI_PROVIDER_ERROR",
+      message: err.message || "Không thể kết nối Backend",
+    });
+    return { ok: false };
+  }
 });
