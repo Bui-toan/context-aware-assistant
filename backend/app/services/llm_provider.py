@@ -1,59 +1,54 @@
-"""Interface trừu tượng cho LLM Provider và các implementation cụ thể."""
-from typing import Protocol
 import json
+import re
 import asyncio
-from google import genai
-from google.genai import types
+from typing import Protocol
 from app.core.config import settings
 
+# --- BỘ LỌC JSON AN TOÀN ---
+def extract_json(text: str) -> dict:
+    """Trích xuất JSON từ response của AI, kể cả khi có markdown bọc ngoài."""
+    match = re.search(r'\{.*\}', text, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group(0))
+        except json.JSONDecodeError:
+            pass
+    raise ValueError("AI không trả về định dạng JSON hợp lệ")
 
+# --- INTERFACE ---
 class LLMProvider(Protocol):
-    """Protocol cho mọi LLM provider — theo SDS mục 3.4."""
-    async def complete(self, system_prompt: str, user_prompt: str) -> str:
-        ...
-
+    async def complete(self, system_prompt: str, user_prompt: str) -> str: ...
 
 class MockProvider:
-    """Provider giả để test khi chưa có API key."""
     async def complete(self, system_prompt: str, user_prompt: str) -> str:
-        return json.dumps(
-            {
-                "meaning": "Nghĩa mô phỏng của từ/cụm từ trong ngữ cảnh.",
-                "explanation": "Giải thích mô phỏng (MockProvider).",
-                "examples": ["Ví dụ 1 mô phỏng.", "Ví dụ 2 mô phỏng."],
-            },
-            ensure_ascii=False,
-        )
+        return '{"meaning": "Test", "explanation": "Test", "examples": [], "original": "Test", "suggested": "Test", "errors": [], "rewritten": "Test"}'
 
+# --- GEMINI PROVIDER (BẢN MỚI) ---
+from google import genai
 
 class GeminiProvider:
-    """Provider sử dụng Google GenAI SDK mới (hỗ trợ Auth Key AQ.)."""
-
     def __init__(self):
-        if not settings.gemini_api_key:
-            raise ValueError("GEMINI_API_KEY chưa được cấu hình trong .env")
-        
-        # Sử dụng Client của SDK mới
+        # Khởi tạo client mới của google-genai
         self.client = genai.Client(api_key=settings.gemini_api_key)
         self.model_name = settings.gemini_model
 
     async def complete(self, system_prompt: str, user_prompt: str) -> str:
-        full_prompt = f"{system_prompt}\n\n{user_prompt}"
-        
-        # google-genai có API async native: await self.client.aio.models.generate_content(...)
-        try:
-            response = await asyncio.wait_for(
-                self.client.aio.models.generate_content(
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                # Gộp prompt
+                full_prompt = f"{system_prompt}\n\n{user_prompt}"
+                
+                # Gọi API qua client mới, dùng asyncio.to_thread để không block FastAPI
+                response = await asyncio.to_thread(
+                    self.client.models.generate_content,
                     model=self.model_name,
-                    contents=full_prompt,
-                ),
-                timeout=settings.ai_timeout
-            )
-            if not response.text:
-                raise ValueError("Gemini trả về nội dung rỗng (có thể do bộ lọc an toàn)")
-            return response.text
-
-        except asyncio.TimeoutError:
-            raise TimeoutError("AI_TIMEOUT")
-        except Exception as e:
-            raise Exception(f"AI_PROVIDER_ERROR: {str(e)}")
+                    contents=full_prompt
+                )
+                return response.text
+            except Exception as e:
+                if "503" in str(e) or "UNAVAILABLE" in str(e):
+                    if attempt < max_retries - 1:
+                        await asyncio.sleep(2 * (attempt + 1)) # Đợi 2s, 4s
+                        continue
+                raise e
