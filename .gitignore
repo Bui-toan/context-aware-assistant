@@ -43,3 +43,4 @@ htmlcov/
 
 # Chrome extension build
 extension/dist/
+*.zip
