@@ -4,9 +4,10 @@ import SearchView from "./views/SearchView";
 import GrammarView from "./views/GrammarView";
 import RewriteView from "./views/RewriteView";
 import { onTabMessage, sendMessage } from "../shared/messaging/message-bus";
+import SettingsView from "./views/SettingsView";
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<"explain" | "search" | "grammar" | "rewrite">("explain");
+  const [activeTab, setActiveTab] = useState<"explain" | "search" | "grammar" | "rewrite" | "settings">("explain");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -50,9 +51,8 @@ export default function App() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", height: "100vh", display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", borderBottom: "1px solid #ccc", background: "#f5f5f5" }}>
-        {(["explain", "search", "grammar", "rewrite"] as const).map(tab => (
-          <button key={tab} onClick={() => setActiveTab(tab)}
-            style={{ flex: 1, padding: "10px 4px", border: "none", background: activeTab === tab ? "#fff" : "transparent", fontWeight: activeTab === tab ? "bold" : "normal", cursor: "pointer", textTransform: "capitalize" }}>
+        {(["explain", "search", "grammar", "rewrite", "settings"] as const).map(tab => (
+          <button key={tab} onClick={() => setActiveTab(tab)} /* style giữ nguyên */>
             {tab}
           </button>
         ))}
@@ -65,7 +65,8 @@ export default function App() {
         {!loading && !error && activeTab === "explain" && (explainData ? <ExplainView data={explainData} /> : <p style={{ padding: 16 }}>Bôi đen văn bản để Explain.</p>)}
         {!loading && !error && activeTab === "grammar" && (grammarData ? <GrammarView data={grammarData} /> : <p style={{ padding: 16 }}>Bôi đen văn bản để kiểm tra ngữ pháp.</p>)}
         {!loading && !error && activeTab === "rewrite" && (rewriteData ? <RewriteView data={rewriteData} /> : <p style={{ padding: 16 }}>Bôi đen văn bản để viết lại.</p>)}
-        
+        {activeTab === "settings" && (<SettingsView />)}
+
         {activeTab === "search" && (
           <SearchView onSearch={handleSearch} loading={loading} error={error} results={searchResults} chunks={searchChunks} />
         )}

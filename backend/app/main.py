@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import explain as explain_route
 from app.api.routes import search as search_route
 from app.core.config import settings
+from app.api.routes import grammar as grammar_route
+from app.api.routes import rewrite as rewrite_route
 
 app = FastAPI(
     title="Context-Aware Reading & Writing Assistant API",
@@ -23,6 +25,8 @@ app.add_middleware(
 
 app.include_router(explain_route.router, prefix="/api")
 app.include_router(search_route.router, prefix="/api") 
+app.include_router(grammar_route.router, prefix="/api")
+app.include_router(rewrite_route.router, prefix="/api")
 
 @app.get("/health", tags=["system"])
 async def health() -> dict:

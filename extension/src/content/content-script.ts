@@ -23,25 +23,59 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     sendResponse({ chunks });
   }
   
-  // Thêm đoạn này để nhận lệnh Highlight từ Service Worker
   if (message.type === "HIGHLIGHT_CHUNK") {
     highlightChunk(message.payload.chunkId);
     sendResponse({ ok: true });
+  } 
+
+  if (message.type === "APPLY_SUGGESTION") {
+  const { suggested } = message.payload;
+  
+  // 1. Nếu đang bôi đen trong input/textarea
+  const active = document.activeElement as HTMLElement;
+  if (active && (active.tagName.toLowerCase() === "input" || active.tagName.toLowerCase() === "textarea")) {
+    const el = active as HTMLInputElement | HTMLTextAreaElement;
+    const start = el.selectionStart ?? 0;
+    const end = el.selectionEnd ?? 0;
+    el.setRangeText(suggested, start, end, "end");
+  } 
+  // 2. Nếu trong contenteditable (như Google Docs, Notion...)
+  else if (active && active.isContentEditable) {
+    // Dùng execCommand (tuy cũ nhưng hoạt động tốt với rich text)
+    document.execCommand("insertText", false, suggested);
+  } 
+  // 3. Các trường hợp khác (Editor lạ) -> Fallback Copy
+  else {
+    navigator.clipboard.writeText(suggested);
+    alert("Không thể tự động ghi đè trên trang này. Đã tự động COPY nội dung vào Clipboard!");
   }
   
-  return true;
+  sendResponse({ ok: true });
+}
+  
+return true;
 });
 
-onAction((action: FloatingActionType, info) => {
+onAction(async (action: FloatingActionType, info) => {
+  // Lấy cài đặt từ storage
+  const settings = await new Promise<any>((resolve) => {
+    chrome.storage.local.get(["language", "defaultRewriteMode"], (res) => {
+      resolve(res);
+    });
+  });
+
+  const lang = settings.language || "vi";
+  const rewriteMode = settings.defaultRewriteMode || "formal";
+  
   const context = extractContext(info.node, info.text);
-  const basePayload = { text: info.text, context: context, language: "vi" as const };
+  const basePayload = { text: info.text, context: context, language: lang };
 
   if (action === "explain") {
     void sendMessage("REQUEST_EXPLAIN", basePayload);
   } else if (action === "grammar") {
     void sendMessage("REQUEST_GRAMMAR", basePayload);
   } else if (action === "rewrite") {
-    void sendMessage("REQUEST_REWRITE", { ...basePayload, mode: "formal" });
+    void sendMessage("REQUEST_REWRITE", { ...basePayload, mode: rewriteMode });
   }
 });
 
