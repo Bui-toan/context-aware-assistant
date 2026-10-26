@@ -1,6 +1,6 @@
 import { onMessage, sendMessage } from "../shared/messaging/message-bus";
-import { postExplain } from "../shared/api/client";
-import type { ExplainRequestPayload } from "../shared/messaging/types";
+import { postExplain, postGrammar, postRewrite } from "../shared/api/client";
+import type { ExplainRequestPayload, GrammarRequestPayload, RewriteRequestPayload } from "../shared/messaging/types";
 import type { SearchRequestPayload } from "../shared/messaging/types";
 
 console.log("[Service Worker] Loaded");
@@ -8,6 +8,20 @@ console.log("[Service Worker] Loaded");
 chrome.runtime.onInstalled.addListener(() => {
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(console.error);
 });
+
+async function handleAiRequest(actionType: string, apiCall: Promise<any>) {
+  try {
+    const result = await apiCall;
+    await sendMessage("RESULT_READY", { actionType, data: result });
+    return { ok: true };
+  } catch (err: any) {
+    await sendMessage("ERROR", {
+      code: "AI_PROVIDER_ERROR",
+      message: err.message || "Lỗi gọi API",
+    });
+    return { ok: false };
+  }
+}
 
 onMessage("REQUEST_SEARCH", async (payload) => {
   const req = payload as SearchRequestPayload;
@@ -64,16 +78,6 @@ onMessage("REQUEST_EXPLAIN", async (payload) => {
   const req = payload as ExplainRequestPayload;
   console.log("[Service Worker] REQUEST_EXPLAIN →", req);
 
-  // 1. Thử mở Side Panel (Bọc trong try/catch riêng để không block API)
-  try {
-    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tabs[0]?.windowId) {
-      await chrome.sidePanel.open({ windowId: tabs[0].windowId });
-    }
-  } catch (e) {
-    console.warn("[Service Worker] Không thể tự mở Side Panel do Chrome chặn (cần user gesture). Hãy mở thủ công.");
-  }
-
   // 2. Gọi Backend
   try {
     const result = await postExplain(req);
@@ -102,4 +106,19 @@ onMessage("HIGHLIGHT_CHUNK", async (payload) => {
     });
   }
   return { ok: true };
+});
+
+onMessage("REQUEST_GRAMMAR", async (payload) => {
+  const req = payload as GrammarRequestPayload;
+  console.log("[Service Worker] REQUEST_GRAMMAR →", req);
+  // KHÔNG GỌI chrome.sidePanel.open() Ở ĐÂY NỮA
+  return await handleAiRequest("grammar", postGrammar(req));
+});
+
+// --- REWRITE ---
+onMessage("REQUEST_REWRITE", async (payload) => {
+  const req = payload as RewriteRequestPayload;
+  console.log("[Service Worker] REQUEST_REWRITE →", req);
+  // KHÔNG GỌI chrome.sidePanel.open() Ở ĐÂY NỮA
+  return await handleAiRequest("rewrite", postRewrite(req));
 });

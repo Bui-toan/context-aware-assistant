@@ -33,22 +33,16 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
 });
 
 onAction((action: FloatingActionType, info) => {
-  console.log("[Content Script] Action:", action, "| text:", info.text);
-
-  // Trích xuất ngữ cảnh xung quanh
   const context = extractContext(info.node, info.text);
-  console.log("[Content Script] Extracted Context:", context);
-
-  const basePayload = {
-    text: info.text,
-    context: context, // Đã có context thật
-    language: "vi" as const,
-  };
+  const basePayload = { text: info.text, context: context, language: "vi" as const };
 
   if (action === "explain") {
     void sendMessage("REQUEST_EXPLAIN", basePayload);
+  } else if (action === "grammar") {
+    void sendMessage("REQUEST_GRAMMAR", basePayload);
+  } else if (action === "rewrite") {
+    void sendMessage("REQUEST_REWRITE", { ...basePayload, mode: "formal" });
   }
-  // Grammar / Rewrite sẽ làm sau
 });
 
 startSelectionDetection();
