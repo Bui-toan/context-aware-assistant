@@ -33,3 +33,18 @@ export async function postRewrite(req: RewriteRequest): Promise<RewriteResponse>
   if (!res.ok) throw new Error("Lỗi viết lại văn bản");
   return res.json();
 }
+
+export async function postSearch(req: { query: string; chunks: any[]; topK?: number }): Promise<any> {
+  const res = await fetch(`${BACKEND_URL}/search`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(req),
+  });
+
+  if (!res.ok) {
+    const errorData = await res.json();
+    throw new Error(errorData.detail?.message || "Lỗi gọi API Search");
+  }
+
+  return res.json();
+}

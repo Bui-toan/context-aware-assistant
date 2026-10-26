@@ -5,25 +5,39 @@ from app.services.embedding_service import EmbeddingService
 async def semantic_search(req: SearchRequest) -> SearchResponse:
     model = EmbeddingService.get_model()
     
-    # 1. Nhúng query thành vector
-    query_emb = model.encode(req.query)
-    chunk_texts = [c.text for c in req.chunks]
-    if not chunk_texts:
+    query = req.query.lower()
+    chunks = req.chunks
+    if not chunks:
         return SearchResponse(results=[])
 
-    # 2. Nhúng tất cả các chunk
-    chunk_embs = model.encode(chunk_texts)
+    # 1. Semantic Score (Vector)
+    query_emb = model.encode(query)
+    chunk_embs = model.encode([c.text for c in chunks])
+    
+    q_norm = query_emb / np.linalg.norm(query_emb)
+    c_norms = chunk_embs / np.linalg.norm(chunk_embs, axis=1, keepdims=True)
+    sem_scores = np.dot(c_norms, q_norm)
 
-    # 3. Tính Cosine Similarity
-    query_norm = query_emb / np.linalg.norm(query_emb)
-    chunk_norms = chunk_embs / np.linalg.norm(chunk_embs, axis=1, keepdims=True)
-    scores = np.dot(chunk_norms, query_norm)
+    # 2. Keyword Score (Đếm số từ khóa xuất hiện)
+    query_words = query.split()
+    kw_scores = []
+    for chunk in chunks:
+        text = chunk.text.lower()
+        # Đếm xem có bao nhiêu từ trong câu hỏi xuất hiện trong chunk
+        matches = sum(1 for word in query_words if word in text)
+        kw_scores.append(matches / len(query_words) if query_words else 0)
+
+    # 3. Kết hợp (Hybrid): 70% Semantic + 30% Keyword
+    final_results = []
+    for i in range(len(chunks)):
+        hybrid_score = (0.7 * sem_scores[i]) + (0.3 * kw_scores[i])
+        
+        # Ngưỡng lọc: Nếu điểm < 0.3 thì loại bỏ (tránh rác)
+        if hybrid_score > 0.3:
+            final_results.append(
+                SearchResultItem(chunkId=chunks[i].chunkId, score=float(hybrid_score))
+            )
 
     # 4. Sắp xếp và lấy Top-K
-    results = [
-        SearchResultItem(chunkId=req.chunks[i].chunkId, score=float(scores[i]))
-        for i in range(len(req.chunks))
-    ]
-    results.sort(key=lambda x: x.score, reverse=True)
-
-    return SearchResponse(results=results[:req.topK])
+    final_results.sort(key=lambda x: x.score, reverse=True)
+    return SearchResponse(results=final_results[:req.topK])

@@ -1,35 +1,66 @@
-import type { RewriteResponse } from "../../shared/api/types";
+import { useEffect, useState } from "react";
 import { sendMessage } from "../../shared/messaging/message-bus";
+import { theme, commonStyles } from "../styles";
 
-export default function RewriteView({ data }: { data: RewriteResponse }) {
-  const isLowSimilarity = data.verification.semanticSimilarity < 0.75;
+interface Props {
+  data: any; loading: boolean; error: string | null;
+  onRewrite: (text: string, mode: string) => void; initialText: string; t: any;
+}
 
-  const handleApply = () => {
-    sendMessage("APPLY_SUGGESTION", { original: "", suggested: data.rewritten });
-  };
+export default function RewriteView({ data, loading, error, onRewrite, initialText, t }: Props) {
+  const [text, setText] = useState("");
+  const [mode, setMode] = useState("formal");
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(data.rewritten);
-    alert("Đã copy!");
-  };
+  useEffect(() => {
+    if (initialText) setText(initialText);
+  }, [initialText]);
+
+  // Dùng mảng mode, nhưng label lấy từ i18n
+  const modes = [
+    { id: "formal", label: t.mode_formal },
+    { id: "casual", label: t.mode_casual },
+    { id: "academic", label: t.mode_academic },
+    { id: "shorten", label: t.mode_shorten }
+  ];
 
   return (
-    <div style={{ padding: "16px" }}>
-      <h2 style={{ fontSize: "18px", marginBottom: "12px" }}>Văn bản viết lại</h2>
-      <div style={{ padding: "12px", background: "#f3f4f6", borderRadius: "6px", marginBottom: "16px", whiteSpace: "pre-wrap" }}>
-        {data.rewritten}
+    <div>
+      <div style={{ display: "flex", gap: "8px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {modes.map(m => (
+          <button key={m.id} onClick={() => setMode(m.id)}
+            style={{
+              padding: "6px 14px", borderRadius: theme.radiusFull, border: "none", cursor: "pointer", fontSize: "13px",
+              backgroundColor: mode === m.id ? theme.primary : "#f1f5f9",
+              color: mode === m.id ? "#fff" : theme.textMuted,
+            }}>
+            {m.label}
+          </button>
+        ))}
       </div>
-      
-      {isLowSimilarity && (
-        <p style={{ color: "#d32f2f", fontSize: "14px", background: "#ffebee", padding: "8px", borderRadius: "4px", marginBottom: "16px" }}>
-          ⚠️ Cảnh báo: Ý nghĩa thay đổi nhiều ({(data.verification.semanticSimilarity * 100).toFixed(1)}%)
-        </p>
-      )}
 
-      <div style={{ display: "flex", gap: "8px" }}>
-        <button onClick={handleApply} style={{ flex: 1, padding: "8px", background: "#1a73e8", color: "white", border: "none", borderRadius: "4px", cursor: "pointer" }}>Apply</button>
-        <button onClick={handleCopy} style={{ flex: 1, padding: "8px", background: "#f3f4f6", border: "1px solid #ccc", borderRadius: "4px", cursor: "pointer" }}>Copy</button>
-      </div>
+      <textarea placeholder={t.rewrite_input} value={text} onChange={(e) => setText(e.target.value)} style={{ ...commonStyles.input, height: "100px", resize: "vertical", marginBottom: "12px" }} />
+      
+      <button onClick={() => onRewrite(text, mode)} disabled={loading || !text.trim()} style={{ ...commonStyles.buttonPrimary, width: "100%", marginBottom: "20px" }}>
+        {loading ? t.loading : t.rewrite_btn}
+      </button>
+
+      {error && <div style={{ color: theme.danger, background: "#fee2e2", padding: "12px", borderRadius: theme.radiusMd, marginBottom: "16px" }}>{error}</div>}
+
+      {data && (
+        <div style={commonStyles.card}>
+          <p style={{ fontSize: "13px", fontWeight: 600, color: theme.primary, marginBottom: "8px" }}>{t.rewrite_result}</p>
+          <p style={{ margin: 0, fontSize: "15px", color: theme.textMain, lineHeight: 1.6 }}>{data.rewritten}</p>
+          {data.verification.semanticSimilarity < 0.75 && (
+            <p style={{ marginTop: "12px", fontSize: "12px", color: theme.warning, background: "#fffbeb", padding: "8px", borderRadius: theme.radiusSm }}>
+              ⚠️ Ý nghĩa thay đổi ({(data.verification.semanticSimilarity * 100).toFixed(1)}%)
+            </p>
+          )}
+          <div style={{ display: "flex", gap: "8px", marginTop: "16px" }}>
+            <button onClick={() => sendMessage("APPLY_SUGGESTION", { suggested: data.rewritten })} style={{ ...commonStyles.buttonPrimary, flex: 1 }}>{t.btn_apply}</button>
+            <button onClick={() => navigator.clipboard.writeText(data.rewritten)} style={{ ...commonStyles.buttonOutline, flex: 1 }}>{t.btn_copy}</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

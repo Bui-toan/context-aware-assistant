@@ -1,56 +1,68 @@
 import { useEffect, useState } from "react";
+import { theme, commonStyles } from "../styles";
 
 export default function SettingsView() {
-  const [language, setLanguage] = useState<"vi" | "en">("vi");
+  const [language, setLanguage] = useState("vi");
   const [mode, setMode] = useState("formal");
+  const [maxContext, setMaxContext] = useState("500");
+  const [backendUrl, setBackendUrl] = useState("http://localhost:8000/api");
   const [saved, setSaved] = useState(false);
 
-  // Load settings khi mở tab
   useEffect(() => {
-    chrome.storage.local.get(["language", "defaultRewriteMode"], (res) => {
+    chrome.storage.local.get(["language", "defaultRewriteMode", "maxContext", "backendUrl"], (res) => {
       if (res.language) setLanguage(res.language);
       if (res.defaultRewriteMode) setMode(res.defaultRewriteMode);
+      if (res.maxContext) setMaxContext(res.maxContext);
+      if (res.backendUrl) setBackendUrl(res.backendUrl);
     });
   }, []);
 
   const handleSave = () => {
     chrome.storage.local.set({
-      language: language,
-      defaultRewriteMode: mode
+      language, defaultRewriteMode: mode, maxContext, backendUrl
     }, () => {
       setSaved(true);
-      setTimeout(() => setSaved(false), 2000); // Ẩn thông báo sau 2s
+      setTimeout(() => setSaved(false), 2000);
     });
   };
 
+  const labelStyle = { display: "block", marginBottom: "6px", fontSize: "13px", fontWeight: 600, color: theme.textMain };
+  const groupStyle = { marginBottom: "16px" };
+
   return (
-    <div style={{ padding: "16px", fontFamily: "sans-serif" }}>
-      <h2 style={{ fontSize: "18px", marginBottom: "16px" }}>Cài đặt hệ thống</h2>
-      
-      <div style={{ marginBottom: "16px" }}>
-        <label style={{ display: "block", marginBottom: "8px", fontWeight: "bold" }}>Ngôn ngữ mặc định:</label>
-        <select value={language} onChange={(e) => setLanguage(e.target.value as "vi" | "en")} style={{ width: "100%", padding: "8px" }}>
+    <div>
+      <div style={groupStyle}>
+        <label style={labelStyle}>Ngôn ngữ trả lời</label>
+        <select value={language} onChange={(e) => setLanguage(e.target.value)} style={commonStyles.input}>
           <option value="vi">Tiếng Việt</option>
           <option value="en">English</option>
         </select>
       </div>
 
-      <div style={{ marginBottom: "24px" }}>
-        <label style={{ display: "block", marginBottom: "8px", fontWeight: "bold" }}>Chế độ Rewrite mặc định:</label>
-        <select value={mode} onChange={(e) => setMode(e.target.value)} style={{ width: "100%", padding: "8px" }}>
-          <option value="formal">Formal (Trang trọng)</option>
-          <option value="casual">Casual (Thân mật)</option>
-          <option value="academic">Academic (Học thuật)</option>
-          <option value="shorten">Shorten (Rút gọn)</option>
-          <option value="improve">Improve (Cải thiện)</option>
+      <div style={groupStyle}>
+        <label style={labelStyle}>Chế độ viết lại mặc định</label>
+        <select value={mode} onChange={(e) => setMode(e.target.value)} style={commonStyles.input}>
+          <option value="formal">Trang trọng</option>
+          <option value="casual">Thân mật</option>
+          <option value="academic">Học thuật</option>
         </select>
       </div>
 
-      <button onClick={handleSave} style={{ width: "100%", padding: "10px", background: "#1a73e8", color: "white", border: "none", borderRadius: "4px", cursor: "pointer" }}>
+      <div style={groupStyle}>
+        <label style={labelStyle}>Độ dài ngữ cảnh tối đa</label>
+        <input type="number" value={maxContext} onChange={(e) => setMaxContext(e.target.value)} style={commonStyles.input} />
+      </div>
+
+      <div style={groupStyle}>
+        <label style={labelStyle}>URL API Backend</label>
+        <input type="text" value={backendUrl} onChange={(e) => setBackendUrl(e.target.value)} style={commonStyles.input} />
+      </div>
+
+      <button onClick={handleSave} style={{ ...commonStyles.buttonPrimary, width: "100%", padding: "12px", marginTop: "8px" }}>
         Lưu cài đặt
       </button>
 
-      {saved && <p style={{ color: "green", marginTop: "12px", textAlign: "center" }}>✅ Đã lưu thành công!</p>}
+      {saved && <p style={{ color: theme.success, textAlign: "center", marginTop: "12px", fontSize: "14px" }}>✅ Đã lưu thành công!</p>}
     </div>
   );
 }
