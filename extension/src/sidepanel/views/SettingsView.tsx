@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
 import { theme, commonStyles } from "../styles";
 
-export default function SettingsView() {
-  const [language, setLanguage] = useState("vi");
-  const [mode, setMode] = useState("formal");
-  const [maxContext, setMaxContext] = useState("500");
-  const [backendUrl, setBackendUrl] = useState("http://localhost:8000/api");
+interface Props {
+  lang: "vi" | "en";
+  t: any;
+}
+
+export default function SettingsView({ lang, t }: Props) {
+  const [language, setLanguage] = useState(lang);
+  const [maxContext, setMaxContext] = useState("500"); // Mặc định 500
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    chrome.storage.local.get(["language", "defaultRewriteMode", "maxContext", "backendUrl"], (res) => {
-      if (res.language) setLanguage(res.language);
-      if (res.defaultRewriteMode) setMode(res.defaultRewriteMode);
-      if (res.maxContext) setMaxContext(res.maxContext);
-      if (res.backendUrl) setBackendUrl(res.backendUrl);
+    setLanguage(lang);
+    // Đọc giới hạn từ storage khi mở tab
+    chrome.storage.local.get(["maxContext"], (res) => {
+      if (res.maxContext) setMaxContext(res.maxContext.toString());
     });
-  }, []);
+  }, [lang]);
 
   const handleSave = () => {
-    chrome.storage.local.set({
-      language, defaultRewriteMode: mode, maxContext, backendUrl
+    chrome.storage.local.set({ 
+      language, 
+      maxContext: parseInt(maxContext) || 500 
     }, () => {
       setSaved(true);
       setTimeout(() => setSaved(false), 2000);
@@ -27,42 +30,35 @@ export default function SettingsView() {
   };
 
   const labelStyle = { display: "block", marginBottom: "6px", fontSize: "13px", fontWeight: 600, color: theme.textMain };
-  const groupStyle = { marginBottom: "16px" };
+  const groupStyle = { marginBottom: "20px" };
 
   return (
-    <div>
+    <div style={{ padding: "16px" }}>
       <div style={groupStyle}>
-        <label style={labelStyle}>Ngôn ngữ trả lời</label>
-        <select value={language} onChange={(e) => setLanguage(e.target.value)} style={commonStyles.input}>
+        <label style={labelStyle}>{t.settings_lang}</label>
+        <select value={language} onChange={(e) => setLanguage(e.target.value as "vi" | "en")} style={commonStyles.input}>
           <option value="vi">Tiếng Việt</option>
           <option value="en">English</option>
         </select>
       </div>
 
       <div style={groupStyle}>
-        <label style={labelStyle}>Chế độ viết lại mặc định</label>
-        <select value={mode} onChange={(e) => setMode(e.target.value)} style={commonStyles.input}>
-          <option value="formal">Trang trọng</option>
-          <option value="casual">Thân mật</option>
-          <option value="academic">Học thuật</option>
-        </select>
-      </div>
-
-      <div style={groupStyle}>
-        <label style={labelStyle}>Độ dài ngữ cảnh tối đa</label>
-        <input type="number" value={maxContext} onChange={(e) => setMaxContext(e.target.value)} style={commonStyles.input} />
-      </div>
-
-      <div style={groupStyle}>
-        <label style={labelStyle}>URL API Backend</label>
-        <input type="text" value={backendUrl} onChange={(e) => setBackendUrl(e.target.value)} style={commonStyles.input} />
+        <label style={labelStyle}>{t.settings_limit}</label>
+        <input 
+          type="number" 
+          value={maxContext} 
+          onChange={(e) => setMaxContext(e.target.value)} 
+          style={commonStyles.input} 
+          min="100" 
+          max="5000"
+        />
       </div>
 
       <button onClick={handleSave} style={{ ...commonStyles.buttonPrimary, width: "100%", padding: "12px", marginTop: "8px" }}>
-        Lưu cài đặt
+        {t.settings_save}
       </button>
 
-      {saved && <p style={{ color: theme.success, textAlign: "center", marginTop: "12px", fontSize: "14px" }}>✅ Đã lưu thành công!</p>}
+      {saved && <p style={{ color: theme.success, textAlign: "center", marginTop: "12px", fontSize: "14px" }}>✅ {t.settings_saved}</p>}
     </div>
   );
 }

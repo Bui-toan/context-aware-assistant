@@ -4,7 +4,7 @@ export type FloatingActionType = "search" | "explain" | "grammar" | "rewrite";
 type ActionCallback = (action: FloatingActionType, info: SelectionInfo) => void;
 
 const HOST_ID = "caa-floating-action-host";
-const TOOLBAR_WIDTH = 300; // Tăng chiều rộng lên chút để chứa 4 nút
+const TOOLBAR_WIDTH = 320;
 const TOOLBAR_HEIGHT = 40;
 const OFFSET_Y = 8;
 
@@ -13,12 +13,24 @@ let shadowRoot: ShadowRoot | null = null;
 let currentSelection: SelectionInfo | null = null;
 let actionCallback: ActionCallback | null = null;
 
-function ensureToolbar(): void {
-  if (hostEl) return;
+function ensureToolbar(lang: "vi" | "en" = "vi"): void {
+  if (hostEl) {
+    // Nếu toolbar đã tồn tại, chỉ cần cập nhật lại chữ khi đổi ngôn ngữ
+    const buttons = shadowRoot?.querySelectorAll(".btn");
+    if (buttons && buttons.length === 4) {
+      const labels = lang === "vi" 
+        ? ["Tìm kiếm", "Giải thích", "Ngữ pháp", "Viết lại"] 
+        : ["Search", "Explain", "Grammar", "Rewrite"];
+      buttons.forEach((btn, idx) => btn.textContent = labels[idx]);
+    }
+    return;
+  }
+
   hostEl = document.createElement("div");
   hostEl.id = HOST_ID;
   hostEl.style.position = "absolute";
-  hostEl.style.top = "0"; hostEl.style.left = "0"; hostEl.style.zIndex = "2147483647"; hostEl.style.display = "none";
+  hostEl.style.top = "0"; hostEl.style.left = "0";
+  hostEl.style.zIndex = "2147483647"; hostEl.style.display = "none";
 
   shadowRoot = hostEl.attachShadow({ mode: "closed" });
   const style = document.createElement("style");
@@ -32,16 +44,15 @@ function ensureToolbar(): void {
   const toolbar = document.createElement("div");
   toolbar.className = "toolbar";
 
-  const actions: Array<{ type: FloatingActionType; label: string }> = [
-    { type: "search", label: "Search" },
-    { type: "explain", label: "Explain" },
-    { type: "grammar", label: "Grammar" },
-    { type: "rewrite", label: "Rewrite" },
-  ];
+  const labels = lang === "vi" 
+    ? ["Tìm kiếm", "Giải thích", "Ngữ pháp", "Viết lại"] 
+    : ["Search", "Explain", "Grammar", "Rewrite"];
+  const types: FloatingActionType[] = ["search", "explain", "grammar", "rewrite"];
 
-  for (const { type, label } of actions) {
+  types.forEach((type, index) => {
     const btn = document.createElement("button");
-    btn.className = "btn"; btn.textContent = label;
+    btn.className = "btn"; 
+    btn.textContent = labels[index];
     btn.addEventListener("mousedown", (e) => { e.preventDefault(); e.stopPropagation(); });
     btn.addEventListener("click", (e) => {
       e.preventDefault(); e.stopPropagation();
@@ -49,14 +60,16 @@ function ensureToolbar(): void {
       hide();
     });
     toolbar.appendChild(btn);
-  }
+  });
+
   shadowRoot.appendChild(toolbar);
   document.body.appendChild(hostEl);
 }
 
-export function show(info: SelectionInfo): void {
-  ensureToolbar();
+export function show(info: SelectionInfo, lang: "vi" | "en" = "vi"): void {
+  ensureToolbar(lang);
   if (!hostEl || !info.rect) return;
+  
   currentSelection = info;
   const rect = info.rect;
   const scrollX = window.scrollX; const scrollY = window.scrollY;
@@ -75,4 +88,5 @@ export function hide(): void {
   if (hostEl) hostEl.style.display = "none";
   currentSelection = null;
 }
+
 export function onAction(cb: ActionCallback): void { actionCallback = cb; }

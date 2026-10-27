@@ -1,25 +1,32 @@
 import { chunkMap } from "./chunk-mapper";
 
-export function highlightChunk(chunkId: string) {
-  const el = chunkMap.get(chunkId);
+export function highlightChunk(chunkId: string, fallbackText?: string) {
+  let el = chunkMap.get(chunkId);
   
+  // Nếu không tìm thấy element trong Map (do DOM bị render lại)
+  if (!el && fallbackText) {
+    // Tìm thẻ <p>, <div>... có chứa đoạn text đó
+    const allBlocks = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, blockquote, td");
+    for (const block of Array.from(allBlocks)) {
+      if ((block.textContent || "").includes(fallbackText.substring(0, 50))) {
+        el = block as HTMLElement;
+        break;
+      }
+    }
+  }
+
   if (!el) {
-    console.warn("[Highlighter] Không tìm thấy element cho chunkId:", chunkId);
+    alert("Không thể tìm thấy vị trí đoạn văn này trên trang (Trang có thể đã thay đổi).");
     return;
   }
 
-  // 1. Xóa highlight cũ (nếu có) để không bị tô vàng nhiều đoạn cùng lúc
   document.querySelectorAll(".caa-highlight").forEach((node) => {
-    const htmlNode = node as HTMLElement;
-    htmlNode.style.backgroundColor = "";
-    htmlNode.classList.remove("caa-highlight");
+    (node as HTMLElement).style.backgroundColor = "";
+    node.classList.remove("caa-highlight");
   });
 
-  // 2. Cuộn trang mượt mà tới vị trí đoạn văn
   el.scrollIntoView({ behavior: "smooth", block: "center" });
-  
-  // 3. Tô màu vàng nhạt
   el.style.transition = "background-color 0.3s";
-  el.style.backgroundColor = "#fef08a"; // Màu vàng nhạt (Tailwind yellow-200)
+  el.style.backgroundColor = "#fef08a";
   el.classList.add("caa-highlight");
 }

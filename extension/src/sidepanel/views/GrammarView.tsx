@@ -3,11 +3,16 @@ import { sendMessage } from "../../shared/messaging/message-bus";
 import { theme, commonStyles } from "../styles";
 
 interface Props {
-  data: any; loading: boolean; error: string | null;
-  onCheck: (text: string) => void; initialText: string; t: any;
+  data: any; 
+  loading?: boolean; 
+  error?: string | null;
+  onCheck: (text: string) => void; 
+  initialText: string; 
+  currentQueryText?: string; // Thêm prop này để hết lỗi
+  t: any;
 }
 
-export default function GrammarView({ data, loading, error, onCheck, initialText, t }: Props) {
+export default function GrammarView({ data, loading, error, onCheck, initialText, currentQueryText, t }: Props) {
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -17,16 +22,26 @@ export default function GrammarView({ data, loading, error, onCheck, initialText
   return (
     <div>
       <textarea 
-        placeholder={t.grammar_input} value={text} onChange={(e) => setText(e.target.value)}
+        placeholder={t.grammar_input} 
+        value={text} 
+        onChange={(e) => setText(e.target.value)}
         style={{ ...commonStyles.input, height: "100px", resize: "vertical", marginBottom: "12px" }}
       />
+      
       <button onClick={() => onCheck(text)} disabled={loading || !text.trim()} style={{ ...commonStyles.buttonPrimary, width: "100%", marginBottom: "20px" }}>
         {loading ? t.loading : t.grammar_btn}
       </button>
 
+      {/* Trạng thái Loading */}
+      {loading && (
+        <div style={{ textAlign: "center", color: theme.primary, margin: "20px 0" }}>
+          ⏳ {t.loading} "<b>{currentQueryText}</b>"...
+        </div>
+      )}
+
       {error && <div style={{ color: theme.danger, background: "#fee2e2", padding: "12px", borderRadius: theme.radiusMd, marginBottom: "16px" }}>{error}</div>}
 
-      {data && (
+      {!loading && data && (
         <div>
           {/* Bảng điểm & Văn phong */}
           <div style={{ display: "flex", gap: "12px", marginBottom: "16px" }}>

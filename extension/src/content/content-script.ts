@@ -1,4 +1,4 @@
-import { startSelectionDetection, onSelectionChange } from "./selection-detector";
+import { startSelectionDetection, onSelectionChange, lastSavedRange, lastSavedElement } from "./selection-detector";
 import { show, hide, onAction, type FloatingActionType } from "./floating-action";
 import { sendMessage } from "../shared/messaging/message-bus";
 import { extractContext } from "./context-extraction";
@@ -8,77 +8,110 @@ import { highlightChunk } from "./search/highlighter";
 
 console.log("[Content Script] Loaded on:", window.location.href);
 
+let currentLang: "vi" | "en" = "vi";
+chrome.storage.local.get(["language"], (res) => { if (res.language) currentLang = res.language; });
+chrome.storage.onChanged.addListener((changes) => { if (changes.language) currentLang = changes.language.newValue; });
+
 onSelectionChange((info) => {
-  if (info && info.rect) show(info); else hide();
+  if (info && info.rect) show(info, currentLang); 
+  else hide();
 });
 
-// Xử lý khi bấm nút trên Floating Action
 onAction(async (action: FloatingActionType, info) => {
-  console.log("[Content Script] Action:", action, "| text:", info.text);
-
-  // Nếu là Search, gửi request và yêu cầu đổi tab
   if (action === "search") {
     void sendMessage("REQUEST_SEARCH", { query: info.text, topK: 5 });
     chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: "search" } });
     return;
   }
 
-  // Các action khác cần lấy context
+  // Lấy setting từ storage
   const settings = await new Promise<any>((resolve) => {
-    chrome.storage.local.get(["language", "defaultRewriteMode"], (res) => resolve(res));
+    chrome.storage.local.get(["language", "maxContext"], (res) => resolve(res));
   });
+  
   const lang = settings.language || "vi";
-  const rewriteMode = settings.defaultRewriteMode || "formal";
+  const maxLimit = settings.maxContext || 500; // Mặc định 500 nếu chưa set
+
+  // Tạo context và kiểm tra giới hạn
   const context = extractContext(info.node, info.text);
   
+  // Nếu context (hoặc text) dài hơn giới hạn -> Chặn và báo lỗi
+  if (info.text.length > maxLimit || context.length > maxLimit) {
+    chrome.runtime.sendMessage({ 
+      type: "ERROR", 
+      payload: { 
+        actionType: action,
+        message: `Văn bản vượt quá giới hạn ${maxLimit} ký tự! (Hiện tại: ${Math.max(info.text.length, context.length)} ký tự). Vui lòng bôi đen đoạn ngắn hơn.` 
+      } 
+    });
+    chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: action } });
+    return;
+  }
+
   const basePayload = { text: info.text, context: context, language: lang };
 
   if (action === "explain") void sendMessage("REQUEST_EXPLAIN", basePayload);
   else if (action === "grammar") void sendMessage("REQUEST_GRAMMAR", basePayload);
-  else if (action === "rewrite") void sendMessage("REQUEST_REWRITE", { ...basePayload, mode: rewriteMode });
+  else if (action === "rewrite") void sendMessage("REQUEST_REWRITE", { ...basePayload, mode: "formal" });
 });
 
 startSelectionDetection();
 
-// Lắng nghe lệnh từ Service Worker
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
-  // 1. Quét trang cho Search
   if (message.type === "GET_PAGE_CHUNKS") {
     clearChunkMap();
     sendResponse({ chunks: extractPageText() });
   }
   
-  // 2. Highlight kết quả
   if (message.type === "HIGHLIGHT_CHUNK") {
-    highlightChunk(message.payload.chunkId);
+    highlightChunk(message.payload.chunkId, message.payload.text);
     sendResponse({ ok: true });
   }
   
-  // 3. Áp dụng văn bản mới (Apply)
   if (message.type === "APPLY_SUGGESTION") {
     const { suggested } = message.payload;
+    let applied = false;
     
-    // Ưu tiên 1: input/textarea đang focus
-    const active = document.activeElement as HTMLElement;
-    if (active && (active.tagName.toLowerCase() === "input" || active.tagName.toLowerCase() === "textarea")) {
-      const el = active as HTMLInputElement | HTMLTextAreaElement;
-      const start = el.selectionStart ?? 0;
-      const end = el.selectionEnd ?? 0;
-      el.setRangeText(suggested, start, end, "end");
-    } 
-    // Ưu tiên 2: contenteditable
-    else if (active && active.isContentEditable) {
-      document.execCommand("insertText", false, suggested);
-    } 
-    // Fallback: Copy vào clipboard
-    else {
-      navigator.clipboard.writeText(suggested);
-      alert("Không thể tự động ghi đè trang này. Đã COPY nội dung vào Clipboard!");
+    try {
+      // 1. Nếu lưu Element là input/textarea
+      if (lastSavedElement && (lastSavedElement.tagName.toLowerCase() === "input" || lastSavedElement.tagName.toLowerCase() === "textarea")) {
+        const el = lastSavedElement as HTMLInputElement | HTMLTextAreaElement;
+        el.focus();
+        el.setRangeText(suggested, el.selectionStart ?? 0, el.selectionEnd ?? 0, "end");
+        applied = true;
+      } 
+      // 2. Nếu lưu Range (Text thường hoặc Google Dịch)
+      else if (lastSavedRange) {
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(lastSavedRange);
+        
+        // Thử dùng execCommand trước (hoạt động tốt với contenteditable và các editor ảo)
+        const success = document.execCommand("insertText", false, suggested);
+        
+        if (!success) {
+          // Fallback: Xóa nội dung cũ và chèn node mới
+          lastSavedRange.deleteContents();
+          const textNode = document.createTextNode(suggested);
+          lastSavedRange.insertNode(textNode);
+          lastSavedRange.setStartAfter(textNode);
+          lastSavedRange.setEndAfter(textNode);
+        }
+        applied = true;
+      }
+    } catch (e) {
+      console.error("Lỗi Apply:", e);
     }
+
+    // 3. Nếu thất bại hoàn toàn -> Copy
+    if (!applied) {
+      navigator.clipboard.writeText(suggested);
+      alert("Không thể tự động ghi đè. Đã COPY nội dung vào Clipboard!");
+    }
+    
     sendResponse({ ok: true });
   }
 
   return true;
 });
-
 export {};

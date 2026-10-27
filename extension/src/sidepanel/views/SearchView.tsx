@@ -6,41 +6,67 @@ interface Props {
   onSearch: (query: string) => void;
   loading: boolean; error: string | null; results: any[] | null;
   chunks: Record<string, string>; t: any;
-  initialQuery: string; // Nhận query bôi đen từ App
+  initialQuery: string;
+  currentQueryText: string;
 }
 
-export default function SearchView({ onSearch, loading, error, results, chunks, t, initialQuery }: Props) {
+export default function SearchView({ onSearch, loading, error, results, chunks, t, initialQuery, currentQueryText }: Props) {
   const [query, setQuery] = useState("");
 
-  // Lắng nghe nếu có query bôi đen được ném sang
   useEffect(() => {
     if (initialQuery) {
-      setQuery(initialQuery);   // Điền vào ô
-      onSearch(initialQuery);   // Tự động tìm luôn
+      setQuery(initialQuery);
+      onSearch(initialQuery);
     }
   }, [initialQuery]);
 
   const handleHighlight = (chunkId: string) => {
-    sendMessage("HIGHLIGHT_CHUNK", { chunkId });
+    // Gửi kèm text để fallback nếu DOM thay đổi
+    sendMessage("HIGHLIGHT_CHUNK", { chunkId, text: chunks[chunkId] });
   };
 
   return (
     <div>
       <div style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
-        <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t.search_placeholder} style={commonStyles.input} onKeyDown={(e) => e.key === "Enter" && onSearch(query)} />
-        <button onClick={() => onSearch(query)} disabled={loading} style={{ ...commonStyles.buttonPrimary, padding: "8px 20px" }}>{loading ? "..." : t.search_btn}</button>
+        <input 
+          type="text" 
+          value={query} 
+          onChange={(e) => setQuery(e.target.value)} 
+          placeholder={t.search_placeholder} 
+          style={commonStyles.input} 
+          onKeyDown={(e) => e.key === "Enter" && onSearch(query)} 
+        />
+        <button onClick={() => onSearch(query)} disabled={loading} style={{ ...commonStyles.buttonPrimary, padding: "8px 20px" }}>
+          {loading ? "..." : t.search_btn}
+        </button>
       </div>
 
+      {/* Trạng thái đang tìm kiếm */}
+      {loading && (
+        <div style={{ textAlign: "center", color: theme.primary, margin: "20px 0" }}>
+          ⏳ {t.loading} "<b>{currentQueryText}</b>"...
+        </div>
+      )}
+
+      {/* Trạng thái lỗi */}
       {error && <div style={{ color: theme.danger, background: "#fee2e2", padding: "12px", borderRadius: theme.radiusMd, marginBottom: "16px" }}>{error}</div>}
 
-      {results && (
+      {/* Kết quả */}
+      {!loading && results && (
         <div>
           <p style={{ color: theme.textMuted, fontSize: "13px", marginBottom: "12px" }}>{t.search_found} {results.length} {t.search_results}</p>
+          
+          {results.length === 0 && (
+             <p style={{ color: theme.textMuted, fontSize: "14px" }}>Không tìm thấy đoạn văn nào phù hợp với ý nghĩa của từ khóa.</p>
+          )}
+          
           {results.map((r, i) => (
             <div key={r.chunkId} onClick={() => handleHighlight(r.chunkId)} style={{ ...commonStyles.card, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-                <strong style={{ color: theme.primary, fontSize: "15px" }}>{t.search_result} {i + 1}</strong>
-                <span style={{ fontSize: "12px", background: "#eff6ff", color: theme.primary, padding: "2px 8px", borderRadius: theme.radiusFull, fontWeight: 600 }}>{(r.score * 100).toFixed(1)}%</span>
+                <strong style={{ color: theme.primary, fontSize: "15px" }}>Kết quả {i + 1}</strong>
+                <span style={{ fontSize: "12px", background: "#eff6ff", color: theme.primary, padding: "2px 8px", borderRadius: theme.radiusFull, fontWeight: 600 }}>
+                  {(r.score * 100).toFixed(1)}%
+                </span>
               </div>
               <p style={{ margin: 0, fontSize: "14px", color: theme.textMain, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                 {chunks[r.chunkId] || "Không có nội dung"}
