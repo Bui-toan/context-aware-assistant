@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "23bcbf5d-7e38-4180-a80f-f27ec74f3874",
-    "name": "SDS_20",
+    "_postman_id": "0877028f-5279-4450-9148-a6c24afa65df",
+    "name": "SDS_20 Copy",
     "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "47585105",
-    "_collection_link": "https://go.postman.co/collection/47585105-23bcbf5d-7e38-4180-a80f-f27ec74f3874?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/47585105-0877028f-5279-4450-9148-a6c24afa65df?source=collection_link"
   },
   "item": [
     {
@@ -40,6 +40,97 @@
     },
     {
       "name": "GET /api/health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/explain - valid input",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r\npm.test(\"Có 3 field: meaning, explanation, examples\", () => {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"meaning\");\r\n    pm.expect(json).to.have.property(\"explanation\");\r\n    pm.expect(json).to.have.property(\"examples\");\r\n    pm.expect(json.examples).to.be.an(\"array\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"text\": \"machine learning\",\r\n  \"context\": \"Machine learning is a subset of AI.\",\r\n  \"language\": \"vi\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/explain",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "explain"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/explain - empty text",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 400\", () => pm.response.to.have.status(400));\r\npm.test(\"Error code = EMPTY_TEXT\", () => {\r\n    pm.expect(pm.response.json().detail.code).to.eql(\"EMPTY_TEXT\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"text\": \"\",\r\n  \"context\": \"\",\r\n  \"language\": \"vi\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/explain",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "explain"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /api/explain — empty context",
       "request": {
         "method": "GET",
         "header": [],

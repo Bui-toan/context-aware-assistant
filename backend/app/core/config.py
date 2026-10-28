@@ -10,9 +10,10 @@ class Settings(BaseSettings):
     )
 
     # AI Provider
-    ai_provider_name: str = "openai"
-    ai_provider_api_key: str = ""
-    ai_provider_model: str = "gpt-4o-mini"
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-3.1-flash-lite"
+    ai_timeout: int = 30
+    allowed_origins: str = "*"     
 
     # Embedding
     embedding_model_name: str = "paraphrase-multilingual-mpnet-base-v2"

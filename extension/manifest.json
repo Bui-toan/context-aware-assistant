@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Context-Aware Reading & Writing Assistant",
+  "version": "0.1.0",
+  "description": "SDS Nhóm 20 — Chrome Extension hỗ trợ đọc, tra cứu, soạn thảo theo ngữ cảnh",
+  "permissions": ["storage", "sidePanel", "activeTab", "scripting"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "background": {
+    "service_worker": "src/background/service-worker.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content-script.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "action": {
+    "default_title": "Mở Context-Aware Assistant"
+  }
+}
