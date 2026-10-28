@@ -13,11 +13,16 @@ let listener: SelectionCallback | null = null;
 let rafId: number | null = null;
 let lastText = "";
 
-// Biến toàn cục lưu trữ vùng bôi đen và element cuối cùng
-export let lastSavedRange: Range | null = null;
+// Biến lưu trữ element cuối cùng
 export let lastSavedElement: HTMLElement | null = null;
 
+// Hàm để reset element từ file khác (thay vì gán trực tiếp)
+export function clearSavedElement() {
+  lastSavedElement = null;
+}
+
 export function getCurrentSelection(): SelectionInfo | null {
+  // 1. Input / Textarea
   const active = document.activeElement as HTMLElement | null;
   if (active) {
     const tag = active.tagName.toLowerCase();
@@ -28,15 +33,14 @@ export function getCurrentSelection(): SelectionInfo | null {
       if (end > start) {
         const text = el.value.substring(start, end).trim();
         if (text) {
-          // Lưu lại element
-          lastSavedElement = el; 
-          lastSavedRange = null;
+          lastSavedElement = el;
           return { text, rect: el.getBoundingClientRect(), source: tag === "input" ? "input" : "textarea", node: el };
         }
       }
     }
   }
 
+  // 2. Văn bản thường
   const sel = window.getSelection();
   if (!sel || sel.isCollapsed || sel.rangeCount === 0) return null;
 
@@ -46,29 +50,34 @@ export function getCurrentSelection(): SelectionInfo | null {
   const range = sel.getRangeAt(0);
   const rect = range.getBoundingClientRect();
 
-  // Lưu lại range và element
-  lastSavedRange = range.cloneRange();
-  lastSavedElement = null; // Reset nếu đang bôi đen text thường
-
   let source: SelectionSource = "window";
   const anchor = sel.anchorNode;
+  
+  // Kiểm tra xem có nằm trong contenteditable không
   if (anchor) {
     const parentEl = anchor.nodeType === Node.TEXT_NODE ? anchor.parentElement : (anchor as HTMLElement);
     if (parentEl && (parentEl.isContentEditable || parentEl.closest("[contenteditable]"))) {
       source = "contenteditable";
-      lastSavedElement = parentEl; // Lưu element contenteditable
+      lastSavedElement = parentEl; 
+    } else {
+      // Nếu là text thường trên web (như bài báo), KHÔNG LƯU element
+      lastSavedElement = null; 
     }
   }
 
   return { text, rect, source, node: anchor };
 }
 
-export function onSelectionChange(cb: SelectionCallback): void { listener = cb; }
+export function onSelectionChange(cb: SelectionCallback): void {
+  listener = cb;
+}
+
 export function startSelectionDetection(): void {
   document.addEventListener("mouseup", handleChange, true);
   document.addEventListener("keyup", handleChange, true);
   document.addEventListener("selectionchange", handleChange, true);
 }
+
 function handleChange(): void {
   if (rafId !== null) cancelAnimationFrame(rafId);
   rafId = requestAnimationFrame(() => {

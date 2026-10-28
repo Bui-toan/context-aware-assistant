@@ -63,7 +63,7 @@ export default function SearchView({ onSearch, loading, error, results, chunks, 
           {results.map((r, i) => (
             <div key={r.chunkId} onClick={() => handleHighlight(r.chunkId)} style={{ ...commonStyles.card, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-                <strong style={{ color: theme.primary, fontSize: "15px" }}>Kết quả {i + 1}</strong>
+                <strong style={{ color: theme.primary, fontSize: "15px" }}>{t.search_result} {i + 1}</strong>
                 <span style={{ fontSize: "12px", background: "#eff6ff", color: theme.primary, padding: "2px 8px", borderRadius: theme.radiusFull, fontWeight: 600 }}>
                   {(r.score * 100).toFixed(1)}%
                 </span>
