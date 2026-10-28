@@ -1,4 +1,4 @@
-import { startSelectionDetection, onSelectionChange, lastSavedRange, lastSavedElement } from "./selection-detector";
+import { startSelectionDetection, onSelectionChange, lastSavedElement, clearSavedElement, type SelectionInfo } from "./selection-detector";
 import { show, hide, onAction, type FloatingActionType } from "./floating-action";
 import { sendMessage } from "../shared/messaging/message-bus";
 import { extractContext } from "./context-extraction";
@@ -12,7 +12,8 @@ let currentLang: "vi" | "en" = "vi";
 chrome.storage.local.get(["language"], (res) => { if (res.language) currentLang = res.language; });
 chrome.storage.onChanged.addListener((changes) => { if (changes.language) currentLang = changes.language.newValue; });
 
-onSelectionChange((info) => {
+// Đã thêm type SelectionInfo | null cho info
+onSelectionChange((info: SelectionInfo | null) => {
   if (info && info.rect) show(info, currentLang); 
   else hide();
 });
@@ -24,18 +25,15 @@ onAction(async (action: FloatingActionType, info) => {
     return;
   }
 
-  // Lấy setting từ storage
   const settings = await new Promise<any>((resolve) => {
     chrome.storage.local.get(["language", "maxContext"], (res) => resolve(res));
   });
   
   const lang = settings.language || "vi";
-  const maxLimit = settings.maxContext || 500; // Mặc định 500 nếu chưa set
+  const maxLimit = settings.maxContext || 500;
 
-  // Tạo context và kiểm tra giới hạn
   const context = extractContext(info.node, info.text);
   
-  // Nếu context (hoặc text) dài hơn giới hạn -> Chặn và báo lỗi
   if (info.text.length > maxLimit || context.length > maxLimit) {
     chrome.runtime.sendMessage({ 
       type: "ERROR", 
@@ -68,50 +66,36 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     sendResponse({ ok: true });
   }
   
-    if (message.type === "APPLY_SUGGESTION") {
+  if (message.type === "APPLY_SUGGESTION") {
     const { suggested } = message.payload;
     let applied = false;
     
     try {
-      // Ưu tiên 1: Nếu đang bôi đen trong ô input/textarea thông thường
-      if (lastSavedElement && (lastSavedElement.tagName.toLowerCase() === "input" || lastSavedElement.tagName.toLowerCase() === "textarea")) {
-        const el = lastSavedElement as HTMLInputElement | HTMLTextAreaElement;
-        el.focus(); // Bắt buộc phải focus lại
-        el.setRangeText(suggested, el.selectionStart ?? 0, el.selectionEnd ?? 0, "end");
-        applied = true;
-      } 
-      // Ưu tiên 2: Nếu đang bôi đen chữ thường (như trên Google Dịch)
-      else if (lastSavedRange) {
-        const sel = window.getSelection();
-        if (sel) {
-          sel.removeAllRanges();
-          sel.addRange(lastSavedRange); // Phục hồi lại vùng bôi đen
-        }
+      if (lastSavedElement) {
+        const tag = lastSavedElement.tagName.toLowerCase();
         
-        // Cách 1: Dùng execCommand (hoạt động tốt với Google Dịch)
-        applied = document.execCommand("insertText", false, suggested);
-        
-        // Cách 2: Nếu execCommand thất bại, chèn thủ công bằng DOM
-        if (!applied) {
-          lastSavedRange.deleteContents();
-          const textNode = document.createTextNode(suggested);
-          lastSavedRange.insertNode(textNode);
-          // Đặt con trỏ sau đoạn vừa chèn
-          lastSavedRange.setStartAfter(textNode);
-          lastSavedRange.setEndAfter(textNode);
+        if (tag === "input" || tag === "textarea") {
+          const el = lastSavedElement as HTMLInputElement | HTMLTextAreaElement;
+          el.focus();
+          el.setRangeText(suggested, el.selectionStart ?? 0, el.selectionEnd ?? 0, "end");
           applied = true;
+        } 
+        else if (lastSavedElement.isContentEditable || lastSavedElement.closest("[contenteditable]")) {
+          lastSavedElement.focus();
+          applied = document.execCommand("insertText", false, suggested);
         }
       }
     } catch (e) {
       console.error("Lỗi Apply:", e);
     }
 
-    // Nếu tất cả cách đều thất bại -> Copy vào Clipboard
     if (!applied) {
       navigator.clipboard.writeText(suggested);
-      alert("Trình duyệt chặn ghi đè trang này. Đã tự động COPY nội dung vào Clipboard!");
+      alert("Đã sao chép nội dung! (Lưu ý: Không thể tự động ghi đè văn bản trên trang web để tránh phá vỡ giao diện).");
     }
     
+    // Sử dụng hàm clear thay vì gán trực tiếp
+    clearSavedElement();
     sendResponse({ ok: true });
   }
 
