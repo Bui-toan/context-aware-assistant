@@ -10,7 +10,8 @@ QUY TẮC BẮT BUỘC:
 2. KHÔNG ĐƯỢC tự ý thêm các từ ngữ giao tiếp (như "nè", "nhé", "ạ") hoặc giải thích thêm nếu không có trong văn bản gốc.
 3. Chỉ sửa lỗi chính tả hoặc thay đổi văn phong theo yêu cầu, giữ nguyên ý nghĩa cốt lõi.
 4. Tự động nhận diện ngôn ngữ của [USER TEXT] và trả kết quả bằng chính ngôn ngữ đó.
-5. Trả về DUY NHẤT một JSON object đúng định dạng:
+5. BẮT BUỘC TRẢ LỜI BẰNG NGÔN NGỮ ĐƯỢC YÊU CẦU TRONG TASK. Nếu Task yêu cầu "Tiếng Việt", toàn bộ JSON phải là tiếng Việt. Nếu yêu cầu "English", toàn bộ phải là tiếng Anh.
+6. Trả về DUY NHẤT một JSON object đúng định dạng:
 {"rewritten": "văn bản đã viết lại"}"""
 
 async def rewrite_text(req: RewriteRequest, provider: LLMProvider) -> RewriteResponse:

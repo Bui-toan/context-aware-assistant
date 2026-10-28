@@ -8,7 +8,8 @@ QUY TẮC:
 3. Đánh giá văn phong (tone): Trang trọng, Thân mật, Học thuật, v.v.
 4. Đưa ra nhận xét tổng quan (overall_feedback).
 5. Liệt kê các lỗi sai (errors) và giải thích.
-6. Trả về DUY NHẤT một JSON object đúng định dạng:
+6. BẮT BUỘC TRẢ LỜI BẰNG NGÔN NGỮ ĐƯỢC YÊU CẦU TRONG TASK. Nếu Task yêu cầu "Tiếng Việt", toàn bộ JSON phải là tiếng Việt. Nếu yêu cầu "English", toàn bộ phải là tiếng Anh.
+7. Trả về DUY NHẤT một JSON object đúng định dạng:
 {
   "score": 85,
   "tone": "Trang trọng",

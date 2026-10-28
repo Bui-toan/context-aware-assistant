@@ -68,45 +68,48 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
     sendResponse({ ok: true });
   }
   
-  if (message.type === "APPLY_SUGGESTION") {
+    if (message.type === "APPLY_SUGGESTION") {
     const { suggested } = message.payload;
     let applied = false;
     
     try {
-      // 1. Nếu lưu Element là input/textarea
+      // Ưu tiên 1: Nếu đang bôi đen trong ô input/textarea thông thường
       if (lastSavedElement && (lastSavedElement.tagName.toLowerCase() === "input" || lastSavedElement.tagName.toLowerCase() === "textarea")) {
         const el = lastSavedElement as HTMLInputElement | HTMLTextAreaElement;
-        el.focus();
+        el.focus(); // Bắt buộc phải focus lại
         el.setRangeText(suggested, el.selectionStart ?? 0, el.selectionEnd ?? 0, "end");
         applied = true;
       } 
-      // 2. Nếu lưu Range (Text thường hoặc Google Dịch)
+      // Ưu tiên 2: Nếu đang bôi đen chữ thường (như trên Google Dịch)
       else if (lastSavedRange) {
         const sel = window.getSelection();
-        sel?.removeAllRanges();
-        sel?.addRange(lastSavedRange);
+        if (sel) {
+          sel.removeAllRanges();
+          sel.addRange(lastSavedRange); // Phục hồi lại vùng bôi đen
+        }
         
-        // Thử dùng execCommand trước (hoạt động tốt với contenteditable và các editor ảo)
-        const success = document.execCommand("insertText", false, suggested);
+        // Cách 1: Dùng execCommand (hoạt động tốt với Google Dịch)
+        applied = document.execCommand("insertText", false, suggested);
         
-        if (!success) {
-          // Fallback: Xóa nội dung cũ và chèn node mới
+        // Cách 2: Nếu execCommand thất bại, chèn thủ công bằng DOM
+        if (!applied) {
           lastSavedRange.deleteContents();
           const textNode = document.createTextNode(suggested);
           lastSavedRange.insertNode(textNode);
+          // Đặt con trỏ sau đoạn vừa chèn
           lastSavedRange.setStartAfter(textNode);
           lastSavedRange.setEndAfter(textNode);
+          applied = true;
         }
-        applied = true;
       }
     } catch (e) {
       console.error("Lỗi Apply:", e);
     }
 
-    // 3. Nếu thất bại hoàn toàn -> Copy
+    // Nếu tất cả cách đều thất bại -> Copy vào Clipboard
     if (!applied) {
       navigator.clipboard.writeText(suggested);
-      alert("Không thể tự động ghi đè. Đã COPY nội dung vào Clipboard!");
+      alert("Trình duyệt chặn ghi đè trang này. Đã tự động COPY nội dung vào Clipboard!");
     }
     
     sendResponse({ ok: true });

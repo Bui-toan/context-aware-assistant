@@ -83,3 +83,22 @@ onMessage("HIGHLIGHT_CHUNK", async (payload: any) => {
     return { ok: false };
   }
 });
+
+// Thêm đoạn này vào cuối file service-worker.ts
+onMessage("APPLY_SUGGESTION", async (payload: any) => {
+  try {
+    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (tabs[0]?.id) {
+      // Chuyển tiếp lệnh xuống Content Script
+      await chrome.tabs.sendMessage(tabs[0].id, {
+        type: "APPLY_SUGGESTION",
+        requestId: crypto.randomUUID(),
+        payload
+      });
+    }
+    return { ok: true };
+  } catch (err) {
+    console.warn("Lỗi khi gửi lệnh apply xuống trang:", err);
+    return { ok: false };
+  }
+});
