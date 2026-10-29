@@ -11,6 +11,7 @@ class Settings(BaseSettings):
 
     # AI Provider
     gemini_api_key: str = ""
+    gemini_fallback_models: str = ""
     gemini_model: str = "gemini-3.1-flash-lite"
     ai_timeout: int = 30
     allowed_origins: str = "*"     
