@@ -1,0 +1,583 @@
+[
+ {
+  "id": "explain-0000",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "hoa anh đào",
+  "context": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0001",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "hoa anh đào",
+  "context": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0002",
+  "variant": "không có ngữ cảnh",
+  "text": "hoa anh đào",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0003",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "kim tự tháp",
+  "context": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0004",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "kim tự tháp",
+  "context": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0005",
+  "variant": "không có ngữ cảnh",
+  "text": "kim tự tháp",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0006",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "thủ đô",
+  "context": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0007",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "thủ đô",
+  "context": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0008",
+  "variant": "không có ngữ cảnh",
+  "text": "thủ đô",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0009",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "rừng nhiệt đới",
+  "context": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0010",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "rừng nhiệt đới",
+  "context": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0011",
+  "variant": "không có ngữ cảnh",
+  "text": "rừng nhiệt đới",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0012",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "học máy",
+  "context": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0013",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "học máy",
+  "context": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0014",
+  "variant": "không có ngữ cảnh",
+  "text": "học máy",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0015",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "lỗ đen",
+  "context": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0016",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "lỗ đen",
+  "context": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0017",
+  "variant": "không có ngữ cảnh",
+  "text": "lỗ đen",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0018",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "quang hợp",
+  "context": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0019",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "quang hợp",
+  "context": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0020",
+  "variant": "không có ngữ cảnh",
+  "text": "quang hợp",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0021",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "vắc-xin",
+  "context": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0022",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "vắc-xin",
+  "context": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0023",
+  "variant": "không có ngữ cảnh",
+  "text": "vắc-xin",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0024",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "blockchain",
+  "context": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0025",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "blockchain",
+  "context": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0026",
+  "variant": "không có ngữ cảnh",
+  "text": "blockchain",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0027",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "món phở",
+  "context": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0028",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "món phở",
+  "context": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0029",
+  "variant": "không có ngữ cảnh",
+  "text": "món phở",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0030",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "sushi",
+  "context": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0031",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "sushi",
+  "context": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0032",
+  "variant": "không có ngữ cảnh",
+  "text": "sushi",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0033",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "cà phê",
+  "context": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0034",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "cà phê",
+  "context": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0035",
+  "variant": "không có ngữ cảnh",
+  "text": "cà phê",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0036",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "pizza",
+  "context": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0037",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "pizza",
+  "context": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0038",
+  "variant": "không có ngữ cảnh",
+  "text": "pizza",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0039",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "chiến tranh thế giới",
+  "context": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0040",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "chiến tranh thế giới",
+  "context": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0041",
+  "variant": "không có ngữ cảnh",
+  "text": "chiến tranh thế giới",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0042",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "tổng thống Mỹ",
+  "context": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0043",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "tổng thống Mỹ",
+  "context": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0044",
+  "variant": "không có ngữ cảnh",
+  "text": "tổng thống Mỹ",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0045",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "cách mạng công nghiệp",
+  "context": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0046",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "cách mạng công nghiệp",
+  "context": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0047",
+  "variant": "không có ngữ cảnh",
+  "text": "cách mạng công nghiệp",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0048",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "Tuyên ngôn Độc lập",
+  "context": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0049",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "Tuyên ngôn Độc lập",
+  "context": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0050",
+  "variant": "không có ngữ cảnh",
+  "text": "Tuyên ngôn Độc lập",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0051",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "cá voi",
+  "context": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0052",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "cá voi",
+  "context": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0053",
+  "variant": "không có ngữ cảnh",
+  "text": "cá voi",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0054",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "Everest",
+  "context": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0055",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "Everest",
+  "context": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0056",
+  "variant": "không có ngữ cảnh",
+  "text": "Everest",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0057",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "khí nhà kính",
+  "context": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0058",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "khí nhà kính",
+  "context": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0059",
+  "variant": "không có ngữ cảnh",
+  "text": "khí nhà kính",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0060",
+  "variant": "ngữ cảnh vi → trả lời vi",
+  "text": "thủy triều",
+  "context": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0061",
+  "variant": "ngữ cảnh vi → trả lời en",
+  "text": "thủy triều",
+  "context": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0062",
+  "variant": "không có ngữ cảnh",
+  "text": "thủy triều",
+  "context": "",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0063",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "overfitting",
+  "context": "The model suffers from overfitting because it memorizes the training data.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0064",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "overfitting",
+  "context": "The model suffers from overfitting because it memorizes the training data.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0065",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "latency",
+  "context": "High latency makes the app feel slow even on a fast network.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0066",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "latency",
+  "context": "High latency makes the app feel slow even on a fast network.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0067",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "inflation",
+  "context": "Rising inflation reduces what each dollar can buy.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0068",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "inflation",
+  "context": "Rising inflation reduces what each dollar can buy.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0069",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "API",
+  "context": "The mobile app calls an API to fetch the latest prices.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0070",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "API",
+  "context": "The mobile app calls an API to fetch the latest prices.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0071",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "cache",
+  "context": "A cache stores recent results so the page loads faster.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0072",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "cache",
+  "context": "A cache stores recent results so the page loads faster.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0073",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "encryption",
+  "context": "Encryption protects messages so only the receiver can read them.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0074",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "encryption",
+  "context": "Encryption protects messages so only the receiver can read them.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0075",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "algorithm",
+  "context": "The search algorithm ranks pages by how relevant they are.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0076",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "algorithm",
+  "context": "The search algorithm ranks pages by how relevant they are.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0077",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "deadlock",
+  "context": "A deadlock occurs when two processes wait for each other forever.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0078",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "deadlock",
+  "context": "A deadlock occurs when two processes wait for each other forever.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0079",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "bandwidth",
+  "context": "Limited bandwidth slows down large file downloads.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0080",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "bandwidth",
+  "context": "Limited bandwidth slows down large file downloads.",
+  "language": "vi"
+ },
+ {
+  "id": "explain-0081",
+  "variant": "thuật ngữ en → trả lời en",
+  "text": "embedding",
+  "context": "An embedding turns a sentence into a vector of numbers.",
+  "language": "en"
+ },
+ {
+  "id": "explain-0082",
+  "variant": "thuật ngữ en → trả lời vi",
+  "text": "embedding",
+  "context": "An embedding turns a sentence into a vector of numbers.",
+  "language": "vi"
+ }
+]

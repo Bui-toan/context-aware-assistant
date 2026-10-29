@@ -1,0 +1,45 @@
+{
+  "task": "rewrite",
+  "n": 5,
+  "pass": 4,
+  "pass_rate": 0.8,
+  "groups": {
+    "shorten": {
+      "n": 2,
+      "pass_rate": 1.0
+    },
+    "casual": {
+      "n": 1,
+      "pass_rate": 0.0
+    },
+    "improve": {
+      "n": 1,
+      "pass_rate": 1.0
+    },
+    "formal": {
+      "n": 1,
+      "pass_rate": 1.0
+    }
+  },
+  "time": {
+    "mean": 27.28,
+    "median": 26.91,
+    "p95": 29.02,
+    "max": 31.83
+  },
+  "extra": {
+    "similarity TB": 0.9752,
+    "tỉ lệ similarity ≥ 0.75": 1.0,
+    "tỉ lệ có thay đổi so với bản gốc": 1.0
+  },
+  "failures": [
+    {
+      "id": "rewrite-0006",
+      "group": "casual",
+      "reasons": [
+        "trả lời lẫn tiếng Việt dù yêu cầu tiếng Anh"
+      ]
+    }
+  ],
+  "generated_at": "2026-10-29T22:13:38"
+}

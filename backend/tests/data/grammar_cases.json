@@ -1,0 +1,1522 @@
+[
+ {
+  "id": "grammar-0000",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Nhat Ban la quoc dao nam o Dong A, noi tieng voi mua hoa anh dao no vao mua xuan.",
+  "expected": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0001",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "expected": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0002",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Nhật Bản là quốc đảo nằmở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "expected": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0003",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Japan are an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "expected": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0004",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Japan is island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "expected": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0005",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Japan is an island country in East Asia, famous for chrery blossoms that bloom in spring.",
+  "expected": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0006",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in in spring.",
+  "expected": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0007",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "expected": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0008",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "expected": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0009",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Ai Cap co dai xay dung cac kim tu thap khong lo ben bo song Nile de lam lang mo cho cac pharaoh.",
+  "expected": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0010",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "expected": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0011",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăngmộ cho các pharaoh.",
+  "expected": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0012",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Ancient Egypt built giant pyramids beside Nile River as tombs for the pharaohs.",
+  "expected": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0013",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Ancient Egypt built giant pyramids bseide the Nile River as tombs for the pharaohs.",
+  "expected": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0014",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Ancient Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "expected": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0015",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "expected": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0016",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "expected": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0017",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Ha Noi la thu do cua Viet Nam, nam ben bo song Hong va co lich su hon mot nghin nam.",
+  "expected": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0018",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn nghìn năm.",
+  "expected": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0019",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và cólịch sử hơn một nghìn năm.",
+  "expected": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0020",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Hanoi are the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "expected": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0021",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Hanoi is capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "expected": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0022",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Hanoi is the captial of Vietnam, located on the Red River with more than a thousand years of history.",
+  "expected": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0023",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of of history.",
+  "expected": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0024",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "expected": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0025",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "expected": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0026",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Rung Amazon o Nam My la khu rung nhiet doi lon nhat the gioi va co da dang sinh hoc rat cao.",
+  "expected": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0027",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Rừng Amzaon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "expected": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0028",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao. cao.",
+  "expected": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0029",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Rừng Amazon ở NamMỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "expected": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0030",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "The Amazon rainforest in South America are the largest tropical forest in the world with very high biodiversity.",
+  "expected": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0031",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "The Amazon rainforest in South America is largest tropical forest in the world with very high biodiversity.",
+  "expected": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0032",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "The Amzaon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "expected": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0033",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "The Amazon rainforest rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "expected": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0034",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "expected": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0035",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "expected": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0036",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Hoc may la mot nhanh cua tri tue nhan tao, cho phep may tinh hoc tu du lieu ma khong can lap trinh chi tiet.",
+  "expected": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0037",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Học máy là một nhánh nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "expected": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0038",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Học máy là một nhánh của trí tuệnhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "expected": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0039",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Machine learning are a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "expected": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0040",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Machine learning is branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "expected": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0041",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Machine learning is a branch of artificial intleligence that lets computers learn from data without explicit programming.",
+  "expected": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0042",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Machine learning is a branch branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "expected": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0043",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "expected": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0044",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "expected": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0045",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Lo den la vung khong-thoi gian co luc hap dan manh den muc anh sang cung khong the thoat ra.",
+  "expected": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0046",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến đến mức ánh sáng cũng không thể thoát ra.",
+  "expected": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0047",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnhđến mức ánh sáng cũng không thể thoát ra.",
+  "expected": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0048",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "A black hole are a region of spacetime where gravity is so strong that even light cannot escape.",
+  "expected": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0049",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "A black hole is region of spacetime where gravity is so strong that even light cannot escape.",
+  "expected": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0050",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "A black hole is a region of spacetime where graivty is so strong that even light cannot escape.",
+  "expected": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0051",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "A black hole is a region of of spacetime where gravity is so strong that even light cannot escape.",
+  "expected": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0052",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "expected": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0053",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "expected": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0054",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Quang hop la qua trinh cay xanh dung anh sang mat troi, nuoc va khi CO2 de tao ra duong va oxy.",
+  "expected": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0055",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Quang hợp là quá trình trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "expected": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0056",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặttrời, nước và khí CO2 để tạo ra đường và oxy.",
+  "expected": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0057",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Photosynthesis are the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "expected": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0058",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Photosynthesis is process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "expected": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0059",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Photoysnthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "expected": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0060",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Photosynthesis is the process by which which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "expected": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0061",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "expected": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0062",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "expected": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0063",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Vac-xin giup co the lam quen voi mam benh da bi lam yeu de he mien dich san sang chong lai benh that.",
+  "expected": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0064",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Vắc-xin giúp cơ thể làm làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "expected": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0065",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàngchống lại bệnh thật.",
+  "expected": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0066",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Vaccines train the immune system with weakened germs so the body are ready to fight the real disease.",
+  "expected": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0067",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Vaccines train immune system with weakened germs so the body is ready to fight the real disease.",
+  "expected": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0068",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Vaccines train the immune system with weaekned germs so the body is ready to fight the real disease.",
+  "expected": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0069",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight fight the real disease.",
+  "expected": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0070",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "expected": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0071",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "expected": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0072",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Blockchain la so cai phan tan, trong do cac khoi du lieu duoc lien ket bang ma hoa nen rat kho bi sua doi.",
+  "expected": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0073",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Blokcchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "expected": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0074",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Blockchain là sổ cái phân phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "expected": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0075",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liênkết bằng mã hóa nên rất khó bị sửa đổi.",
+  "expected": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0076",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "A blockchain are a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "expected": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0077",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "A blockchain is distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "expected": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0078",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "A blockcahin is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "expected": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0079",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "A blockchain is a distributed ledger whose data blocks blocks are linked by cryptography, making them very hard to alter.",
+  "expected": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0080",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "expected": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0081",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "expected": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0082",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Pho la mon sup truyen thong cua Viet Nam gom nuoc dung, banh pho, rau thom va thit bo hoac ga.",
+  "expected": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0083",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Phở là món súp tryuền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "expected": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0084",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, phở, rau thơm và thịt bò hoặc gà.",
+  "expected": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0085",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm vàthịt bò hoặc gà.",
+  "expected": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0086",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Pho are a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "expected": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0087",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Pho is traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "expected": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0088",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Pho is a trdaitional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "expected": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0089",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Pho is a traditional Vietnamese soup made of of broth, rice noodles, fresh herbs and beef or chicken.",
+  "expected": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0090",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "expected": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0091",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "expected": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0092",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Sushi la mon an Nhat Ban lam tu com tron giam ket hop voi ca song, hai san hoac rau cu.",
+  "expected": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0093",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau rau củ.",
+  "expected": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0094",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp vớicá sống, hải sản hoặc rau củ.",
+  "expected": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0095",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Sushi are a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "expected": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0096",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Sushi is Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "expected": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0097",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Sushi is a Japnaese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "expected": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0098",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Sushi is is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "expected": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0099",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "expected": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0100",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "expected": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0101",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Ca phe duoc lam tu hat ca phe rang xay, va Viet Nam la mot trong nhung nuoc xuat khau ca phe lon nhat the gioi.",
+  "expected": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0102",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "expected": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0103",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớnnhất thế giới.",
+  "expected": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0104",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Coffee are made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "expected": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0105",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of largest coffee exporters in the world.",
+  "expected": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0106",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in in the world.",
+  "expected": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0107",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "expected": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0108",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "expected": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0109",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Pizza la mon banh co nguon goc tu Y, phu sot ca chua va pho mai roi nuong trong lo.",
+  "expected": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0110",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Pizza là món bánh có nguồn gốc từ từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "expected": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0111",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồinướng trong lò.",
+  "expected": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0112",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Pizza are a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "expected": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0113",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Pizza is dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "expected": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0114",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Pizza is a dish from Italy, topped with toamto sauce and cheese and baked in an oven.",
+  "expected": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0115",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Pizza is is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "expected": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0116",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "expected": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0117",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "expected": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0118",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Chien tranh the gioi thu hai dien ra tu nam 1939 den 1945 va ket thuc voi su dau hang cua phe Truc.",
+  "expected": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0119",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu đầu hàng của phe Trục.",
+  "expected": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0120",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàngcủa phe Trục.",
+  "expected": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0121",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "World War II lasted from 1939 to 1945 and ended with surrender of the Axis powers.",
+  "expected": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0122",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "World War II latsed from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "expected": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0123",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "World War II lasted from 1939 to to 1945 and ended with the surrender of the Axis powers.",
+  "expected": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0124",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "expected": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0125",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "expected": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0126",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Tong thong Hoa Ky vua la nguyen thu quoc gia vua la nguoi dung dau chinh phu My.",
+  "expected": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0127",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Tổng thống Hoa Kỳ vừa là nugyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "expected": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0128",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là là người đứng đầu chính phủ Mỹ.",
+  "expected": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0129",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa làngười đứng đầu chính phủ Mỹ.",
+  "expected": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0130",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "The President of the United States are both the head of state and the head of government.",
+  "expected": "The President of the United States is both the head of state and the head of government.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0131",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "The President of United States is both the head of state and the head of government.",
+  "expected": "The President of the United States is both the head of state and the head of government.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0132",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "The President of the Untied States is both the head of state and the head of government.",
+  "expected": "The President of the United States is both the head of state and the head of government.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0133",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "The President of the United States is both the head of state and the head head of government.",
+  "expected": "The President of the United States is both the head of state and the head of government.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0134",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "expected": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0135",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "The President of the United States is both the head of state and the head of government.",
+  "expected": "The President of the United States is both the head of state and the head of government.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0136",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Cach mang cong nghiep bat dau o Anh vao the ky 18, thay lao dong thu cong bang may moc chay bang hoi nuoc.",
+  "expected": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0137",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Cách mạng công ngihệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "expected": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0138",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động động thủ công bằng máy móc chạy bằng hơi nước.",
+  "expected": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0139",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Cách mạng công nghiệp bắt đầu ởAnh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "expected": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0140",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "The Industrial Revolution began in Britain in 18th century, replacing manual labor with steam-powered machines.",
+  "expected": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0141",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "The Industrial Revolution began in Brtiain in the 18th century, replacing manual labor with steam-powered machines.",
+  "expected": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0142",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "The Industrial Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "expected": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0143",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "expected": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0144",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "expected": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0145",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Ngay 2 thang 9 nam 1945, Chu tich Ho Chi Minh doc Tuyen ngon Doc lap tai Quang truong Ba Dinh.",
+  "expected": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0146",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng tưrờng Ba Đình.",
+  "expected": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0147",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Ngày 2 tháng tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "expected": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0148",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Ngày 2tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "expected": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0149",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "On 2 September 1945, President Ho Chi Minh read Declaration of Independence at Ba Dinh Square.",
+  "expected": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0150",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Inedpendence at Ba Dinh Square.",
+  "expected": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0151",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "On On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "expected": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0152",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "expected": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0153",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "expected": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0154",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Ca voi xanh la loai dong vat lon nhat tung ton tai, co the dai hon ba muoi met.",
+  "expected": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0155",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Cá Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "expected": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0156",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Cá voi xanh là loài độngvật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "expected": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0157",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "The blue whale are the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "expected": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0158",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "The blue whale is largest animal ever to have lived, reaching more than thirty meters in length.",
+  "expected": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0159",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "The blue whale is the largest animal ever to have lived, raeching more than thirty meters in length.",
+  "expected": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0160",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more more than thirty meters in length.",
+  "expected": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0161",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "expected": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0162",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "expected": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0163",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Dinh Everest cao khoang 8.849 met, la ngon nui cao nhat the gioi so voi muc nuoc bien.",
+  "expected": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0164",
+  "language": "vi",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Đỉnh Everest cao khảong 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "expected": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0165",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao cao nhất thế giới so với mực nước biển.",
+  "expected": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0166",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so vớimực nước biển.",
+  "expected": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0167",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Mount Everest are about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "expected": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0168",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "Mount Everest is about 8,849 meters tall, highest mountain in the world above sea level.",
+  "expected": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0169",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Mount Everest is about 8,849 meters tall, the highest moutnain in the world above sea level.",
+  "expected": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0170",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Mount Everest is is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "expected": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0171",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "expected": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0172",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "expected": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0173",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Bien doi khi hau khien nhiet do Trai Dat tang len chu yeu do khi nha kinh tu viec dot nhien lieu hoa thach.",
+  "expected": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0174",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch. thạch.",
+  "expected": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0175",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đấttăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "expected": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0176",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "Climate change are raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "expected": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0177",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "Clmiate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "expected": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0178",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases gases from burning fossil fuels.",
+  "expected": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0179",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "expected": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0180",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "expected": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0181",
+  "language": "vi",
+  "error_type": "mất dấu tiếng Việt",
+  "text": "Mat Trang la ve tinh tu nhien duy nhat cua Trai Dat va gay ra hien tuong thuy trieu.",
+  "expected": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0182",
+  "language": "vi",
+  "error_type": "lặp từ",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Trái Đất và gây ra hiện tượng thủy triều.",
+  "expected": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0183",
+  "language": "vi",
+  "error_type": "dính từ (thiếu khoảng trắng)",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủytriều.",
+  "expected": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0184",
+  "language": "en",
+  "error_type": "chia động từ",
+  "text": "The Moon are Earth's only natural satellite and causes the ocean tides.",
+  "expected": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0185",
+  "language": "en",
+  "error_type": "thiếu mạo từ",
+  "text": "The Moon is Earth's only natural satellite and causes ocean tides.",
+  "expected": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0186",
+  "language": "en",
+  "error_type": "lỗi chính tả (đảo chữ)",
+  "text": "The Moon is Earth's only natural satellite and cuases the ocean tides.",
+  "expected": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0187",
+  "language": "en",
+  "error_type": "lặp từ",
+  "text": "The Moon Moon is Earth's only natural satellite and causes the ocean tides.",
+  "expected": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0188",
+  "language": "vi",
+  "error_type": "không có lỗi",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "expected": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": ""
+ },
+ {
+  "id": "grammar-0189",
+  "language": "en",
+  "error_type": "không có lỗi",
+  "text": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "expected": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": ""
+ }
+]

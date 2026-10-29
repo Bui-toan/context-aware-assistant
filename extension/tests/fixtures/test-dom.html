@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Test DOM Phức Tạp</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+    <h1>Trang Web Giả Lập DOM Phức Tạp</h1>
+
+    <!-- Case 1: Div lồng 5 cấp (Thử thách Candidate Finder) -->
+    <div id="level1" style="border: 1px solid red; padding: 10px;">
+        <div id="level2" style="border: 1px solid blue; padding: 10px;">
+            <div id="level3" style="border: 1px solid green; padding: 10px;">
+                <div id="level4" style="border: 1px solid orange; padding: 10px;">
+                    <div id="level5" style="border: 1px solid purple; padding: 10px;">
+                        <span id="target-text">Đoạn văn bản này nằm sâu bên trong 5 lớp div lồng nhau. Hãy bôi đen câu này và xem Extension có trích xuất đúng ngữ cảnh không.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Case 2: Bảng biểu (Table) -->
+    <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <th>STT</th>
+            <th>Nội dung</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td id="table-text">Đây là đoạn văn bản nằm trong ô của bảng biểu. Hãy bôi đen và bấm Explain.</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- Case 3: Danh sách (List) -->
+    <ul>
+        <li id="list-text">Đây là một mục trong danh sách. Nó có ngữ cảnh là cả cái danh sách này.</li>
+    </ul>
+</body>
+</html>

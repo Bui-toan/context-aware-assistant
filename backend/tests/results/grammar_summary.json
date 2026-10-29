@@ -1,0 +1,34 @@
+{
+  "task": "grammar",
+  "n": 5,
+  "pass": 5,
+  "pass_rate": 1.0,
+  "groups": {
+    "mất dấu tiếng Việt": {
+      "n": 1,
+      "pass_rate": 1.0
+    },
+    "lặp từ": {
+      "n": 2,
+      "pass_rate": 1.0
+    },
+    "không có lỗi": {
+      "n": 2,
+      "pass_rate": 1.0
+    }
+  },
+  "time": {
+    "mean": 25.62,
+    "median": 27.68,
+    "p95": 28.11,
+    "max": 28.12
+  },
+  "extra": {
+    "tỉ lệ phát hiện lỗi": 1.0,
+    "tỉ lệ sửa tốt hơn bản gốc": 1.0,
+    "độ giống TB với câu đúng": 1.0,
+    "tỉ lệ báo nhầm (câu đúng bị sửa)": 0.0
+  },
+  "failures": [],
+  "generated_at": "2026-10-29T22:11:03"
+}

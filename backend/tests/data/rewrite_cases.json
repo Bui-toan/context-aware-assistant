@@ -1,0 +1,1762 @@
+[
+ {
+  "id": "rewrite-0000",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0001",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0002",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0003",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0004",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0005",
+  "language": "en",
+  "mode": "formal",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0006",
+  "language": "en",
+  "mode": "casual",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0007",
+  "language": "en",
+  "mode": "academic",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0008",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0009",
+  "language": "en",
+  "mode": "improve",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0010",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0011",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0012",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0013",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0014",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0015",
+  "language": "en",
+  "mode": "formal",
+  "text": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0016",
+  "language": "en",
+  "mode": "casual",
+  "text": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0017",
+  "language": "en",
+  "mode": "academic",
+  "text": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0018",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0019",
+  "language": "en",
+  "mode": "improve",
+  "text": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0020",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0021",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0022",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0023",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0024",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0025",
+  "language": "en",
+  "mode": "formal",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0026",
+  "language": "en",
+  "mode": "casual",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0027",
+  "language": "en",
+  "mode": "academic",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0028",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0029",
+  "language": "en",
+  "mode": "improve",
+  "text": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0030",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0031",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0032",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0033",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0034",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0035",
+  "language": "en",
+  "mode": "formal",
+  "text": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0036",
+  "language": "en",
+  "mode": "casual",
+  "text": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0037",
+  "language": "en",
+  "mode": "academic",
+  "text": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0038",
+  "language": "en",
+  "mode": "shorten",
+  "text": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0039",
+  "language": "en",
+  "mode": "improve",
+  "text": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0040",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0041",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0042",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0043",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0044",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0045",
+  "language": "en",
+  "mode": "formal",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0046",
+  "language": "en",
+  "mode": "casual",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0047",
+  "language": "en",
+  "mode": "academic",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0048",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0049",
+  "language": "en",
+  "mode": "improve",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0050",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0051",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0052",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0053",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0054",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0055",
+  "language": "en",
+  "mode": "formal",
+  "text": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0056",
+  "language": "en",
+  "mode": "casual",
+  "text": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0057",
+  "language": "en",
+  "mode": "academic",
+  "text": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0058",
+  "language": "en",
+  "mode": "shorten",
+  "text": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0059",
+  "language": "en",
+  "mode": "improve",
+  "text": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0060",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0061",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0062",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0063",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0064",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0065",
+  "language": "en",
+  "mode": "formal",
+  "text": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0066",
+  "language": "en",
+  "mode": "casual",
+  "text": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0067",
+  "language": "en",
+  "mode": "academic",
+  "text": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0068",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0069",
+  "language": "en",
+  "mode": "improve",
+  "text": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0070",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0071",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0072",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0073",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0074",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0075",
+  "language": "en",
+  "mode": "formal",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0076",
+  "language": "en",
+  "mode": "casual",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0077",
+  "language": "en",
+  "mode": "academic",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0078",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0079",
+  "language": "en",
+  "mode": "improve",
+  "text": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0080",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0081",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0082",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0083",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0084",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0085",
+  "language": "en",
+  "mode": "formal",
+  "text": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0086",
+  "language": "en",
+  "mode": "casual",
+  "text": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0087",
+  "language": "en",
+  "mode": "academic",
+  "text": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0088",
+  "language": "en",
+  "mode": "shorten",
+  "text": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0089",
+  "language": "en",
+  "mode": "improve",
+  "text": "A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0090",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0091",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0092",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0093",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0094",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0095",
+  "language": "en",
+  "mode": "formal",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0096",
+  "language": "en",
+  "mode": "casual",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0097",
+  "language": "en",
+  "mode": "academic",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0098",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0099",
+  "language": "en",
+  "mode": "improve",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0100",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0101",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0102",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0103",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0104",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0105",
+  "language": "en",
+  "mode": "formal",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0106",
+  "language": "en",
+  "mode": "casual",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0107",
+  "language": "en",
+  "mode": "academic",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0108",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0109",
+  "language": "en",
+  "mode": "improve",
+  "text": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0110",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0111",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0112",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0113",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0114",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0115",
+  "language": "en",
+  "mode": "formal",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0116",
+  "language": "en",
+  "mode": "casual",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0117",
+  "language": "en",
+  "mode": "academic",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0118",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0119",
+  "language": "en",
+  "mode": "improve",
+  "text": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0120",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0121",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0122",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0123",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0124",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0125",
+  "language": "en",
+  "mode": "formal",
+  "text": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0126",
+  "language": "en",
+  "mode": "casual",
+  "text": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0127",
+  "language": "en",
+  "mode": "academic",
+  "text": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0128",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0129",
+  "language": "en",
+  "mode": "improve",
+  "text": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0130",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0131",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0132",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0133",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0134",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0135",
+  "language": "en",
+  "mode": "formal",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0136",
+  "language": "en",
+  "mode": "casual",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0137",
+  "language": "en",
+  "mode": "academic",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0138",
+  "language": "en",
+  "mode": "shorten",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0139",
+  "language": "en",
+  "mode": "improve",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0140",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0141",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0142",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0143",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0144",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0145",
+  "language": "en",
+  "mode": "formal",
+  "text": "The President of the United States is both the head of state and the head of government.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0146",
+  "language": "en",
+  "mode": "casual",
+  "text": "The President of the United States is both the head of state and the head of government.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0147",
+  "language": "en",
+  "mode": "academic",
+  "text": "The President of the United States is both the head of state and the head of government.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0148",
+  "language": "en",
+  "mode": "shorten",
+  "text": "The President of the United States is both the head of state and the head of government.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0149",
+  "language": "en",
+  "mode": "improve",
+  "text": "The President of the United States is both the head of state and the head of government.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0150",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0151",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0152",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0153",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0154",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0155",
+  "language": "en",
+  "mode": "formal",
+  "text": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0156",
+  "language": "en",
+  "mode": "casual",
+  "text": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0157",
+  "language": "en",
+  "mode": "academic",
+  "text": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0158",
+  "language": "en",
+  "mode": "shorten",
+  "text": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0159",
+  "language": "en",
+  "mode": "improve",
+  "text": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0160",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0161",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0162",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0163",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0164",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0165",
+  "language": "en",
+  "mode": "formal",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0166",
+  "language": "en",
+  "mode": "casual",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0167",
+  "language": "en",
+  "mode": "academic",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0168",
+  "language": "en",
+  "mode": "shorten",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0169",
+  "language": "en",
+  "mode": "improve",
+  "text": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0170",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0171",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0172",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0173",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0174",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0175",
+  "language": "en",
+  "mode": "formal",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0176",
+  "language": "en",
+  "mode": "casual",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0177",
+  "language": "en",
+  "mode": "academic",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0178",
+  "language": "en",
+  "mode": "shorten",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0179",
+  "language": "en",
+  "mode": "improve",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0180",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0181",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0182",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0183",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0184",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0185",
+  "language": "en",
+  "mode": "formal",
+  "text": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0186",
+  "language": "en",
+  "mode": "casual",
+  "text": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0187",
+  "language": "en",
+  "mode": "academic",
+  "text": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0188",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0189",
+  "language": "en",
+  "mode": "improve",
+  "text": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0190",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0191",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0192",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0193",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0194",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0195",
+  "language": "en",
+  "mode": "formal",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0196",
+  "language": "en",
+  "mode": "casual",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0197",
+  "language": "en",
+  "mode": "academic",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0198",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0199",
+  "language": "en",
+  "mode": "improve",
+  "text": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0200",
+  "language": "vi",
+  "mode": "formal",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0201",
+  "language": "vi",
+  "mode": "casual",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0202",
+  "language": "vi",
+  "mode": "academic",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0203",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0204",
+  "language": "vi",
+  "mode": "improve",
+  "text": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0205",
+  "language": "en",
+  "mode": "formal",
+  "text": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0206",
+  "language": "en",
+  "mode": "casual",
+  "text": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0207",
+  "language": "en",
+  "mode": "academic",
+  "text": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0208",
+  "language": "en",
+  "mode": "shorten",
+  "text": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0209",
+  "language": "en",
+  "mode": "improve",
+  "text": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": "",
+  "length": "câu"
+ },
+ {
+  "id": "rewrite-0210",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà. Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ. Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới. Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0211",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken. Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables. Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world. Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0212",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân. Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh. Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm. Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0213",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring. Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs. Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history. The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0214",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục. Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ. Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước. Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0215",
+  "language": "en",
+  "mode": "shorten",
+  "text": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers. The President of the United States is both the head of state and the head of government. The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines. On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0216",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Cá voi xanh là loài động vật lớn nhất từng tồn tại, có thể dài hơn ba mươi mét. Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển. Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch. Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0217",
+  "language": "en",
+  "mode": "shorten",
+  "text": "The blue whale is the largest animal ever to have lived, reaching more than thirty meters in length. Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level. Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels. The Moon is Earth's only natural satellite and causes the ocean tides.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0218",
+  "language": "vi",
+  "mode": "shorten",
+  "text": "Học máy là một nhánh của trí tuệ nhân tạo, cho phép máy tính học từ dữ liệu mà không cần lập trình chi tiết. Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra. Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy. Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật. Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+  "context": "",
+  "length": "đoạn"
+ },
+ {
+  "id": "rewrite-0219",
+  "language": "en",
+  "mode": "shorten",
+  "text": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming. A black hole is a region of spacetime where gravity is so strong that even light cannot escape. Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen. Vaccines train the immune system with weakened germs so the body is ready to fight the real disease. A blockchain is a distributed ledger whose data blocks are linked by cryptography, making them very hard to alter.",
+  "context": "",
+  "length": "đoạn"
+ }
+]

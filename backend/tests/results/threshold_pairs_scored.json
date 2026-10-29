@@ -1,0 +1,562 @@
+[
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Hôm nay trời rất đẹp.",
+    "b": "Thời tiết hôm nay thật tuyệt vời.",
+    "similarity": 0.9281
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Tôi thích đọc sách vào buổi tối.",
+    "b": "Buổi tối tôi hay đọc sách vì tôi yêu thích việc đó.",
+    "similarity": 0.938
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Công ty sẽ tổ chức họp vào sáng mai.",
+    "b": "Cuộc họp của công ty được lên lịch vào sáng ngày mai.",
+    "similarity": 0.9223
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Anh ấy đã hoàn thành bài tập đúng hạn.",
+    "b": "Bài tập của anh ấy được nộp đúng thời hạn.",
+    "similarity": 0.8727
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Giá xăng tăng khiến chi phí vận chuyển cao hơn.",
+    "b": "Do xăng đắt lên nên tiền vận chuyển cũng tăng theo.",
+    "similarity": 0.9782
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Sinh viên cần nộp báo cáo trước thứ Sáu.",
+    "b": "Báo cáo phải được sinh viên nộp trước ngày thứ Sáu.",
+    "similarity": 0.9911
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Quán cà phê này phục vụ rất nhanh.",
+    "b": "Nhân viên ở quán cà phê này làm việc rất nhanh nhẹn.",
+    "similarity": 0.7922
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Cô giáo giải thích bài học rất dễ hiểu.",
+    "b": "Bài học được cô giáo giảng giải một cách rõ ràng, dễ hiểu.",
+    "similarity": 0.9081
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "The weather is lovely today.",
+    "b": "Today the weather is really nice.",
+    "similarity": 0.9496
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "I enjoy reading books at night.",
+    "b": "At night I like to read books.",
+    "similarity": 0.9771
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "The company will hold a meeting tomorrow morning.",
+    "b": "A company meeting is scheduled for tomorrow morning.",
+    "similarity": 0.9666
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "He finished the assignment on time.",
+    "b": "The assignment was submitted by him before the deadline.",
+    "similarity": 0.6337
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Higher fuel prices raise transport costs.",
+    "b": "Transport becomes more expensive when fuel gets pricier.",
+    "similarity": 0.9138
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "Students must submit the report before Friday.",
+    "b": "The report has to be handed in by students prior to Friday.",
+    "similarity": 0.9191
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "This cafe serves customers very quickly.",
+    "b": "Service at this cafe is very fast.",
+    "similarity": 0.9506
+  },
+  {
+    "group": "cùng nghĩa (diễn đạt lại)",
+    "label": 1,
+    "a": "The teacher explained the lesson clearly.",
+    "b": "The lesson was made easy to understand by the teacher.",
+    "similarity": 0.6975
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Tôi thích ăn phở.",
+    "b": "Tôi không thích ăn phở.",
+    "similarity": 0.4335
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Cửa hàng mở cửa vào chủ nhật.",
+    "b": "Cửa hàng đóng cửa vào chủ nhật.",
+    "similarity": 0.7849
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Dự án đã hoàn thành đúng hạn.",
+    "b": "Dự án chưa hoàn thành đúng hạn.",
+    "similarity": 0.4112
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Giá cổ phiếu tăng mạnh hôm nay.",
+    "b": "Giá cổ phiếu giảm mạnh hôm nay.",
+    "similarity": 0.4142
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Thuốc này an toàn cho trẻ em.",
+    "b": "Thuốc này không an toàn cho trẻ em.",
+    "similarity": 0.5613
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Anh ấy đồng ý với đề xuất.",
+    "b": "Anh ấy phản đối đề xuất.",
+    "similarity": 0.4105
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Chuyến bay đến sớm hơn dự kiến.",
+    "b": "Chuyến bay đến muộn hơn dự kiến.",
+    "similarity": 0.8526
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "Em được phép vào phòng thi.",
+    "b": "Em không được phép vào phòng thi.",
+    "similarity": 0.4307
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "I like eating pho.",
+    "b": "I do not like eating pho.",
+    "similarity": 0.511
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "The store is open on Sunday.",
+    "b": "The store is closed on Sunday.",
+    "similarity": 0.803
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "The project was completed on time.",
+    "b": "The project was not completed on time.",
+    "similarity": 0.3289
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "The stock price rose sharply today.",
+    "b": "The stock price fell sharply today.",
+    "similarity": 0.3629
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "This medicine is safe for children.",
+    "b": "This medicine is not safe for children.",
+    "similarity": 0.5729
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "He agreed with the proposal.",
+    "b": "He rejected the proposal.",
+    "similarity": 0.382
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "The flight arrived earlier than expected.",
+    "b": "The flight arrived later than expected.",
+    "similarity": 0.886
+  },
+  {
+    "group": "đảo nghĩa (phủ định/trái nghĩa)",
+    "label": 0,
+    "a": "You are allowed to enter the exam room.",
+    "b": "You are not allowed to enter the exam room.",
+    "similarity": 0.437
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "Cuộc họp bắt đầu lúc 9 giờ sáng.",
+    "b": "Cuộc họp bắt đầu lúc 3 giờ chiều.",
+    "similarity": 0.3987
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "Hà Nội là thủ đô của Việt Nam.",
+    "b": "Huế là thủ đô của Việt Nam.",
+    "similarity": 0.8934
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "Hạn nộp bài là ngày 15 tháng 3.",
+    "b": "Hạn nộp bài là ngày 25 tháng 8.",
+    "similarity": 0.5888
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "Vé xe giá 200 nghìn đồng.",
+    "b": "Vé xe giá 20 triệu đồng.",
+    "similarity": 0.7417
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "The meeting starts at 9 a.m.",
+    "b": "The meeting starts at 3 p.m.",
+    "similarity": 0.542
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "Hanoi is the capital of Vietnam.",
+    "b": "Hue is the capital of Vietnam.",
+    "similarity": 0.837
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "The deadline is March 15.",
+    "b": "The deadline is August 25.",
+    "similarity": 0.6595
+  },
+  {
+    "group": "đổi số/thực thể",
+    "label": 0,
+    "a": "The ticket costs 20 dollars.",
+    "b": "The ticket costs 2,000 dollars.",
+    "similarity": 0.5554
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+    "b": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+    "similarity": -0.0033
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+    "b": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+    "similarity": 0.0793
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+    "b": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+    "similarity": -0.0911
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+    "b": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+    "similarity": 0.0222
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Rừng Amazon ở Nam Mỹ là khu rừng nhiệt đới lớn nhất thế giới và có đa dạng sinh học rất cao.",
+    "b": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+    "similarity": 0.1737
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+    "b": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+    "similarity": 0.0759
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+    "b": "Vắc-xin giúp cơ thể làm quen với mầm bệnh đã bị làm yếu để hệ miễn dịch sẵn sàng chống lại bệnh thật.",
+    "similarity": -0.0911
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Nhật Bản là quốc đảo nằm ở Đông Á, nổi tiếng với mùa hoa anh đào nở vào mùa xuân.",
+    "b": "Sushi là món ăn Nhật Bản làm từ cơm trộn giấm kết hợp với cá sống, hải sản hoặc rau củ.",
+    "similarity": 0.3754
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Chiến tranh thế giới thứ hai diễn ra từ năm 1939 đến 1945 và kết thúc với sự đầu hàng của phe Trục.",
+    "b": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+    "similarity": 0.0953
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Cách mạng công nghiệp bắt đầu ở Anh vào thế kỷ 18, thay lao động thủ công bằng máy móc chạy bằng hơi nước.",
+    "b": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+    "similarity": 0.066
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+    "b": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+    "similarity": 0.0759
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+    "b": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+    "similarity": 0.2505
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Phở là món súp truyền thống của Việt Nam gồm nước dùng, bánh phở, rau thơm và thịt bò hoặc gà.",
+    "b": "Quang hợp là quá trình cây xanh dùng ánh sáng mặt trời, nước và khí CO2 để tạo ra đường và oxy.",
+    "similarity": 0.0666
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+    "b": "Lỗ đen là vùng không-thời gian có lực hấp dẫn mạnh đến mức ánh sáng cũng không thể thoát ra.",
+    "similarity": 0.1591
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+    "b": "Tổng thống Hoa Kỳ vừa là nguyên thủ quốc gia vừa là người đứng đầu chính phủ Mỹ.",
+    "similarity": 0.1363
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+    "b": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+    "similarity": 0.0909
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Blockchain là sổ cái phân tán, trong đó các khối dữ liệu được liên kết bằng mã hóa nên rất khó bị sửa đổi.",
+    "b": "Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.",
+    "similarity": -0.0421
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Hà Nội là thủ đô của Việt Nam, nằm bên bờ sông Hồng và có lịch sử hơn một nghìn năm.",
+    "b": "Pizza là món bánh có nguồn gốc từ Ý, phủ sốt cà chua và phô mai rồi nướng trong lò.",
+    "similarity": 0.0056
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Ai Cập cổ đại xây dựng các kim tự tháp khổng lồ bên bờ sông Nile để làm lăng mộ cho các pharaoh.",
+    "b": "Biến đổi khí hậu khiến nhiệt độ Trái Đất tăng lên chủ yếu do khí nhà kính từ việc đốt nhiên liệu hóa thạch.",
+    "similarity": 0.0454
+  },
+  {
+    "group": "khác chủ đề (vi)",
+    "label": 0,
+    "a": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+    "b": "Cà phê được làm từ hạt cà phê rang xay, và Việt Nam là một trong những nước xuất khẩu cà phê lớn nhất thế giới.",
+    "similarity": 0.0211
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+    "b": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+    "similarity": 0.0312
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+    "b": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+    "similarity": 0.0715
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Climate change is raising Earth's temperature mainly because of greenhouse gases from burning fossil fuels.",
+    "b": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+    "similarity": 0.2768
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Machine learning is a branch of artificial intelligence that lets computers learn from data without explicit programming.",
+    "b": "The President of the United States is both the head of state and the head of government.",
+    "similarity": -0.0728
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+    "b": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+    "similarity": 0.0769
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+    "b": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+    "similarity": 0.2372
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "The Amazon rainforest in South America is the largest tropical forest in the world with very high biodiversity.",
+    "b": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+    "similarity": 0.2468
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Pizza is a dish from Italy, topped with tomato sauce and cheese and baked in an oven.",
+    "b": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+    "similarity": 0.1294
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+    "b": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+    "similarity": 0.1543
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+    "b": "Ancient Egypt built giant pyramids beside the Nile River as tombs for the pharaohs.",
+    "similarity": 0.0304
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Pho is a traditional Vietnamese soup made of broth, rice noodles, fresh herbs and beef or chicken.",
+    "b": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+    "similarity": 0.0288
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Japan is an island country in East Asia, famous for cherry blossoms that bloom in spring.",
+    "b": "Photosynthesis is the process by which green plants use sunlight, water and carbon dioxide to make sugar and oxygen.",
+    "similarity": 0.1648
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+    "b": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+    "similarity": 0.0746
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+    "b": "Coffee is made from roasted ground beans, and Vietnam is one of the largest coffee exporters in the world.",
+    "similarity": 0.2132
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "The Industrial Revolution began in Britain in the 18th century, replacing manual labor with steam-powered machines.",
+    "b": "A black hole is a region of spacetime where gravity is so strong that even light cannot escape.",
+    "similarity": -0.0615
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Hanoi is the capital of Vietnam, located on the Red River with more than a thousand years of history.",
+    "b": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+    "similarity": 0.0706
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "The President of the United States is both the head of state and the head of government.",
+    "b": "World War II lasted from 1939 to 1945 and ended with the surrender of the Axis powers.",
+    "similarity": 0.1295
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "Mount Everest is about 8,849 meters tall, the highest mountain in the world above sea level.",
+    "b": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+    "similarity": -0.1236
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "On 2 September 1945, President Ho Chi Minh read the Declaration of Independence at Ba Dinh Square.",
+    "b": "Sushi is a Japanese dish of vinegared rice combined with raw fish, seafood or vegetables.",
+    "similarity": -0.0165
+  },
+  {
+    "group": "khác chủ đề (en)",
+    "label": 0,
+    "a": "The Moon is Earth's only natural satellite and causes the ocean tides.",
+    "b": "Vaccines train the immune system with weakened germs so the body is ready to fight the real disease.",
+    "similarity": -0.0423
+  }
+]
