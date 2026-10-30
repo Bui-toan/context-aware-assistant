@@ -19,13 +19,18 @@ export default function SearchView({
 }: Props) {
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    if (initialQuery.trim()) {
-      setQuery(initialQuery);
-      onSearch(initialQuery.trim());
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialQuery, searchNonce]);
+    useEffect(() => {
+      if (initialQuery.trim()) {
+        setQuery(initialQuery.trim());
+      }
+    }, [initialQuery]);
+
+    useEffect(() => {
+      if (initialQuery.trim()) {
+        onSearch(initialQuery.trim());
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [initialQuery, searchNonce]);
 
   const submit = () => {
     const q = query.trim();

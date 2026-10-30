@@ -12,9 +12,9 @@ from app.core.config import settings
 
 
 # --- CẤU HÌNH ---
-REQUEST_TIMEOUT_MS = 90000   # 90 giây, theo khuyến nghị cho Gemini
-TOTAL_TIMEOUT_S = 300        # 5 phút cho toàn bộ chuỗi thử
-MAX_OVERLOAD_RETRIES = 2     # Thử lại tối đa 2 lần khi gặp 503
+REQUEST_TIMEOUT_MS = 90000   
+TOTAL_TIMEOUT_S = 300       
+MAX_OVERLOAD_RETRIES = 2    
 
 
 # --- LỖI RIÊNG: để route trả 503 thay vì 500 chung chung ---
@@ -39,7 +39,6 @@ class LLMProvider(Protocol):
     async def complete(self, system_prompt: str, user_prompt: str) -> str: ...
 
 
-# --- MOCK PROVIDER (Dùng để test UI không tốn quota) ---
 class MockProvider:
     async def complete(self, system_prompt: str, user_prompt: str) -> str:
         return json.dumps({
@@ -64,14 +63,13 @@ class GeminiProvider:
         if not self.api_keys:
             raise ValueError("Chưa cấu hình GEMINI_API_KEY trong file .env")
 
-        # Model chính + các model dự phòng (bỏ trùng, giữ thứ tự)
+        # Model chính + các model dự phòng
         fallbacks = [
             m.strip()
             for m in settings.gemini_fallback_models.split(",")
             if m.strip()
         ]
         self.models = list(dict.fromkeys([settings.gemini_model, *fallbacks]))
-        # Trong __init__, sau khi có self.models
         self.models = [m for m in self.models if m != "gemini-2.5-flash-lite"]
         self.current_key_index = 0
         self._update_client()
@@ -119,7 +117,6 @@ class GeminiProvider:
         return response.text
 
     async def complete(self, system_prompt: str, user_prompt: str) -> str:
-        # Gộp system vào prompt: chạy được cho cả Gemini lẫn Gemma
         prompt = f"{system_prompt}\n\n{user_prompt}"
         deadline = time.monotonic() + TOTAL_TIMEOUT_S
 

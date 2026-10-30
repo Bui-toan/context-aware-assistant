@@ -21,7 +21,6 @@ export function findContextCandidates(selectionNode: Node): ContextCandidate[] {
   return candidates;
 }
 
-// Thêm hàm này (bị thiếu ở bước trước)
 export function findNearestCandidate(selectionNode: Node): ContextCandidate | null {
   const candidates = findContextCandidates(selectionNode);
   return candidates[0] ?? null;

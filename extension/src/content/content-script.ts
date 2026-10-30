@@ -19,8 +19,7 @@ onSelectionChange((info: SelectionInfo | null) => {
 
 onAction(async (action: FloatingActionType, info) => {
   if (action === "search") {
-    void sendMessage("REQUEST_SEARCH", { query: info.text, topK: 5 });
-    chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: "search" } });
+    chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: "search", query: info.text } });
     return;
   }
 

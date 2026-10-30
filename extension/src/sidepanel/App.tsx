@@ -115,7 +115,17 @@ export default function App() {
         setActiveTab(action);
       });
     });
-
+    
+    listen("REQUEST_SEARCH", (payload) => {
+      setBusy("search", true);
+      setFail("search", null);
+      if (payload?.query) {
+        setGlobalSearchQuery(payload.query);
+        setCurrentQueryText(payload.query);
+        setSearchNonce((n) => n + 1); // Kích hoạt SearchView tìm kiếm
+      }
+      setActiveTab("search");
+    });
     // Kết quả trả về
     listen("RESULT_READY", (payload) => {
       const action = payload?.actionType as string | undefined;

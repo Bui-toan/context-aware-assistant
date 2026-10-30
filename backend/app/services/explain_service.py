@@ -64,7 +64,6 @@ def parse_response(raw: str) -> ExplainResponse:
     Nếu parse lỗi → raise ValueError, route sẽ trả AI_PROVIDER_ERROR.
     """
     try:
-        # Bỏ markdown code fence nếu AI trả ```json ... ```
         cleaned = raw.strip()
         if cleaned.startswith("```"):
             # Cắt 3 dấu ``` đầu và cuối

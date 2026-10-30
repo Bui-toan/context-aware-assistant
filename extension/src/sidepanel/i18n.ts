@@ -27,6 +27,10 @@ const vi = {
   error_api: "Đã xảy ra lỗi khi gọi API. Vui lòng thử lại sau.",
   error_no_connection: "Không thể kết nối với trang web. Vui lòng bấm F5 tải lại trang.",
   error_no_chunks: "Trang này không có đoạn văn bản nào phù hợp để tìm kiếm.",
+  grammar_score: "Điểm ngữ pháp",
+  grammar_tone: "Văn phong",
+  grammar_feedback: "Nhận xét",
+  grammar_error_details: "Chi tiết lỗi",
 };
 
 // en bắt buộc có ĐÚNG các key của vi: thiếu hoặc thừa đều báo lỗi khi build
@@ -62,6 +66,10 @@ const en: Dictionary = {
   error_api: "An error occurred while calling the API. Please try again later.",
   error_no_connection: "Cannot connect to the webpage. Please press F5 to reload.",
   error_no_chunks: "This page has no text paragraphs suitable for searching.",
+  grammar_score: "Grammar Score",
+  grammar_tone: "Tone",
+  grammar_feedback: "Feedback",
+  grammar_error_details: "Error Details",
 };
 
 export const translations: Record<"vi" | "en", Dictionary> = { vi, en };

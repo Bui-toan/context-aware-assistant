@@ -17,7 +17,6 @@ router = APIRouter()
 
 
 def _build_provider():
-    """Tạo provider 1 lần khi khởi động server; thiếu key/model thì dùng Mock và ghi cảnh báo."""
     try:
         return GeminiProvider()
     except Exception as e:
