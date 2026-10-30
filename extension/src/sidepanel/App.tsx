@@ -50,6 +50,25 @@ export default function App() {
 
   const t = translations[lang];
 
+  // Hàm dịch lỗi (Tự động nhận diện lỗi mạng, lỗi API, hoặc lỗi chung)
+    const translateError = (errMsg: string | undefined | null): string => {
+    if (!errMsg) return t.error_generic;
+    
+    if (errMsg.includes("Failed to fetch") || errMsg.includes("NetworkError")) {
+      return t.error_network;
+    }
+    
+    // Thêm 2 dòng này để bắt mã lỗi từ Service Worker
+    if (errMsg === "ERR_NO_CONNECTION") return t.error_no_connection;
+    if (errMsg === "ERR_NO_CHUNKS") return t.error_no_chunks;
+    
+    if (errMsg.startsWith("ERR_")) {
+      return t.error_api;
+    }
+
+    return errMsg;
+  };
+
   const setBusy = (action: string, value: boolean) =>
     setLoading((prev) => ({ ...prev, [action]: value }));
   const setFail = (action: string, message: string | null) =>
@@ -73,7 +92,7 @@ export default function App() {
     };
     chrome.runtime.onMessage.addListener(runtimeListener);
 
-    // ---- Các tin nhắn qua message bus (có thể trả về hàm hủy đăng ký) ----
+    // ---- Các tin nhắn qua message bus ----
     const offs: Array<() => void> = [];
     const listen = (type: ListenType, handler: (payload: any) => void) => {
       const off = onTabMessage(type, handler) as unknown;
@@ -99,6 +118,7 @@ export default function App() {
       setFail("search", null);
       if (payload?.query) {
         setGlobalSearchQuery(payload.query);
+        setCurrentQueryText(payload.query);
       }
       setActiveTab("search");
     });
@@ -123,9 +143,9 @@ export default function App() {
       }
     });
 
-    // Lỗi
+    // Lỗi (Tự động dịch)
     listen("ERROR", (payload) => {
-      const message: string = payload?.message ?? "Đã xảy ra lỗi";
+      const message: string = translateError(payload?.message);
       const action = payload?.actionType as string | undefined;
       if (action) {
         setBusy(action, false);
@@ -142,7 +162,7 @@ export default function App() {
       chrome.runtime.onMessage.removeListener(runtimeListener);
       offs.forEach((off) => off());
     };
-  }, []);
+  }, [lang]); // Thêm lang vào dependency để hàm translateError luôn cập nhật ngôn ngữ mới nhất
 
   // ---- Gọi từ giao diện ----
   const handleSearch = async (query: string) => {
@@ -153,7 +173,7 @@ export default function App() {
     try {
       await sendMessage("REQUEST_SEARCH", { query, topK: 5 });
     } catch (err: any) {
-      setFail("search", err?.message ?? "Không gửi được yêu cầu tìm kiếm");
+      setFail("search", translateError(err?.message));
       setBusy("search", false);
     }
   };
@@ -166,7 +186,7 @@ export default function App() {
     try {
       await sendMessage("REQUEST_EXPLAIN", { text, context: "", language: lang });
     } catch (err: any) {
-      setFail("explain", err?.message ?? "Lỗi gọi API Explain");
+      setFail("explain", translateError(err?.message));
       setBusy("explain", false);
     }
   };
@@ -178,7 +198,7 @@ export default function App() {
     try {
       await sendMessage("REQUEST_GRAMMAR", { text, context: "", language: lang });
     } catch (err: any) {
-      setFail("grammar", err?.message ?? "Không gửi được yêu cầu");
+      setFail("grammar", translateError(err?.message));
       setBusy("grammar", false);
     }
   };
@@ -190,7 +210,7 @@ export default function App() {
     try {
       await sendMessage("REQUEST_REWRITE", { text, context: "", mode, language: lang });
     } catch (err: any) {
-      setFail("rewrite", err?.message ?? "Không gửi được yêu cầu");
+      setFail("rewrite", translateError(err?.message));
       setBusy("rewrite", false);
     }
   };
@@ -210,7 +230,7 @@ export default function App() {
 
   const renderContent = () => {
     switch (activeTab) {
-       case "explain":
+      case "explain":
         return (
           <ExplainView
             data={explainData}
@@ -218,7 +238,7 @@ export default function App() {
             error={errors.explain}
             currentQueryText={currentQueryText}
             initialText={pageSelectedText}
-            onExplain={handleExplain} // <-- Truyền hàm vào
+            onExplain={handleExplain}
             t={t}
           />
         );
@@ -310,7 +330,7 @@ export default function App() {
               </svg>
             </button>
             <div style={{ flex: 1, fontWeight: 600, color: theme.primary }}>
-              {lang === "vi" ? "Cài đặt" : "Settings"}
+              {t.settings_title}
             </div>
           </>
         ) : (

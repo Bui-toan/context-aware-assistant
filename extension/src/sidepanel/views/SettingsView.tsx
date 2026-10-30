@@ -42,18 +42,6 @@ export default function SettingsView({ lang, t }: Props) {
         </select>
       </div>
 
-      <div style={groupStyle}>
-        <label style={labelStyle}>{t.settings_limit}</label>
-        <input 
-          type="number" 
-          value={maxContext} 
-          onChange={(e) => setMaxContext(e.target.value)} 
-          style={commonStyles.input} 
-          min="100" 
-          max="5000"
-        />
-      </div>
-
       <button onClick={handleSave} style={{ ...commonStyles.buttonPrimary, width: "100%", padding: "12px", marginTop: "8px" }}>
         {t.settings_save}
       </button>

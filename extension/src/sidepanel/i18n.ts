@@ -21,6 +21,12 @@ const vi = {
   error_overloaded: "Dịch vụ AI đang quá tải, vui lòng thử lại sau ít phút.",
   error_generic: "Có lỗi xảy ra, vui lòng thử lại.",
   search_result: "Kết quả",
+  search_empty: "Không tìm thấy đoạn văn nào phù hợp với ý nghĩa của từ khóa.",
+  no_content: "Không có nội dung",
+  error_network: "Không thể kết nối đến máy chủ. Vui lòng kiểm tra lại mạng hoặc bật Backend.",
+  error_api: "Đã xảy ra lỗi khi gọi API. Vui lòng thử lại sau.",
+  error_no_connection: "Không thể kết nối với trang web. Vui lòng bấm F5 tải lại trang.",
+  error_no_chunks: "Trang này không có đoạn văn bản nào phù hợp để tìm kiếm.",
 };
 
 // en bắt buộc có ĐÚNG các key của vi: thiếu hoặc thừa đều báo lỗi khi build
@@ -50,6 +56,12 @@ const en: Dictionary = {
   error_overloaded: "The AI service is overloaded. Please try again in a few minutes.",
   error_generic: "Something went wrong. Please try again.",
   search_result: "Result",
+  search_empty: "No paragraphs found matching the keyword meaning.",
+  no_content: "No content",
+  error_network: "Cannot connect to server. Please check your network or start the Backend.",
+  error_api: "An error occurred while calling the API. Please try again later.",
+  error_no_connection: "Cannot connect to the webpage. Please press F5 to reload.",
+  error_no_chunks: "This page has no text paragraphs suitable for searching.",
 };
 
 export const translations: Record<"vi" | "en", Dictionary> = { vi, en };

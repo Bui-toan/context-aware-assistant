@@ -57,7 +57,7 @@ export default function SearchView({ onSearch, loading, error, results, chunks, 
           <p style={{ color: theme.textMuted, fontSize: "13px", marginBottom: "12px" }}>{t.search_found} {results.length} {t.search_results}</p>
           
           {results.length === 0 && (
-             <p style={{ color: theme.textMuted, fontSize: "14px" }}>Không tìm thấy đoạn văn nào phù hợp với ý nghĩa của từ khóa.</p>
+            <p style={{ color: theme.textMuted, fontSize: "14px" }}>{t.search_empty}</p>
           )}
           
           {results.map((r, i) => (
@@ -69,7 +69,7 @@ export default function SearchView({ onSearch, loading, error, results, chunks, 
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "14px", color: theme.textMain, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                {chunks[r.chunkId] || "Không có nội dung"}
+                {chunks[r.chunkId] || t.no_content}
               </p>
             </div>
           ))}

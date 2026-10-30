@@ -2,7 +2,12 @@ import { chunkMap } from "./chunk-mapper";
 
 export function highlightChunk(chunkId: string, fallbackText?: string) {
   let el = chunkMap.get(chunkId);
+
   
+  let currentLang: "vi" | "en" = "vi";
+  chrome.storage.local.get(["language"], (res) => { if (res.language) currentLang = res.language; });
+  chrome.storage.onChanged.addListener((changes) => { if (changes.language) currentLang = changes.language.newValue; });
+    
   // Nếu không tìm thấy element trong Map (do DOM bị render lại)
   if (!el && fallbackText) {
     // Tìm thẻ <p>, <div>... có chứa đoạn text đó
@@ -16,7 +21,10 @@ export function highlightChunk(chunkId: string, fallbackText?: string) {
   }
 
   if (!el) {
-    alert("Không thể tìm thấy vị trí đoạn văn này trên trang (Trang có thể đã thay đổi).");
+    const copyMsg = currentLang === "vi"
+        ? "Không thể tìm thấy vị trí đoạn văn này trên trang (Trang có thể đã thay đổi)."
+        : "The location of this passage could not be found on the page (the page may have changed).";
+      alert(copyMsg);
     return;
   }
 
