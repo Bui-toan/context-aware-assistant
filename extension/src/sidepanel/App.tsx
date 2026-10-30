@@ -7,6 +7,7 @@ import SettingsView from "./views/SettingsView";
 import { onTabMessage, sendMessage } from "../shared/messaging/message-bus";
 import { theme } from "./styles";
 import { translations, type Lang } from "./i18n";
+import { getActiveSource, extractPdfChunks, extractGoogleDocChunks, type Chunk } from "./doc-sources";
 
 type TabId = "explain" | "search" | "grammar" | "rewrite";
 type ViewId = TabId | "settings";
@@ -41,38 +42,36 @@ export default function App() {
   const [pageSelectedText, setPageSelectedText] = useState("");
   const [currentQueryText, setCurrentQueryText] = useState("");
   const [globalSearchQuery, setGlobalSearchQuery] = useState("");
-
-  // Ref giữ tab hiện tại để listener (đăng ký một lần) luôn đọc được giá trị mới
-  const activeTabRef = useRef<ViewId>(activeTab);
-  useEffect(() => {
-    activeTabRef.current = activeTab;
-  }, [activeTab]);
+  // Tăng mỗi khi có yêu cầu tìm từ trang (kể cả khi từ khóa giống lần trước) để SearchView tìm lại
+  const [searchNonce, setSearchNonce] = useState(0);
 
   const t = translations[lang];
 
-  // Hàm dịch lỗi (Tự động nhận diện lỗi mạng, lỗi API, hoặc lỗi chung)
-    const translateError = (errMsg: string | undefined | null): string => {
-    if (!errMsg) return t.error_generic;
-    
-    if (errMsg.includes("Failed to fetch") || errMsg.includes("NetworkError")) {
-      return t.error_network;
-    }
-    
-    // Thêm 2 dòng này để bắt mã lỗi từ Service Worker
-    if (errMsg === "ERR_NO_CONNECTION") return t.error_no_connection;
-    if (errMsg === "ERR_NO_CHUNKS") return t.error_no_chunks;
-    
-    if (errMsg.startsWith("ERR_")) {
-      return t.error_api;
-    }
-
-    return errMsg;
-  };
+  // Ref để các listener (đăng ký một lần) luôn đọc được giá trị mới nhất
+  const activeTabRef = useRef<ViewId>(activeTab);
+  const tRef = useRef(t);
+  useEffect(() => {
+    activeTabRef.current = activeTab;
+  }, [activeTab]);
+  useEffect(() => {
+    tRef.current = t;
+  }, [t]);
 
   const setBusy = (action: string, value: boolean) =>
     setLoading((prev) => ({ ...prev, [action]: value }));
   const setFail = (action: string, message: string | null) =>
     setErrors((prev) => ({ ...prev, [action]: message }));
+
+  // Dịch lỗi (mạng, mã lỗi từ Service Worker, hoặc lỗi chung). Chỉ dùng ref và setter nên an toàn trong listener.
+  const translateError = (errMsg: string | undefined | null): string => {
+    const tt = tRef.current;
+    if (!errMsg) return tt.error_generic;
+    if (errMsg.includes("Failed to fetch") || errMsg.includes("NetworkError")) return tt.error_network;
+    if (errMsg === "ERR_NO_CONNECTION") return tt.error_no_connection;
+    if (errMsg === "ERR_NO_CHUNKS") return tt.error_no_chunks;
+    if (errMsg.startsWith("ERR_")) return tt.error_api;
+    return errMsg;
+  };
 
   useEffect(() => {
     // ---- Ngôn ngữ ----
@@ -84,10 +83,15 @@ export default function App() {
     };
     chrome.storage.onChanged.addListener(storageListener);
 
-    // ---- Lệnh đổi tab từ content script ----
+    // ---- Lệnh đổi tab (từ nút nổi hoặc menu chuột phải); có thể kèm từ khóa tìm kiếm ----
     const runtimeListener = (msg: any) => {
       if (msg?.type === "SWITCH_TAB" && isTabId(msg.payload?.tab)) {
         setActiveTab(msg.payload.tab);
+        const q = msg.payload.query;
+        if (msg.payload.tab === "search" && typeof q === "string" && q.trim()) {
+          setGlobalSearchQuery(q);
+          setSearchNonce((n) => n + 1);
+        }
       }
     };
     chrome.runtime.onMessage.addListener(runtimeListener);
@@ -112,17 +116,6 @@ export default function App() {
       });
     });
 
-    // Bôi đen rồi bấm Search
-    listen("REQUEST_SEARCH", (payload) => {
-      setBusy("search", true);
-      setFail("search", null);
-      if (payload?.query) {
-        setGlobalSearchQuery(payload.query);
-        setCurrentQueryText(payload.query);
-      }
-      setActiveTab("search");
-    });
-
     // Kết quả trả về
     listen("RESULT_READY", (payload) => {
       const action = payload?.actionType as string | undefined;
@@ -137,15 +130,16 @@ export default function App() {
         setSearchResults(payload.data?.results ?? []);
         const map: Record<string, string> = {};
         payload.data?.originalChunks?.forEach((c: any) => {
-          map[c.chunkId] = c.text;
+          const m = /^pdf-p(\d+)-/.exec(c.chunkId);
+          map[c.chunkId] = m ? `[Trang ${m[1]}] ${c.text}` : c.text; // PDF: ghi rõ số trang
         });
         setSearchChunks(map);
       }
     });
 
-    // Lỗi (Tự động dịch)
+    // Lỗi (tự dịch)
     listen("ERROR", (payload) => {
-      const message: string = translateError(payload?.message);
+      const message = translateError(payload?.message);
       const action = payload?.actionType as string | undefined;
       if (action) {
         setBusy(action, false);
@@ -162,7 +156,8 @@ export default function App() {
       chrome.runtime.onMessage.removeListener(runtimeListener);
       offs.forEach((off) => off());
     };
-  }, [lang]); // Thêm lang vào dependency để hàm translateError luôn cập nhật ngôn ngữ mới nhất
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ---- Gọi từ giao diện ----
   const handleSearch = async (query: string) => {
@@ -171,7 +166,12 @@ export default function App() {
     setSearchResults(null);
     setCurrentQueryText(query);
     try {
-      await sendMessage("REQUEST_SEARCH", { query, topK: 5 });
+      // PDF và Google Docs: tự lấy văn bản ở Side Panel; trang web thường: Service Worker hỏi Content Script
+      const src = await getActiveSource();
+      let chunks: Chunk[] | undefined;
+      if (src.kind === "pdf") chunks = await extractPdfChunks(src.url);
+      else if (src.kind === "gdoc") chunks = await extractGoogleDocChunks(src.url);
+      await sendMessage("REQUEST_SEARCH", { query, topK: 5, ...(chunks ? { chunks } : {}) });
     } catch (err: any) {
       setFail("search", translateError(err?.message));
       setBusy("search", false);
@@ -246,6 +246,7 @@ export default function App() {
         return (
           <SearchView
             initialQuery={globalSearchQuery}
+            searchNonce={searchNonce}
             currentQueryText={currentQueryText}
             onSearch={handleSearch}
             loading={loading.search}
@@ -329,9 +330,7 @@ export default function App() {
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
-            <div style={{ flex: 1, fontWeight: 600, color: theme.primary }}>
-              {t.settings_title}
-            </div>
+            <div style={{ flex: 1, fontWeight: 600, color: theme.primary }}>{t.settings_title}</div>
           </>
         ) : (
           <>

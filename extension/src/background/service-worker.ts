@@ -1,85 +1,120 @@
 import { onMessage, sendMessage } from "../shared/messaging/message-bus";
 import { postExplain, postSearch, postGrammar, postRewrite } from "../shared/api/client";
-import type { ExplainRequestPayload, GrammarRequestPayload, RewriteRequestPayload } from "../shared/messaging/types";
+import type {
+  ExplainRequestPayload,
+  GrammarRequestPayload,
+  RewriteRequestPayload,
+  SearchRequestPayload,
+  MessageType,
+} from "../shared/messaging/types";
 
 console.log("[Service Worker] Loaded");
 
+type Chunk = { chunkId: string; text: string };
+
+// Gửi tin nhắn tới Side Panel. Không báo lỗi nếu panel chưa mở (tránh làm hỏng request chính).
+function emit(type: MessageType, payload: unknown): Promise<unknown> {
+  return sendMessage(type, payload).catch(() => undefined);
+}
+
+// Báo Side Panel chuyển tab (SWITCH_TAB không nằm trong MessageType nên gửi trực tiếp).
+// Chờ một chút để Side Panel vừa mở kịp đăng ký listener.
+async function switchTab(tab: string, query?: string): Promise<void> {
+  await new Promise((r) => setTimeout(r, 400));
+  chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab, query } }).catch(() => {});
+}
+
+async function getLanguage(): Promise<"vi" | "en"> {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(["language"], (res) => resolve(res.language || "vi"));
+  });
+}
+
+async function getActiveTab(): Promise<chrome.tabs.Tab | undefined> {
+  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+  return tab;
+}
+
 // ==========================================
-// 1. TẠO MENU CHUỘT PHẢI (CONTEXT MENU)
+// 1. MENU CHUỘT PHẢI
 // ==========================================
+const MENU_ITEMS = [
+  { id: "caa-explain", title: "AI: Explain (Giải thích)" },
+  { id: "caa-search", title: "AI: Search (Tìm kiếm)" },
+  { id: "caa-grammar", title: "AI: Grammar (Ngữ pháp)" },
+  { id: "caa-rewrite", title: "AI: Rewrite (Viết lại)" },
+];
+
 chrome.runtime.onInstalled.addListener(() => {
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(console.error);
 
-  const menuItems = [
-    { id: "caa-explain", title: "AI: Explain (Giải thích)" },
-    { id: "caa-search", title: "AI: Search (Tìm kiếm)" },
-    { id: "caa-grammar", title: "AI: Grammar (Ngữ pháp)" },
-    { id: "caa-rewrite", title: "AI: Rewrite (Viết lại)" },
-  ];
-
-  menuItems.forEach(item => {
-    chrome.contextMenus.create({
-      id: item.id,
-      title: item.title,
-      contexts: ["selection"] // Chỉ hiện khi có bôi đen chữ
-    });
+  chrome.contextMenus.removeAll(() => {
+    for (const item of MENU_ITEMS) {
+      chrome.contextMenus.create({
+        id: item.id,
+        title: item.title,
+        contexts: ["selection"], // Chỉ hiện khi có bôi đen chữ
+      });
+    }
   });
 });
 
 // ==========================================
-// 2. XỬ LÝ KHI BẤM VÀO MENU CHUỘT PHẢI
+// 2. XỬ LÝ KHI BẤM MENU CHUỘT PHẢI
 // ==========================================
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-  if (!info.selectionText || !tab?.id) return;
-  
-  const text = info.selectionText;
+  const text = info.selectionText?.trim();
+  if (!text || !tab?.id) return;
 
-  // Mở Side Panel tự động
-  if (tab.windowId) {
-    await chrome.sidePanel.open({ windowId: tab.windowId }).catch(() => {});
-  }
+  // sidePanel.open() phải được gọi ngay (còn trong thao tác của người dùng), trước mọi await khác
+  if (tab.windowId !== undefined) chrome.sidePanel.open({ windowId: tab.windowId }).catch(() => {});
 
-  // Lấy ngôn ngữ hiện tại từ Storage
-  const lang = await new Promise<"vi" | "en">((resolve) => {
-    chrome.storage.local.get(["language"], (res) => resolve(res.language || "vi"));
-  });
+  const language = await getLanguage();
+  const context = ""; // Menu chuột phải không có ngữ cảnh
 
-  const context = ""; // Không có context khi dùng menu chuột phải
-  const defaultMode = "formal";
-
-  // Gửi tín hiệu cho Side Panel (App.tsx) để điền chữ và chuyển Tab
-  if (info.menuItemId === "caa-explain") {
-    await sendMessage("REQUEST_EXPLAIN", { text, context, language: lang });
-    handleAiRequest("explain", postExplain({ text, context, language: lang }));
-  } 
-  else if (info.menuItemId === "caa-grammar") {
-    await sendMessage("REQUEST_GRAMMAR", { text, context, language: lang });
-    handleAiRequest("grammar", postGrammar({ text, context, language: lang }));
-  } 
-  else if (info.menuItemId === "caa-rewrite") {
-    await sendMessage("REQUEST_REWRITE", { text, context, mode: defaultMode, language: lang });
-    handleAiRequest("rewrite", postRewrite({ text, context, mode: defaultMode, language: lang }));
-  }
-  else if (info.menuItemId === "caa-search") {
-    // Đối với Search, UI sẽ tự động gọi API thông qua tab Search
-    await sendMessage("REQUEST_SEARCH", { query: text, topK: 5 });
+  switch (info.menuItemId) {
+    case "caa-explain": {
+      const p = { text, context, language };
+      void emit("REQUEST_EXPLAIN", p); // báo Side Panel hiện "đang xử lý"
+      void switchTab("explain");
+      void handleAiRequest("explain", postExplain(p));
+      break;
+    }
+    case "caa-grammar": {
+      const p = { text, context, language };
+      void emit("REQUEST_GRAMMAR", p);
+      void switchTab("grammar");
+      void handleAiRequest("grammar", postGrammar(p));
+      break;
+    }
+    case "caa-rewrite": {
+      const p = { text, context, mode: "formal" as const, language };
+      void emit("REQUEST_REWRITE", p);
+      void switchTab("rewrite");
+      void handleAiRequest("rewrite", postRewrite(p));
+      break;
+    }
+    case "caa-search":
+      // Side Panel (SearchView) sẽ tự gọi tìm kiếm khi nhận từ khóa
+      void switchTab("search", text);
+      break;
   }
 });
 
 // ==========================================
-// 3. CÁC HÀM XỬ LÝ API (TỪ SIDE PANEL GỬI XUỐNG)
+// 3. GỌI API (từ Side Panel / Content Script gửi xuống)
 // ==========================================
-async function handleAiRequest(actionType: string, apiCall: Promise<any>) {
+async function handleAiRequest(actionType: string, apiCall: Promise<unknown>) {
   try {
     const result = await apiCall;
-    await sendMessage("RESULT_READY", { actionType, data: result });
+    await emit("RESULT_READY", { actionType, data: result });
     return { ok: true };
   } catch (err: any) {
     console.error(`[Service Worker] Lỗi ${actionType}:`, err);
-    await sendMessage("ERROR", {
+    await emit("ERROR", {
       actionType,
       code: "AI_PROVIDER_ERROR",
-      message: err.message || "Lỗi gọi API Backend",
+      message: err?.message || "Lỗi gọi API Backend",
     });
     return { ok: false };
   }
@@ -100,33 +135,35 @@ onMessage("REQUEST_REWRITE", async (payload) => {
 });
 
 onMessage("REQUEST_SEARCH", async (payload) => {
-  const req = payload as any;
+  const req = payload as SearchRequestPayload;
   try {
-    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tabs[0]?.id) throw new Error("Không tìm thấy tab");
+    // PDF và Google Docs: Side Panel đã tự lấy văn bản và gửi kèm trong payload.chunks
+    let chunks: Chunk[] | undefined = req.chunks;
 
-    // Nếu là file PDF, Content Script không chạy được nên sẽ báo lỗi ở đây
-        const pageChunks = await chrome.tabs.sendMessage(tabs[0].id, {
-      type: "GET_PAGE_CHUNKS", requestId: crypto.randomUUID(), payload: {}
-    }).catch((e) => {
-        console.error("[Service Worker] Lỗi gửi message lấy chunks:", e);
-        throw new Error("ERR_NO_CONNECTION"); // Thay bằng mã lỗi
-    }) as { chunks: any[] };
-
-    console.log(`[Service Worker] Nhận được ${pageChunks.chunks?.length || 0} chunks từ trang.`);
-
-    if (!pageChunks.chunks || pageChunks.chunks.length === 0) {
-      throw new Error("ERR_NO_CHUNKS"); // Thay bằng mã lỗi
+    // Trang web thường: hỏi Content Script lấy các đoạn văn bản
+    if (!chunks?.length) {
+      const tab = await getActiveTab();
+      if (!tab?.id) throw new Error("Không tìm thấy tab");
+      const res = (await chrome.tabs
+        .sendMessage(tab.id, { type: "GET_PAGE_CHUNKS", requestId: crypto.randomUUID(), payload: {} })
+        .catch((e) => {
+          console.error("[Service Worker] Lỗi gửi message lấy chunks:", e);
+          throw new Error("ERR_NO_CONNECTION");
+        })) as { chunks?: Chunk[] };
+      chunks = res?.chunks;
     }
 
-    const result = await postSearch({ query: req.query, chunks: pageChunks.chunks, topK: req.topK || 5 });
-    await sendMessage("RESULT_READY", {
+    console.log(`[Service Worker] Nhận được ${chunks?.length || 0} chunks.`);
+    if (!chunks || chunks.length === 0) throw new Error("ERR_NO_CHUNKS");
+
+    const result = await postSearch({ query: req.query, chunks, topK: req.topK || 5 });
+    await emit("RESULT_READY", {
       actionType: "search",
-      data: { results: result.results, originalChunks: pageChunks.chunks }
+      data: { results: result.results, originalChunks: chunks },
     });
     return { ok: true };
   } catch (err: any) {
-    await sendMessage("ERROR", { actionType: "search", code: "SEARCH_ERROR", message: err.message });
+    await emit("ERROR", { actionType: "search", code: "SEARCH_ERROR", message: err?.message });
     return { ok: false };
   }
 });
@@ -134,30 +171,37 @@ onMessage("REQUEST_SEARCH", async (payload) => {
 // ==========================================
 // 4. CÁC LỆNH ĐIỀU HƯỚNG KHÁC
 // ==========================================
-onMessage("HIGHLIGHT_CHUNK", async (payload: any) => {
-  try {
-    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tabs[0]?.id) {
-      await chrome.tabs.sendMessage(tabs[0].id, {
-        type: "HIGHLIGHT_CHUNK", requestId: crypto.randomUUID(), payload
-      });
-    }
+onMessage("HIGHLIGHT_CHUNK", async (payload) => {
+  const tab = await getActiveTab();
+  if (!tab?.id) return { ok: false };
+
+  const id = String((payload as { chunkId?: string })?.chunkId ?? "");
+
+  // PDF: không highlight được trong trình xem, chỉ nhảy tới đúng trang
+  const pdf = /^pdf-p(\d+)-/.exec(id);
+  if (pdf && tab.url) {
+    await chrome.tabs.update(tab.id, { url: `${tab.url.split("#")[0]}#page=${pdf[1]}` }).catch(() => {});
     return { ok: true };
-  } catch (err) {
+  }
+  // Google Docs: chỉ hiển thị đoạn trích trong Side Panel
+  if (id.startsWith("doc-")) return { ok: true };
+
+  try {
+    await chrome.tabs.sendMessage(tab.id, { type: "HIGHLIGHT_CHUNK", requestId: crypto.randomUUID(), payload });
+    return { ok: true };
+  } catch {
     return { ok: false };
   }
 });
 
-onMessage("APPLY_SUGGESTION", async (payload: any) => {
+onMessage("APPLY_SUGGESTION", async (payload) => {
   try {
-    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tabs[0]?.id) {
-      await chrome.tabs.sendMessage(tabs[0].id, {
-        type: "APPLY_SUGGESTION", requestId: crypto.randomUUID(), payload
-      });
+    const tab = await getActiveTab();
+    if (tab?.id) {
+      await chrome.tabs.sendMessage(tab.id, { type: "APPLY_SUGGESTION", requestId: crypto.randomUUID(), payload });
     }
     return { ok: true };
-  } catch (err) {
+  } catch {
     return { ok: false };
   }
 });

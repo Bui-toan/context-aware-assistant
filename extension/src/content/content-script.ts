@@ -12,7 +12,6 @@ let currentLang: "vi" | "en" = "vi";
 chrome.storage.local.get(["language"], (res) => { if (res.language) currentLang = res.language; });
 chrome.storage.onChanged.addListener((changes) => { if (changes.language) currentLang = changes.language.newValue; });
 
-// Đã thêm type SelectionInfo | null cho info
 onSelectionChange((info: SelectionInfo | null) => {
   if (info && info.rect) show(info, currentLang); 
   else hide();
@@ -99,7 +98,6 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       alert(copyMsg);
     }
     
-    // Sử dụng hàm clear thay vì gán trực tiếp
     clearSavedElement();
     sendResponse({ ok: true });
   }
