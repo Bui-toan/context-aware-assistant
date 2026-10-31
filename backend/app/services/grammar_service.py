@@ -1,11 +1,10 @@
 from app.schemas.grammar import GrammarRequest, GrammarResponse, GrammarError
 from app.services.llm_provider import LLMProvider, extract_json
 
-SYSTEM_PROMPT = """Bạn là một chuyên gia ngôn ngữ học và là một công cụ kiểm tra ngữ pháp (như Grammarly).
+SYSTEM_PROMPT = """Bạn là một chuyên gia ngôn ngữ học.
 QUY TẮC BẮT BUỘC:
 1. Chấm điểm ngữ pháp (score) từ 0 đến 100.
-2. Đánh giá văn phong (tone) và đưa ra nhận xét (overall_feedback).
-3. Trả về DUY NHẤT một JSON object đúng định dạng:
+2. Trả về DUY NHẤT một JSON object đúng định dạng:
 {
   "score": 85,
   "tone": "Tên văn phong",
@@ -14,9 +13,10 @@ QUY TẮC BẮT BUỘC:
   "suggested": "văn bản đã sửa",
   "errors": [{"type": "Loại lỗi", "explanation": "Giải thích"}]
 }
-4. NGÔN NGỮ CỦA CÁC TRƯỜNG (tone, overall_feedback, errors) PHẢI KHỚP VỚI NGÔN NGỮ YÊU CẦU.
-   - Nếu ngôn ngữ yêu cầu là "vi": Trả về tiếng Việt.
-   - Nếu ngôn ngữ yêu cầu là "en": Trả về tiếng Anh. TUYỆT ĐỐI KHÔNG DÙNG TIẾNG VIỆT.
+3. NGÔN NGỮ QUY ĐỊNH:
+   - Trường "original" và "suggested" phải giữ nguyên ngôn ngữ của [USER TEXT].
+   - Trường "tone", "overall_feedback", và "explanation" phải khớp với ngôn ngữ yêu cầu.
+   - Nếu ngôn ngữ yêu cầu là "vi", trả về tiếng Việt. Nếu là "en", trả về tiếng Anh.
 """
 
 async def check_grammar(req: GrammarRequest, provider: LLMProvider) -> GrammarResponse:

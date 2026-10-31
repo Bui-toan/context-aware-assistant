@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 class ExplainRequest(BaseModel):
     text: str = Field(..., description="Đoạn được chọn (selection)")
     context: str = Field("", description="Câu trước + câu chứa + câu sau")
-    language: Literal["vi", "en"] = "vi"
+    language: str = "vi" # <-- Đã mở khóa
 
 
 class ExplainResponse(BaseModel):

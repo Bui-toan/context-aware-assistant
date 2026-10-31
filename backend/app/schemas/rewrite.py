@@ -9,7 +9,7 @@ class RewriteRequest(BaseModel):
     text: str
     context: str = ""
     mode: RewriteMode
-    language: Literal["vi", "en"] = "vi"
+    language: str = "vi"
 
 
 class VerificationInfo(BaseModel):

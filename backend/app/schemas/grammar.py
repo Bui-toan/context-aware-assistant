@@ -4,7 +4,7 @@ from pydantic import BaseModel
 class GrammarRequest(BaseModel):
     text: str
     context: str = ""
-    language: Literal["vi", "en"] = "vi"
+    language: str = "vi"
 
 class GrammarError(BaseModel):
     type: str
