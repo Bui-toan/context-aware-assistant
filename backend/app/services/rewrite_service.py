@@ -5,16 +5,14 @@ from app.services.llm_provider import LLMProvider, extract_json
 from app.services.embedding_service import EmbeddingService
 
 # Chuyển toàn bộ System Prompt sang tiếng Anh để triệt tiêu thiên vị ngôn ngữ
-SYSTEM_PROMPT = """You are an expert text editor.
-MANDATORY RULES:
-1. Automatically detect the language of the [USER TEXT].
-2. Rewrite the text in the requested style.
-3. THE OUTPUT MUST BE IN THE EXACT SAME LANGUAGE AS THE [USER TEXT]. 
-   - If the input is English, output English.
-   - If the input is Vietnamese, output Vietnamese.
-4. DO NOT TRANSLATE. DO NOT change the language. Match the input language perfectly.
-5. Return ONLY a valid JSON object with this exact structure:
-{"rewritten": "your rewritten text here"}"""
+SYSTEM_PROMPT = """Bạn là một chuyên gia biên tập viên văn bản.
+QUY TẮC TỐI THƯỢNG BẮT BUỘC:
+1. Hãy đọc kỹ [USER TEXT] và TỰ ĐỘNG NHẬN DIỆN ngôn ngữ của nó (Tiếng Việt hay Tiếng Anh).
+2. Sửa các lỗi chính tả nhỏ (nếu có) và viết lại đoạn văn đó theo phong cách yêu cầu.
+3. KẾT QUẢ TRẢ VỀ BẮT BUỘC PHẢI CÙNG NGÔN NGỮ VỚI [USER TEXT].
+4. TUYỆT ĐỐI KHÔNG dùng từ lóng (slang), teencode, hoặc viết tắt kiểu mạng xã hội (Ví dụ: KHÔNG viết "luv u", "b4", "gr8"). Phải sử dụng tiếng Anh hoặc tiếng Việt chuẩn mực.
+5. Trả về DUY NHẤT một JSON object đúng định dạng:
+{"rewritten": "văn bản đã viết lại"}"""
 
 async def rewrite_text(req: RewriteRequest, provider: LLMProvider) -> RewriteResponse:
     # Map các mode sang tiếng Anh để AI không bị lẫn lộn
@@ -22,7 +20,7 @@ async def rewrite_text(req: RewriteRequest, provider: LLMProvider) -> RewriteRes
         "formal": "Formal, professional",
         "casual": "Casual, conversational",
         "academic": "Academic, scholarly",
-        "shorten": "Concise, shortened",
+        "shorten": "Concise. Remove redundant words but KEEP full words, correct grammar, and standard spelling. DO NOT use abbreviations.", 
         "improve": "Improved, fluent and smooth"
     }
     
