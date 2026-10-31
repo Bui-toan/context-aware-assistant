@@ -24,7 +24,7 @@ async def semantic_search(req: SearchRequest) -> SearchResponse:
         matches = sum(1 for word in query_words if word in text)
         kw_scores.append(matches / len(query_words) if query_words else 0)
 
-    # 3. Kết hợp (60% Semantic + 40% Keyword)
+    # 3. Kết hợp (90% Semantic + 10% Keyword)
     final_results = []
     for i in range(len(chunks)):
         hybrid_score = (0.9 * sem_scores[i]) + (0.1 * kw_scores[i])

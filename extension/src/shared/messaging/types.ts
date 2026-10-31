@@ -145,6 +145,12 @@ export interface PageChunksReadyMessage extends BaseMessage {
   payload: PageChunksReadyPayload;
 }
 
+export interface SearchRequestPayload {
+  query: string;
+  topK?: number;
+  chunks?: Array<{ chunkId: string; text: string }>; // PDF và Google Docs: Side Panel tự lấy rồi gửi kèm
+}
+
 export type AppMessage =
   | SelectionDetectedMessage
   | RequestExplainMessage

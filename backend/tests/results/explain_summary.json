@@ -1,0 +1,33 @@
+{
+  "task": "explain",
+  "n": 5,
+  "pass": 5,
+  "pass_rate": 1.0,
+  "groups": {
+    "thuật ngữ en → trả lời en": {
+      "n": 1,
+      "pass_rate": 1.0
+    },
+    "không có ngữ cảnh": {
+      "n": 2,
+      "pass_rate": 1.0
+    },
+    "ngữ cảnh vi → trả lời vi": {
+      "n": 1,
+      "pass_rate": 1.0
+    },
+    "ngữ cảnh vi → trả lời en": {
+      "n": 1,
+      "pass_rate": 1.0
+    }
+  },
+  "time": {
+    "mean": 25.89,
+    "median": 26.77,
+    "p95": 27.57,
+    "max": 27.64
+  },
+  "extra": {},
+  "failures": [],
+  "generated_at": "2026-10-29T22:08:37"
+}

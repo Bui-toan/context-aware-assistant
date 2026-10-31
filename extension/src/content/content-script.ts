@@ -12,7 +12,6 @@ let currentLang: "vi" | "en" = "vi";
 chrome.storage.local.get(["language"], (res) => { if (res.language) currentLang = res.language; });
 chrome.storage.onChanged.addListener((changes) => { if (changes.language) currentLang = changes.language.newValue; });
 
-// Đã thêm type SelectionInfo | null cho info
 onSelectionChange((info: SelectionInfo | null) => {
   if (info && info.rect) show(info, currentLang); 
   else hide();
@@ -20,8 +19,7 @@ onSelectionChange((info: SelectionInfo | null) => {
 
 onAction(async (action: FloatingActionType, info) => {
   if (action === "search") {
-    void sendMessage("REQUEST_SEARCH", { query: info.text, topK: 5 });
-    chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: "search" } });
+    chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: "search", query: info.text } });
     return;
   }
 
@@ -39,7 +37,9 @@ onAction(async (action: FloatingActionType, info) => {
       type: "ERROR", 
       payload: { 
         actionType: action,
-        message: `Văn bản vượt quá giới hạn ${maxLimit} ký tự! (Hiện tại: ${Math.max(info.text.length, context.length)} ký tự). Vui lòng bôi đen đoạn ngắn hơn.` 
+                message: lang === "vi" 
+          ? `Văn bản vượt quá giới hạn ${maxLimit} ký tự! (Hiện tại: ${Math.max(info.text.length, context.length)} ký tự). Vui lòng bôi đen đoạn ngắn hơn.`
+          : `Text exceeds the limit of ${maxLimit} characters! (Current: ${Math.max(info.text.length, context.length)}). Please select a shorter text.`
       } 
     });
     chrome.runtime.sendMessage({ type: "SWITCH_TAB", payload: { tab: action } });
@@ -91,10 +91,12 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
 
     if (!applied) {
       navigator.clipboard.writeText(suggested);
-      alert("Đã sao chép nội dung! (Lưu ý: Không thể tự động ghi đè văn bản trên trang web để tránh phá vỡ giao diện).");
+           const copyMsg = currentLang === "vi"
+        ? "Đã sao chép nội dung! (Lưu ý: Không thể tự động ghi đè văn bản trên trang web để tránh phá vỡ giao diện)."
+        : "Content copied! (Note: Cannot automatically overwrite text on the webpage to avoid breaking the layout).";
+      alert(copyMsg);
     }
     
-    // Sử dụng hàm clear thay vì gán trực tiếp
     clearSavedElement();
     sendResponse({ ok: true });
   }

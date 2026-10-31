@@ -15,7 +15,6 @@ let actionCallback: ActionCallback | null = null;
 
 function ensureToolbar(lang: "vi" | "en" = "vi"): void {
   if (hostEl) {
-    // Nếu toolbar đã tồn tại, chỉ cần cập nhật lại chữ khi đổi ngôn ngữ
     const buttons = shadowRoot?.querySelectorAll(".btn");
     if (buttons && buttons.length === 4) {
       const labels = lang === "vi" 

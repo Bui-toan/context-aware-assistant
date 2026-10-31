@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-10-29T21:32:51",
+  "overall": {
+    "n": 100,
+    "hit@1": 0.99,
+    "hit@5": 0.99,
+    "mrr": 0.99,
+    "time_mean": 9.22,
+    "time_max": 25.037
+  },
+  "by_kind": {
+    "en→en": {
+      "n": 25,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 9.584,
+      "time_max": 25.037
+    },
+    "en→vi": {
+      "n": 20,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 8.574,
+      "time_max": 19.274
+    },
+    "ngắn vi→vi": {
+      "n": 19,
+      "hit@1": 0.9474,
+      "hit@5": 0.9474,
+      "mrr": 0.9474,
+      "time_mean": 10.341,
+      "time_max": 23.441
+    },
+    "vi→en": {
+      "n": 21,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 9.07,
+      "time_max": 22.375
+    },
+    "vi→vi": {
+      "n": 15,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 8.264,
+      "time_max": 22.337
+    }
+  },
+  "by_size": {
+    "10": {
+      "n": 25,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 2.753,
+      "time_max": 2.966
+    },
+    "50": {
+      "n": 27,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 4.847,
+      "time_max": 5.811
+    },
+    "150": {
+      "n": 19,
+      "hit@1": 1.0,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "time_mean": 10.144,
+      "time_max": 12.167
+    },
+    "300": {
+      "n": 29,
+      "hit@1": 0.9655,
+      "hit@5": 0.9655,
+      "mrr": 0.9655,
+      "time_mean": 18.26,
+      "time_max": 25.037
+    }
+  },
+  "http_errors": 0,
+  "top1_score_when_answer_exists": 0.6706,
+  "top1_score_when_no_answer": null,
+  "failures_top5": [
+    {
+      "id": "search-0409",
+      "kind": "ngắn vi→vi",
+      "size": 300,
+      "query": "Everest",
+      "rank": null
+    }
+  ]
+}

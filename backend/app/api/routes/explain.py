@@ -9,13 +9,14 @@ from app.schemas.explain import ExplainRequest, ExplainResponse
 from app.services.explain_service import explain
 from app.services.llm_provider import GeminiProvider, MockProvider
 from app.security.validation import validate_explain_input
+from fastapi import HTTPException
+from app.services.llm_provider import GeminiProvider, MockProvider, LLMUnavailableError
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
 def _build_provider():
-    """Tạo provider 1 lần khi khởi động server; thiếu key/model thì dùng Mock và ghi cảnh báo."""
     try:
         return GeminiProvider()
     except Exception as e:
@@ -48,10 +49,7 @@ async def explain_route(req: ExplainRequest) -> ExplainResponse:
     try:
         return await explain(req, _provider)
     except TimeoutError:
-        raise HTTPException(
-            status_code=504,
-            detail={"code": "AI_TIMEOUT", "message": "AI phản hồi quá chậm, vui lòng thử lại."},
-        )
+        raise HTTPException(status_code=503, detail="llm_unavailable")
     except ValueError as e:
         raise HTTPException(
             status_code=500,

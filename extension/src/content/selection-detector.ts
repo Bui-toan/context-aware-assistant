@@ -13,7 +13,6 @@ let listener: SelectionCallback | null = null;
 let rafId: number | null = null;
 let lastText = "";
 
-// Biến lưu trữ element cuối cùng
 export let lastSavedElement: HTMLElement | null = null;
 
 // Hàm để reset element từ file khác (thay vì gán trực tiếp)

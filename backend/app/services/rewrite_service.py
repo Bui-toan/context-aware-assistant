@@ -4,27 +4,40 @@ from app.schemas.rewrite import RewriteRequest, RewriteResponse, VerificationInf
 from app.services.llm_provider import LLMProvider, extract_json
 from app.services.embedding_service import EmbeddingService
 
-SYSTEM_PROMPT = """Bạn là công cụ viết lại văn bản chính xác.
-QUY TẮC BẮT BUỘC:
-1. Giữ nguyên định dạng và độ dài tương đương của văn bản gốc.
-2. KHÔNG ĐƯỢC tự ý thêm các từ ngữ giao tiếp (như "nè", "nhé", "ạ") hoặc giải thích thêm nếu không có trong văn bản gốc.
-3. Chỉ sửa lỗi chính tả hoặc thay đổi văn phong theo yêu cầu, giữ nguyên ý nghĩa cốt lõi.
-4. Tự động nhận diện ngôn ngữ của [USER TEXT] và trả kết quả bằng chính ngôn ngữ đó.
-5. BẮT BUỘC TRẢ LỜI BẰNG NGÔN NGỮ ĐƯỢC YÊU CẦU TRONG TASK. Nếu Task yêu cầu "Tiếng Việt", toàn bộ JSON phải là tiếng Việt. Nếu yêu cầu "English", toàn bộ phải là tiếng Anh.
-6. Trả về DUY NHẤT một JSON object đúng định dạng:
+# Chuyển toàn bộ System Prompt sang tiếng Anh để triệt tiêu thiên vị ngôn ngữ
+SYSTEM_PROMPT = """Bạn là một chuyên gia biên tập viên văn bản.
+QUY TẮC TỐI THƯỢNG BẮT BUỘC:
+1. Hãy đọc kỹ [USER TEXT] và TỰ ĐỘNG NHẬN DIỆN ngôn ngữ của nó (Tiếng Việt hay Tiếng Anh).
+2. Sửa các lỗi chính tả nhỏ (nếu có) và viết lại đoạn văn đó theo phong cách yêu cầu.
+3. KẾT QUẢ TRẢ VỀ BẮT BUỘC PHẢI CÙNG NGÔN NGỮ VỚI [USER TEXT].
+4. TUYỆT ĐỐI KHÔNG dùng từ lóng (slang), teencode, hoặc viết tắt kiểu mạng xã hội (Ví dụ: KHÔNG viết "luv u", "b4", "gr8"). Phải sử dụng tiếng Anh hoặc tiếng Việt chuẩn mực.
+5. Trả về DUY NHẤT một JSON object đúng định dạng:
 {"rewritten": "văn bản đã viết lại"}"""
 
 async def rewrite_text(req: RewriteRequest, provider: LLMProvider) -> RewriteResponse:
-    modes = {
-        "formal": "Trang trọng, lịch sự",
-        "casual": "Thân mật, đời thường",
-        "academic": "Học thuật, hàn lâm",
-        "shorten": "Rút gọn, súc tích",
-        "improve": "Cải thiện, mượt mà hơn"
+    # Map các mode sang tiếng Anh để AI không bị lẫn lộn
+    modes_en = {
+        "formal": "Formal, professional",
+        "casual": "Casual, conversational",
+        "academic": "Academic, scholarly",
+        "shorten": "Concise. Remove redundant words but KEEP full words, correct grammar, and standard spelling. DO NOT use abbreviations.", 
+        "improve": "Improved, fluent and smooth"
     }
     
-    task = f"""Hãy viết lại đoạn văn sau theo phong cách: {modes.get(req.mode, "mặc định")}.
+    style = modes_en.get(req.mode, "Formal")
     
+    # Thêm ví dụ mẫu (Few-shot) để AI bắt chước
+    task = f"""Rewrite the following text in a {style} style.
+CRITICAL REMINDER: DO NOT TRANSLATE. Match the exact language of the input.
+
+Example 1 (English input):
+Input: "I want to buy a car."
+Output: {{"rewritten": "I am looking to purchase a vehicle."}}
+
+Example 2 (Vietnamese input):
+Input: "Tôi muốn mua một chiếc xe hơi."
+Output: {{"rewritten": "Tôi đang có nhu cầu mua sắm một chiếc ô tô."}}
+
 [USER TEXT]
 {req.text}"""
 
@@ -32,7 +45,7 @@ async def rewrite_text(req: RewriteRequest, provider: LLMProvider) -> RewriteRes
     data = extract_json(raw)
     rewritten_text = data.get("rewritten", req.text)
 
-    # Tính Verification
+    # --- Phần Verification (Giữ nguyên) ---
     model = EmbeddingService.get_model()
     emb_orig = model.encode(req.text)
     emb_new = model.encode(rewritten_text)

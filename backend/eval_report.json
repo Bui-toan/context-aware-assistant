@@ -1,0 +1,30 @@
+[
+  {
+    "kind": "ngắn vi→vi",
+    "query": "Everest",
+    "rank": null,
+    "target": "Đỉnh Everest cao khoảng 8.849 mét, là ngọn núi cao nhất thế giới so với mực nước biển.",
+    "top3": []
+  },
+  {
+    "kind": "vi→vi",
+    "query": "thiên thể nào làm nước biển lên xuống",
+    "rank": null,
+    "target": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+    "top3": []
+  },
+  {
+    "kind": "en→vi",
+    "query": "what causes ocean tides",
+    "rank": null,
+    "target": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+    "top3": []
+  },
+  {
+    "kind": "ngắn vi→vi",
+    "query": "thủy triều",
+    "rank": null,
+    "target": "Mặt Trăng là vệ tinh tự nhiên duy nhất của Trái Đất và gây ra hiện tượng thủy triều.",
+    "top3": []
+  }
+]
