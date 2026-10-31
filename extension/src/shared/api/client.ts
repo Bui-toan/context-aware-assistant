@@ -1,55 +1,59 @@
-import type { ExplainRequest, ExplainResponse, GrammarRequest, GrammarResponse, RewriteRequest, RewriteResponse } from "./types";
+import type { 
+  ExplainRequest, ExplainResponse, 
+  SearchRequest, SearchResponse, 
+  GrammarRequest, GrammarResponse, 
+  RewriteRequest, RewriteResponse 
+} from "./types";
 
 const BACKEND_URL = "http://localhost:8000/api";
+const SECRET_TOKEN = "CAA_NHOM20_SECRET_2026"; // Phải khớp với Backend
 
-export async function postExplain(req: ExplainRequest): Promise<ExplainResponse> {
-  const res = await fetch(`${BACKEND_URL}/explain`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(req),
+/**
+ * Hàm fetch dùng chung: Tự động thêm Header và xử lý lỗi
+ */
+async function fetchWithAuth(endpoint: string, options: RequestInit): Promise<any> {
+  const res = await fetch(`${BACKEND_URL}${endpoint}`, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      "X-Extension-Token": SECRET_TOKEN, // Gửi kèm Token bảo mật
+      ...options.headers,
+    },
   });
 
   if (!res.ok) {
     const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.detail?.message || "ERR_EXPLAIN");
+    const errorMessage = errorData.detail?.message || errorData.detail || `Lỗi gọi API: ${res.status}`;
+    throw new Error(errorMessage);
   }
 
   return res.json();
+}
+
+export async function postExplain(req: ExplainRequest): Promise<ExplainResponse> {
+  return fetchWithAuth("/explain", {
+    method: "POST",
+    body: JSON.stringify(req),
+  });
+}
+
+export async function postSearch(req: SearchRequest): Promise<SearchResponse> {
+  return fetchWithAuth("/search", {
+    method: "POST",
+    body: JSON.stringify(req),
+  });
 }
 
 export async function postGrammar(req: GrammarRequest): Promise<GrammarResponse> {
-  const res = await fetch(`${BACKEND_URL}/grammar`, {
-    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(req),
+  return fetchWithAuth("/grammar", {
+    method: "POST",
+    body: JSON.stringify(req),
   });
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.detail?.message || "ERR_GRAMMAR");
-  }
-  return res.json();
 }
 
 export async function postRewrite(req: RewriteRequest): Promise<RewriteResponse> {
-  const res = await fetch(`${BACKEND_URL}/rewrite`, {
-    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(req),
-  });
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.detail?.message || "ERR_REWRITE");
-  }
-  return res.json();
-}
-
-export async function postSearch(req: { query: string; chunks: any[]; topK?: number }): Promise<any> {
-  const res = await fetch(`${BACKEND_URL}/search`, {
+  return fetchWithAuth("/rewrite", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(req),
   });
-
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.detail?.message || "ERR_SEARCH");
-  }
-
-  return res.json();
 }
