@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "SDS Nhom 20 - Full Test Suite",
+		"description": "Bộ test tự động cho đồ án Context-Aware Reading & Writing Assistant. Đã tích hợp sẵn Token bảo mật.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. System Check",
+			"item": [
+				{
+					"name": "GET /health",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r",
+									"pm.test(\"Có field status = ok\", () => {\r",
+									"    pm.expect(pm.response.json().status).to.eql(\"ok\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": ["{{baseUrl}}"],
+							"path": ["health"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Explain API",
+			"item": [
+				{
+					"name": "POST /api/explain - Valid (Tiếng Việt)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r",
+									"pm.test(\"Có 3 field: meaning, explanation, examples\", () => {\r",
+									"    const json = pm.response.json();\r",
+									"    pm.expect(json).to.have.property(\"meaning\");\r",
+									"    pm.expect(json).to.have.property(\"explanation\");\r",
+									"    pm.expect(json.examples).to.be.an(\"array\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "X-Extension-Token", "value": "{{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"machine learning\",\n  \"context\": \"Machine learning is a subset of AI.\",\n  \"language\": \"vi\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/explain",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "explain"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/explain - Empty Text (Lỗi 400)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 400\", () => pm.response.to.have.status(400));\r",
+									"pm.test(\"Error code = EMPTY_TEXT\", () => {\r",
+									"    pm.expect(pm.response.json().detail.code).to.eql(\"EMPTY_TEXT\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "X-Extension-Token", "value": "{{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"\",\n  \"context\": \"\",\n  \"language\": \"vi\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/explain",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "explain"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Search API",
+			"item": [
+				{
+					"name": "POST /api/search - Semantic Search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r",
+									"pm.test(\"Trả về mảng kết quả\", () => {\r",
+									"    pm.expect(pm.response.json().results).to.be.an(\"array\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "X-Extension-Token", "value": "{{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"trí tuệ nhân tạo\",\n  \"chunks\": [\n    { \"chunkId\": \"c1\", \"text\": \"AI is the simulation of human intelligence.\" },\n    { \"chunkId\": \"c2\", \"text\": \"The weather is nice today.\" },\n    { \"chunkId\": \"c3\", \"text\": \"Machine learning is a field of artificial intelligence.\" }\n  ],\n  \"topK\": 2\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/search",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "search"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Grammar API",
+			"item": [
+				{
+					"name": "POST /api/grammar - Check English",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r",
+									"pm.test(\"Có điểm số (score)\", () => {\r",
+									"    pm.expect(pm.response.json()).to.have.property(\"score\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "X-Extension-Token", "value": "{{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"I lov you so much\",\n  \"context\": \"\",\n  \"language\": \"en\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/grammar",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "grammar"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5. Rewrite API",
+			"item": [
+				{
+					"name": "POST /api/rewrite - Formal Mode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r",
+									"pm.test(\"Có văn bản viết lại (rewritten)\", () => {\r",
+									"    pm.expect(pm.response.json()).to.have.property(\"rewritten\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" },
+							{ "key": "X-Extension-Token", "value": "{{token}}" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"I want to buy a car\",\n  \"context\": \"\",\n  \"mode\": \"formal\",\n  \"language\": \"en\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/rewrite",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "rewrite"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "6. Security Tests",
+			"item": [
+				{
+					"name": "POST /api/explain - No Token (Lỗi 401)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status 401 Unauthorized\", () => pm.response.to.have.status(401));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"text\": \"test\",\n  \"context\": \"\",\n  \"language\": \"vi\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/explain",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "explain"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000"
+		},
+		{
+			"key": "token",
+			"value": "CAA_NHOM20_SECRET_2026"
+		}
+	]
+}
