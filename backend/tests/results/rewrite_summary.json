@@ -1,45 +1,108 @@
 {
   "task": "rewrite",
-  "n": 5,
-  "pass": 4,
-  "pass_rate": 0.8,
+  "n_runs": 30,
+  "n_cases": 30,
+  "pass": 29,
+  "pass_rate": 0.9667,
+  "pass_ci95": [
+    0.8333,
+    0.9941
+  ],
   "groups": {
     "shorten": {
-      "n": 2,
-      "pass_rate": 1.0
+      "n": 9,
+      "pass": 9,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.7008,
+        1.0
+      ]
     },
     "casual": {
-      "n": 1,
-      "pass_rate": 0.0
+      "n": 4,
+      "pass": 4,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.5101,
+        1.0
+      ]
     },
     "improve": {
-      "n": 1,
-      "pass_rate": 1.0
+      "n": 6,
+      "pass": 6,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.6097,
+        1.0
+      ]
     },
     "formal": {
-      "n": 1,
-      "pass_rate": 1.0
+      "n": 4,
+      "pass": 3,
+      "pass_rate": 0.75,
+      "ci95": [
+        0.3006,
+        0.9544
+      ]
+    },
+    "academic": {
+      "n": 5,
+      "pass": 5,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.5655,
+        1.0
+      ]
+    },
+    "shorten (đoạn)": {
+      "n": 2,
+      "pass": 2,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.3424,
+        1.0
+      ]
     }
   },
   "time": {
-    "mean": 27.28,
-    "median": 26.91,
-    "p95": 29.02,
-    "max": 31.83
+    "mean": 5.82,
+    "median": 4.79,
+    "p95": 10.49,
+    "max": 10.96
   },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": null,
   "extra": {
-    "similarity TB": 0.9752,
-    "tỉ lệ similarity ≥ 0.75": 1.0,
-    "tỉ lệ có thay đổi so với bản gốc": 1.0
+    "similarity TB": 0.939,
+    "tỉ lệ similarity ≥ 0.75": "100.0% (30/30; KTC95% 89%–100%)",
+    "tỉ lệ có thay đổi so với bản gốc": "100.0% (30/30; KTC95% 89%–100%)"
   },
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "5bf9644e3c7e",
+      "ref_sha": "155afe70ad64"
+    }
+  ],
   "failures": [
     {
-      "id": "rewrite-0006",
-      "group": "casual",
+      "id": "rewrite-0070#1",
+      "group": "formal",
       "reasons": [
-        "trả lời lẫn tiếng Việt dù yêu cầu tiếng Anh"
+        "không trả lời bằng tiếng Việt"
       ]
     }
   ],
-  "generated_at": "2026-10-29T22:13:38"
+  "generated_at": "2026-11-11T20:55:54",
+  "reference_status": {
+    "state": "GENERATED",
+    "seed": 42,
+    "generated_at": "2026-11-11T09:48:49",
+    "testbank_sha256": "e933efb82dbf"
+  },
+  "code_version": "42b8e0d"
 }

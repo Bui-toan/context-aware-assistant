@@ -1,34 +1,116 @@
 {
   "task": "grammar",
-  "n": 5,
-  "pass": 5,
-  "pass_rate": 1.0,
+  "n_runs": 30,
+  "n_cases": 30,
+  "pass": 28,
+  "pass_rate": 0.9333,
+  "pass_ci95": [
+    0.7868,
+    0.9815
+  ],
   "groups": {
     "mất dấu tiếng Việt": {
-      "n": 1,
-      "pass_rate": 1.0
+      "n": 4,
+      "pass": 3,
+      "pass_rate": 0.75,
+      "ci95": [
+        0.3006,
+        0.9544
+      ]
     },
     "lặp từ": {
-      "n": 2,
-      "pass_rate": 1.0
+      "n": 6,
+      "pass": 6,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.6097,
+        1.0
+      ]
     },
     "không có lỗi": {
-      "n": 2,
-      "pass_rate": 1.0
+      "n": 10,
+      "pass": 9,
+      "pass_rate": 0.9,
+      "ci95": [
+        0.5958,
+        0.9821
+      ]
+    },
+    "chia động từ": {
+      "n": 1,
+      "pass": 1,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.2065,
+        1.0
+      ]
+    },
+    "dính từ (thiếu khoảng trắng)": {
+      "n": 4,
+      "pass": 4,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.5101,
+        1.0
+      ]
+    },
+    "lỗi chính tả (đảo chữ)": {
+      "n": 5,
+      "pass": 5,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.5655,
+        1.0
+      ]
     }
   },
   "time": {
-    "mean": 25.62,
-    "median": 27.68,
-    "p95": 28.11,
-    "max": 28.12
+    "mean": 9.19,
+    "median": 5.65,
+    "p95": 16.88,
+    "max": 62.56
   },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": null,
   "extra": {
-    "tỉ lệ phát hiện lỗi": 1.0,
-    "tỉ lệ sửa tốt hơn bản gốc": 1.0,
-    "độ giống TB với câu đúng": 1.0,
-    "tỉ lệ báo nhầm (câu đúng bị sửa)": 0.0
+    "tỉ lệ phát hiện lỗi": "100.0% (20/20; KTC95% 84%–100%)",
+    "tỉ lệ sửa tốt hơn bản gốc": "95.0% (19/20; KTC95% 76%–99%)",
+    "độ giống TB với câu đúng": 0.987,
+    "tỉ lệ báo nhầm (câu đúng bị sửa)": "10.0% (1/10; KTC95% 2%–40%)"
   },
-  "failures": [],
-  "generated_at": "2026-10-29T22:11:03"
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "5bf9644e3c7e",
+      "ref_sha": "a977844505b6"
+    }
+  ],
+  "failures": [
+    {
+      "id": "grammar-0173#1",
+      "group": "mất dấu tiếng Việt",
+      "reasons": [
+        "không trùng đáp án đúng (độ giống 0.75, chưa sửa gì)"
+      ]
+    },
+    {
+      "id": "grammar-0008#1",
+      "group": "không có lỗi",
+      "reasons": [
+        "báo/sửa nhầm câu đã đúng"
+      ]
+    }
+  ],
+  "generated_at": "2026-11-11T20:50:16",
+  "reference_status": {
+    "state": "GENERATED",
+    "seed": 42,
+    "generated_at": "2026-11-11T09:48:49",
+    "testbank_sha256": "e933efb82dbf"
+  },
+  "code_version": "42b8e0d"
 }

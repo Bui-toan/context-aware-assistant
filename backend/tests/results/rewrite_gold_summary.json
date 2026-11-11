@@ -1,0 +1,136 @@
+{
+  "task": "rewrite_gold",
+  "n_runs": 18,
+  "n_cases": 6,
+  "pass": 13,
+  "pass_rate": 0.7222,
+  "pass_ci95": [
+    0.4913,
+    0.875
+  ],
+  "groups": {
+    "formal": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "casual": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "academic": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "shorten (đoạn)": {
+      "n": 6,
+      "pass": 4,
+      "pass_rate": 0.6667,
+      "ci95": [
+        0.3,
+        0.9032
+      ]
+    },
+    "improve": {
+      "n": 3,
+      "pass": 0,
+      "pass_rate": 0.0,
+      "ci95": [
+        0.0,
+        0.5615
+      ]
+    }
+  },
+  "time": {
+    "mean": 4.48,
+    "median": 3.99,
+    "p95": 7.02,
+    "max": 8.91
+  },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": {
+    "số ca chạy lặp": 6,
+    "ca ổn định (mọi lần cùng kết quả)": 5,
+    "ca DAO ĐỘNG giữa các lần": 1
+  },
+  "extra": {
+    "similarity TB": 0.932,
+    "tỉ lệ similarity ≥ 0.75": "100.0% (18/18; KTC95% 82%–100%)",
+    "tỉ lệ có thay đổi so với bản gốc": "100.0% (18/18; KTC95% 82%–100%)"
+  },
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "0fcf3ea225fe",
+      "ref_sha": "c01656efddf8"
+    }
+  ],
+  "failures": [
+    {
+      "id": "g-rew-05#1",
+      "group": "shorten (đoạn)",
+      "reasons": [
+        "shorten nhưng compressionRatio=1.005181347150259",
+        "shorten nhưng bản viết lại không ngắn hơn bản gốc"
+      ]
+    },
+    {
+      "id": "g-rew-05#3",
+      "group": "shorten (đoạn)",
+      "reasons": [
+        "shorten nhưng compressionRatio=1.0103626943005182",
+        "shorten nhưng bản viết lại không ngắn hơn bản gốc"
+      ]
+    },
+    {
+      "id": "g-rew-06#1",
+      "group": "improve",
+      "reasons": [
+        "mất thông tin bắt buộc: ['5 May']"
+      ]
+    },
+    {
+      "id": "g-rew-06#2",
+      "group": "improve",
+      "reasons": [
+        "mất thông tin bắt buộc: ['5 May']"
+      ]
+    },
+    {
+      "id": "g-rew-06#3",
+      "group": "improve",
+      "reasons": [
+        "mất thông tin bắt buộc: ['5 May']"
+      ]
+    }
+  ],
+  "generated_at": "2026-11-11T11:16:23",
+  "reference_status": {
+    "state": "APPROVED",
+    "reviewers": [
+      "Bùi Khánh Toàn",
+      "Nguyễn Hoàng Phú"
+    ],
+    "approved_at": "2026-11-11T10:24:31",
+    "cases": 69
+  },
+  "code_version": "42b8e0d"
+}

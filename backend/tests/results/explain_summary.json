@@ -1,33 +1,87 @@
 {
   "task": "explain",
-  "n": 5,
-  "pass": 5,
+  "n_runs": 30,
+  "n_cases": 30,
+  "pass": 30,
   "pass_rate": 1.0,
+  "pass_ci95": [
+    0.8865,
+    1.0
+  ],
   "groups": {
     "thuật ngữ en → trả lời en": {
-      "n": 1,
-      "pass_rate": 1.0
+      "n": 4,
+      "pass": 4,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.5101,
+        1.0
+      ]
     },
     "không có ngữ cảnh": {
-      "n": 2,
-      "pass_rate": 1.0
+      "n": 6,
+      "pass": 6,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.6097,
+        1.0
+      ]
     },
     "ngữ cảnh vi → trả lời vi": {
-      "n": 1,
-      "pass_rate": 1.0
+      "n": 6,
+      "pass": 6,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.6097,
+        1.0
+      ]
     },
     "ngữ cảnh vi → trả lời en": {
-      "n": 1,
-      "pass_rate": 1.0
+      "n": 9,
+      "pass": 9,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.7008,
+        1.0
+      ]
+    },
+    "thuật ngữ en → trả lời vi": {
+      "n": 5,
+      "pass": 5,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.5655,
+        1.0
+      ]
     }
   },
   "time": {
-    "mean": 25.89,
-    "median": 26.77,
-    "p95": 27.57,
-    "max": 27.64
+    "mean": 3.43,
+    "median": 3.44,
+    "p95": 3.66,
+    "max": 3.83
   },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": null,
   "extra": {},
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "0fcf3ea225fe",
+      "ref_sha": "66e292852180"
+    }
+  ],
   "failures": [],
-  "generated_at": "2026-10-29T22:08:37"
+  "generated_at": "2026-11-11T11:52:17",
+  "reference_status": {
+    "state": "GENERATED",
+    "seed": 42,
+    "generated_at": "2026-11-11T09:48:49",
+    "testbank_sha256": "e933efb82dbf"
+  },
+  "code_version": "42b8e0d"
 }

@@ -1,0 +1,215 @@
+{
+ "version": 1,
+ "author": "BẢN NHÁP do trợ lý AI soạn tay. CHƯA có người duyệt. Phải được 2 thành viên đối chiếu từng ca (python gold_tool.py sheet) rồi mới chốt (python gold_tool.py freeze).",
+ "rule": "Tuyệt đối không sửa file này để 'cho test qua'. Sửa là mất dấu chốt (hash đổi) và kết quả sẽ bị đánh dấu TAMPERED.",
+ "cases": [
+  {
+   "docId": "vi_energy",
+   "language": "vi",
+   "chunks": [
+    {
+     "chunkId": "c01",
+     "text": "Năng lượng tái tạo là nguồn năng lượng được lấy từ những nguồn có thể tự phục hồi như ánh sáng mặt trời, gió và nước."
+    },
+    {
+     "chunkId": "c02",
+     "text": "Điện mặt trời hoạt động nhờ các tấm pin quang điện biến ánh sáng thành điện năng."
+    },
+    {
+     "chunkId": "c03",
+     "text": "Điện gió sử dụng các tua-bin lớn để biến động năng của gió thành điện, thường đặt ở vùng ven biển hoặc đồi núi."
+    },
+    {
+     "chunkId": "c04",
+     "text": "Thủy điện tạo ra điện từ dòng nước chảy qua đập, và là nguồn điện lớn nhất trong nhóm năng lượng tái tạo ở nhiều nước."
+    },
+    {
+     "chunkId": "c05",
+     "text": "Nhược điểm chính của điện mặt trời và điện gió là phụ thuộc thời tiết nên sản lượng không ổn định."
+    },
+    {
+     "chunkId": "c06",
+     "text": "Để khắc phục, nhiều nước đầu tư hệ thống pin lưu trữ để tích điện lúc dư và dùng lại khi thiếu."
+    },
+    {
+     "chunkId": "c07",
+     "text": "Việt Nam có số giờ nắng cao ở miền Trung và miền Nam, thuận lợi để phát triển điện mặt trời."
+    },
+    {
+     "chunkId": "c08",
+     "text": "Chi phí lắp đặt tấm pin đã giảm mạnh trong mười năm qua, giúp nhiều hộ gia đình tự lắp trên mái nhà."
+    },
+    {
+     "chunkId": "c09",
+     "text": "Năng lượng hạt nhân không thải khí nhà kính khi vận hành nhưng đặt ra vấn đề xử lý chất thải phóng xạ."
+    },
+    {
+     "chunkId": "c10",
+     "text": "Than đá và dầu mỏ vẫn chiếm tỉ trọng lớn trong sản xuất điện toàn cầu và là nguồn phát thải carbon chính."
+    },
+    {
+     "chunkId": "c11",
+     "text": "Hiệp định Paris kêu gọi các quốc gia giảm phát thải để hạn chế mức tăng nhiệt độ toàn cầu."
+    },
+    {
+     "chunkId": "c12",
+     "text": "Người tiêu dùng có thể tiết kiệm điện bằng cách dùng đèn LED và thiết bị tiết kiệm năng lượng."
+    }
+   ],
+   "queries": [
+    {
+     "id": "vi_energy-q1",
+     "query": "tấm pin biến nắng thành điện như thế nào",
+     "language": "vi",
+     "relevant": [
+      "c02"
+     ]
+    },
+    {
+     "id": "vi_energy-q2",
+     "query": "vì sao điện gió và điện mặt trời không ổn định",
+     "language": "vi",
+     "relevant": [
+      "c05"
+     ]
+    },
+    {
+     "id": "vi_energy-q3",
+     "query": "giải pháp để lưu điện khi dư thừa",
+     "language": "vi",
+     "relevant": [
+      "c06"
+     ]
+    },
+    {
+     "id": "vi_energy-q4",
+     "query": "which source is the biggest among renewable power",
+     "language": "en",
+     "relevant": [
+      "c04"
+     ]
+    },
+    {
+     "id": "vi_energy-q5",
+     "query": "nhà máy điện hạt nhân có vấn đề gì",
+     "language": "vi",
+     "relevant": [
+      "c09"
+     ]
+    },
+    {
+     "id": "vi_energy-q6",
+     "query": "how can households save electricity",
+     "language": "en",
+     "relevant": [
+      "c12"
+     ]
+    }
+   ]
+  },
+  {
+   "docId": "en_vaccine",
+   "language": "en",
+   "chunks": [
+    {
+     "chunkId": "d01",
+     "text": "The immune system protects the body by recognizing and destroying germs such as bacteria and viruses."
+    },
+    {
+     "chunkId": "d02",
+     "text": "White blood cells patrol the bloodstream and attack anything that looks foreign."
+    },
+    {
+     "chunkId": "d03",
+     "text": "A vaccine contains a weakened or inactive part of a germ so the body can practice fighting it safely."
+    },
+    {
+     "chunkId": "d04",
+     "text": "After vaccination, the body produces antibodies and memory cells that remember the germ for years."
+    },
+    {
+     "chunkId": "d05",
+     "text": "Some vaccines need booster doses because protection can fade over time."
+    },
+    {
+     "chunkId": "d06",
+     "text": "Herd immunity occurs when enough people are immune that the disease cannot spread easily."
+    },
+    {
+     "chunkId": "d07",
+     "text": "Common side effects of vaccines include a sore arm, mild fever, and tiredness for a day or two."
+    },
+    {
+     "chunkId": "d08",
+     "text": "Serious allergic reactions to vaccines are very rare and are usually treated quickly at the clinic."
+    },
+    {
+     "chunkId": "d09",
+     "text": "Antibiotics kill bacteria but do not work against viruses such as the common cold or flu."
+    },
+    {
+     "chunkId": "d10",
+     "text": "Hand washing and wearing masks reduce the spread of respiratory infections."
+    },
+    {
+     "chunkId": "d11",
+     "text": "Children usually receive a schedule of vaccines starting from birth to protect them early."
+    },
+    {
+     "chunkId": "d12",
+     "text": "Researchers test new vaccines in several phases of clinical trials before approval."
+    }
+   ],
+   "queries": [
+    {
+     "id": "en_vaccine-q1",
+     "query": "why do some shots need extra doses later",
+     "language": "en",
+     "relevant": [
+      "d05"
+     ]
+    },
+    {
+     "id": "en_vaccine-q2",
+     "query": "tác dụng phụ thường gặp sau khi tiêm",
+     "language": "vi",
+     "relevant": [
+      "d07"
+     ]
+    },
+    {
+     "id": "en_vaccine-q3",
+     "query": "kháng sinh có chữa được cúm không",
+     "language": "vi",
+     "relevant": [
+      "d09"
+     ]
+    },
+    {
+     "id": "en_vaccine-q4",
+     "query": "how does the body remember a germ",
+     "language": "en",
+     "relevant": [
+      "d04"
+     ]
+    },
+    {
+     "id": "en_vaccine-q5",
+     "query": "miễn dịch cộng đồng là gì",
+     "language": "vi",
+     "relevant": [
+      "d06"
+     ]
+    },
+    {
+     "id": "en_vaccine-q6",
+     "query": "how are new vaccines checked for safety before approval",
+     "language": "en",
+     "relevant": [
+      "d12"
+     ]
+    }
+   ]
+  }
+ ]
+}

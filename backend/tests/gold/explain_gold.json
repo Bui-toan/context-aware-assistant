@@ -1,0 +1,187 @@
+{
+ "version": 1,
+ "author": "BẢN NHÁP do trợ lý AI soạn tay. CHƯA có người duyệt. Phải được 2 thành viên đối chiếu từng ca (python gold_tool.py sheet) rồi mới chốt (python gold_tool.py freeze).",
+ "rule": "Tuyệt đối không sửa file này để 'cho test qua'. Sửa là mất dấu chốt (hash đổi) và kết quả sẽ bị đánh dấu TAMPERED.",
+ "cases": [
+  {
+   "id": "g-exp-01",
+   "variant": "thuật ngữ kỹ thuật",
+   "text": "overfitting",
+   "context": "Mô hình bị overfitting khi chỉ học thuộc dữ liệu huấn luyện.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Hiện tượng mô hình học quá khớp với dữ liệu huấn luyện nên dự đoán kém trên dữ liệu mới.",
+    "explanation": "Mô hình ghi nhớ cả nhiễu của tập huấn luyện thay vì học quy luật chung."
+   },
+   "must_include": [
+    [
+     "huấn luyện",
+     "training",
+     "train"
+    ],
+    [
+     "dữ liệu mới",
+     "chưa từng thấy",
+     "tổng quát",
+     "dữ liệu khác"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-02",
+   "variant": "từ đa nghĩa: bờ sông",
+   "text": "bank",
+   "context": "We sat on the bank of the river and watched the boats.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Bờ sông.",
+    "explanation": "Trong câu này bank là bờ sông, nơi họ ngồi xem thuyền."
+   },
+   "must_include": [
+    [
+     "bờ"
+    ],
+    [
+     "sông"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-03",
+   "variant": "từ đa nghĩa: ngân hàng",
+   "text": "bank",
+   "context": "She deposited her salary at the bank near her office.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Ngân hàng.",
+    "explanation": "Trong câu này bank là ngân hàng, nơi cô ấy gửi lương."
+   },
+   "must_include": [
+    [
+     "ngân hàng"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-04",
+   "variant": "thuật ngữ, trả lời tiếng Anh",
+   "text": "latency",
+   "context": "High latency makes the app feel slow even on a fast network.",
+   "language": "en",
+   "reference": {
+    "meaning": "The delay between sending a request and receiving a response.",
+    "explanation": "High latency means each request takes long to come back, so the app feels slow."
+   },
+   "must_include": [
+    [
+     "delay",
+     "time",
+     "wait",
+     "lag"
+    ],
+    [
+     "request",
+     "response",
+     "network",
+     "slow"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-05",
+   "variant": "khái niệm khoa học",
+   "text": "quang hợp",
+   "context": "Quang hợp là quá trình cây xanh tạo ra đường và oxy từ ánh sáng, nước và CO2.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Quá trình cây xanh dùng ánh sáng để tạo ra chất hữu cơ và oxy.",
+    "explanation": "Cây hấp thụ ánh sáng, nước và CO2 để tạo ra đường và giải phóng oxy."
+   },
+   "must_include": [
+    [
+     "ánh sáng",
+     "năng lượng"
+    ],
+    [
+     "oxy",
+     "đường"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-06",
+   "variant": "khái niệm kinh tế",
+   "text": "inflation",
+   "context": "Rising inflation reduces what each dollar can buy.",
+   "language": "en",
+   "reference": {
+    "meaning": "A general rise in prices that lowers the purchasing power of money.",
+    "explanation": "When prices rise, the same amount of money buys fewer goods."
+   },
+   "must_include": [
+    [
+     "price",
+     "prices"
+    ],
+    [
+     "buy",
+     "purchasing",
+     "afford",
+     "value"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-07",
+   "variant": "ngữ cảnh tiếng Anh, trả lời tiếng Việt",
+   "text": "cache",
+   "context": "A cache stores recent results so the page loads faster.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Bộ nhớ đệm lưu tạm dữ liệu vừa dùng.",
+    "explanation": "Cache lưu kết quả gần đây để lần sau lấy nhanh hơn, giúp trang tải nhanh."
+   },
+   "must_include": [
+    [
+     "lưu",
+     "bộ nhớ",
+     "nhớ tạm"
+    ],
+    [
+     "nhanh",
+     "tốc độ",
+     "tải"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-exp-08",
+   "variant": "từ đa nghĩa: công ty",
+   "text": "Apple",
+   "context": "Apple released a new phone this autumn.",
+   "language": "en",
+   "reference": {
+    "meaning": "The technology company Apple Inc.",
+    "explanation": "Here Apple is the company that makes phones, not the fruit."
+   },
+   "must_include": [
+    [
+     "company",
+     "tech",
+     "technology",
+     "brand",
+     "manufacturer",
+     "corporation"
+    ]
+   ],
+   "must_not_include": []
+  }
+ ]
+}

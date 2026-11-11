@@ -1,0 +1,121 @@
+{
+  "task": "explain_gold",
+  "n_runs": 24,
+  "n_cases": 8,
+  "pass": 24,
+  "pass_rate": 1.0,
+  "pass_ci95": [
+    0.862,
+    1.0
+  ],
+  "groups": {
+    "thuật ngữ kỹ thuật": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "từ đa nghĩa: bờ sông": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "từ đa nghĩa: ngân hàng": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "thuật ngữ, trả lời tiếng Anh": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "khái niệm khoa học": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "khái niệm kinh tế": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "ngữ cảnh tiếng Anh, trả lời tiếng Việt": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "từ đa nghĩa: công ty": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    }
+  },
+  "time": {
+    "mean": 7.91,
+    "median": 7.67,
+    "p95": 11.57,
+    "max": 19.5
+  },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": {
+    "số ca chạy lặp": 8,
+    "ca ổn định (mọi lần cùng kết quả)": 8,
+    "ca DAO ĐỘNG giữa các lần": 0
+  },
+  "extra": {},
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "0fcf3ea225fe",
+      "ref_sha": "0315922299f7"
+    }
+  ],
+  "failures": [],
+  "generated_at": "2026-11-11T11:02:52",
+  "reference_status": {
+    "state": "APPROVED",
+    "reviewers": [
+      "Bùi Khánh Toàn",
+      "Nguyễn Hoàng Phú"
+    ],
+    "approved_at": "2026-11-11T10:24:31",
+    "cases": 69
+  },
+  "code_version": "42b8e0d"
+}

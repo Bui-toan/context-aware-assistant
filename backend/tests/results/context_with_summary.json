@@ -1,0 +1,82 @@
+{
+  "task": "context_with",
+  "n_runs": 72,
+  "n_cases": 24,
+  "pass": 70,
+  "pass_rate": 0.9722,
+  "pass_ci95": [
+    0.9043,
+    0.9923
+  ],
+  "groups": {
+    "tiếng Anh đa nghĩa": {
+      "n": 48,
+      "pass": 48,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.9259,
+        1.0
+      ]
+    },
+    "tiếng Việt đa nghĩa": {
+      "n": 24,
+      "pass": 22,
+      "pass_rate": 0.9167,
+      "ci95": [
+        0.7415,
+        0.9768
+      ]
+    }
+  },
+  "time": {
+    "mean": 4.67,
+    "median": 4.57,
+    "p95": 7.21,
+    "max": 7.94
+  },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": {
+    "số ca chạy lặp": 24,
+    "ca ổn định (mọi lần cùng kết quả)": 23,
+    "ca DAO ĐỘNG giữa các lần": 1
+  },
+  "extra": {},
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "0fcf3ea225fe",
+      "ref_sha": "f4d4c4fc340a"
+    }
+  ],
+  "failures": [
+    {
+      "id": "g-ctx-23#2",
+      "group": "tiếng Việt đa nghĩa",
+      "reasons": [
+        "thiếu ý bắt buộc: ['muồi']"
+      ]
+    },
+    {
+      "id": "g-ctx-23#3",
+      "group": "tiếng Việt đa nghĩa",
+      "reasons": [
+        "thiếu ý bắt buộc: ['muồi']"
+      ]
+    }
+  ],
+  "generated_at": "2026-11-11T11:27:25",
+  "reference_status": {
+    "state": "APPROVED",
+    "reviewers": [
+      "Bùi Khánh Toàn",
+      "Nguyễn Hoàng Phú"
+    ],
+    "approved_at": "2026-11-11T10:24:31",
+    "cases": 69
+  },
+  "code_version": "42b8e0d"
+}

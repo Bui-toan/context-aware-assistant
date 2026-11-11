@@ -1,0 +1,186 @@
+{
+ "version": 1,
+ "author": "BẢN NHÁP do trợ lý AI soạn tay. CHƯA có người duyệt. Phải được 2 thành viên đối chiếu từng ca (python gold_tool.py sheet) rồi mới chốt (python gold_tool.py freeze).",
+ "rule": "Tuyệt đối không sửa file này để 'cho test qua'. Sửa là mất dấu chốt (hash đổi) và kết quả sẽ bị đánh dấu TAMPERED.",
+ "cases": [
+  {
+   "id": "g-gram-01",
+   "language": "vi",
+   "error_type": "mất dấu",
+   "text": "Hom nay toi di lam bang xe may.",
+   "expected": "Hôm nay tôi đi làm bằng xe máy.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-02",
+   "language": "vi",
+   "error_type": "chính tả",
+   "text": "Chúng em xin chân thành cảm ơn thầy cô đã tận tình giúp đở.",
+   "expected": "Chúng em xin chân thành cảm ơn thầy cô đã tận tình giúp đỡ.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-03",
+   "language": "vi",
+   "error_type": "chính tả",
+   "text": "Bạn hãy xắp xếp lại các tài liệu theo thứ tự.",
+   "expected": "Bạn hãy sắp xếp lại các tài liệu theo thứ tự.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-04",
+   "language": "vi",
+   "error_type": "lặp từ",
+   "text": "Em đã đã nộp bài tập vào hôm qua.",
+   "expected": "Em đã nộp bài tập vào hôm qua.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-05",
+   "language": "vi",
+   "error_type": "lặp từ",
+   "text": "Chúng tôi sẽ sẽ tổ chức buổi họp vào thứ Hai.",
+   "expected": "Chúng tôi sẽ tổ chức buổi họp vào thứ Hai.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-06",
+   "language": "vi",
+   "error_type": "dính từ",
+   "text": "Hãy kiểm tra lạiphần cài đặt của ứng dụng.",
+   "expected": "Hãy kiểm tra lại phần cài đặt của ứng dụng.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-07",
+   "language": "vi",
+   "error_type": "chính tả",
+   "text": "Báo cáo vẫn còn nhiều thiếu xót.",
+   "expected": "Báo cáo vẫn còn nhiều thiếu sót.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-08",
+   "language": "vi",
+   "error_type": "không có lỗi",
+   "text": "Cô ấy đã hoàn thành báo cáo trước hạn nộp.",
+   "expected": "Cô ấy đã hoàn thành báo cáo trước hạn nộp.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-09",
+   "language": "vi",
+   "error_type": "không có lỗi",
+   "text": "Mô hình được huấn luyện trên tập dữ liệu rất lớn.",
+   "expected": "Mô hình được huấn luyện trên tập dữ liệu rất lớn.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-10",
+   "language": "en",
+   "error_type": "chia động từ",
+   "text": "She don't like coffee in the morning.",
+   "expected": "She doesn't like coffee in the morning.",
+   "alternatives": [
+    "She does not like coffee in the morning."
+   ],
+   "context": ""
+  },
+  {
+   "id": "g-gram-11",
+   "language": "en",
+   "error_type": "chia động từ",
+   "text": "He have two brothers and one sister.",
+   "expected": "He has two brothers and one sister.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-12",
+   "language": "en",
+   "error_type": "chia động từ",
+   "text": "The results is shown in the table below.",
+   "expected": "The results are shown in the table below.",
+   "alternatives": [
+    "The result is shown in the table below."
+   ],
+   "context": ""
+  },
+  {
+   "id": "g-gram-13",
+   "language": "en",
+   "error_type": "chính tả",
+   "text": "We recieved your message yesterday.",
+   "expected": "We received your message yesterday.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-14",
+   "language": "en",
+   "error_type": "chia động từ",
+   "text": "There is many students in the classroom.",
+   "expected": "There are many students in the classroom.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-15",
+   "language": "en",
+   "error_type": "nhầm từ",
+   "text": "Their going to submit the assignment tomorrow.",
+   "expected": "They're going to submit the assignment tomorrow.",
+   "alternatives": [
+    "They are going to submit the assignment tomorrow."
+   ],
+   "context": ""
+  },
+  {
+   "id": "g-gram-16",
+   "language": "en",
+   "error_type": "nhiều lỗi",
+   "text": "The teacher explain the lesson very clear.",
+   "expected": "The teacher explained the lesson very clearly.",
+   "alternatives": [
+    "The teacher explains the lesson very clearly."
+   ],
+   "context": ""
+  },
+  {
+   "id": "g-gram-17",
+   "language": "en",
+   "error_type": "dạng động từ",
+   "text": "I am looking forward to hear from you.",
+   "expected": "I am looking forward to hearing from you.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-18",
+   "language": "en",
+   "error_type": "không có lỗi",
+   "text": "The meeting starts at nine o'clock tomorrow morning.",
+   "expected": "The meeting starts at nine o'clock tomorrow morning.",
+   "alternatives": [],
+   "context": ""
+  },
+  {
+   "id": "g-gram-19",
+   "language": "en",
+   "error_type": "không có lỗi",
+   "text": "Please send me the final version of the document.",
+   "expected": "Please send me the final version of the document.",
+   "alternatives": [],
+   "context": ""
+  }
+ ]
+}

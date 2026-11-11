@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-11T10:53:40",
+  "reference_status": {
+    "state": "APPROVED",
+    "reviewers": [
+      "Bùi Khánh Toàn",
+      "Nguyễn Hoàng Phú"
+    ],
+    "approved_at": "2026-11-11T10:24:31",
+    "cases": 69
+  },
+  "code_version": "42b8e0d",
+  "overall": {
+    "n": 12,
+    "n_unique_queries": 12,
+    "hit@1": 1.0,
+    "hit@5": 1.0,
+    "hit@1_text": "100.0% (12/12; KTC95% 76%–100%)",
+    "hit@5_text": "100.0% (12/12; KTC95% 76%–100%)",
+    "mrr": 1.0,
+    "time_mean": 2.439,
+    "time_max": 2.654
+  },
+  "cross_lingual": {
+    "n": 5,
+    "n_unique_queries": 5,
+    "hit@1": 1.0,
+    "hit@5": 1.0,
+    "hit@1_text": "100.0% (5/5; KTC95% 57%–100%)",
+    "hit@5_text": "100.0% (5/5; KTC95% 57%–100%)",
+    "mrr": 1.0,
+    "time_mean": 2.465,
+    "time_max": 2.654
+  },
+  "same_language": {
+    "n": 7,
+    "n_unique_queries": 7,
+    "hit@1": 1.0,
+    "hit@5": 1.0,
+    "hit@1_text": "100.0% (7/7; KTC95% 65%–100%)",
+    "hit@5_text": "100.0% (7/7; KTC95% 65%–100%)",
+    "mrr": 1.0,
+    "time_mean": 2.421,
+    "time_max": 2.541
+  },
+  "recall@5": 1.0,
+  "failures_top5": []
+}

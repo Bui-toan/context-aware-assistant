@@ -12,7 +12,7 @@ import json
 import random
 import unicodedata
 
-from common import DATA_DIR
+from common import DATA_DIR, write_data_manifest
 from testbank import EN_TERMS, NEG, T
 
 VI_I, EN_I = 1, 2
@@ -287,14 +287,16 @@ def gen_pairs():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", type=int, default=42)
-    rng.seed(ap.parse_args().seed)
+    seed = ap.parse_args().seed
+    rng.seed(seed)
     save("search_cases.json", gen_search())
     save("explain_cases.json", gen_explain())
     save("grammar_cases.json", gen_grammar())
     save("rewrite_cases.json", gen_rewrite())
     save("robustness_cases.json", gen_robust())
     save("threshold_pairs.json", gen_pairs())
-    print(f"\nData đã lưu tại: {DATA_DIR}")
+    write_data_manifest(seed)
+    print(f"\nData đã lưu tại: {DATA_DIR}  (kèm MANIFEST.json: seed + SHA-256 từng file)")
 
 
 if __name__ == "__main__":

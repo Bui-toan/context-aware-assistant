@@ -1,0 +1,483 @@
+{
+ "version": 1,
+ "author": "BẢN NHÁP do trợ lý AI soạn tay. CHƯA có người duyệt (python gold_tool.py sheet / freeze).",
+ "purpose": "Thí nghiệm chứng minh điểm khác biệt Context-Aware: cùng một từ đa nghĩa, chạy HAI lần (có ngữ cảnh / không ngữ cảnh) rồi so sánh.",
+ "rule": "Không sửa file này để 'cho test qua'. Sửa là đổi hash và bị đánh dấu TAMPERED.",
+ "cases": [
+  {
+   "id": "g-ctx-01",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: bờ sông",
+   "text": "bank",
+   "context": "We sat on the bank of the river and watched the boats.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Bờ sông.",
+    "explanation": "Ở đây bank là bờ sông."
+   },
+   "must_include": [
+    [
+     "bờ"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-02",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: ngân hàng",
+   "text": "bank",
+   "context": "She deposited her salary at the bank near her office.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Ngân hàng.",
+    "explanation": "Ở đây bank là ngân hàng, nơi gửi tiền."
+   },
+   "must_include": [
+    [
+     "ngân hàng"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-03",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: công ty",
+   "text": "Apple",
+   "context": "Apple released a new phone this autumn.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Công ty công nghệ Apple.",
+    "explanation": "Ở đây Apple là công ty sản xuất điện thoại."
+   },
+   "must_include": [
+    [
+     "công ty",
+     "hãng",
+     "tập đoàn"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-04",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: quả táo",
+   "text": "apple",
+   "context": "She ate a red apple for lunch.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Quả táo.",
+    "explanation": "Ở đây apple là quả táo, trái cây."
+   },
+   "must_include": [
+    [
+     "quả",
+     "trái"
+    ],
+    [
+     "táo"
+    ]
+   ],
+   "must_not_include": [
+    "iphone",
+    "công ty",
+    "hãng"
+   ]
+  },
+  {
+   "id": "g-ctx-05",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: ngôn ngữ lập trình",
+   "text": "Python",
+   "context": "I wrote the script in Python and ran it on the server.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Ngôn ngữ lập trình Python.",
+    "explanation": "Ở đây Python là ngôn ngữ lập trình."
+   },
+   "must_include": [
+    [
+     "lập trình",
+     "ngôn ngữ"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-06",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: con trăn",
+   "text": "python",
+   "context": "A python slowly wrapped around the branch.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Con trăn.",
+    "explanation": "Ở đây python là loài rắn lớn, con trăn."
+   },
+   "must_include": [
+    [
+     "rắn",
+     "trăn"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-07",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: cà phê",
+   "text": "Java",
+   "context": "She drinks a cup of Java every morning.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Cà phê.",
+    "explanation": "Java ở đây là cách gọi cà phê."
+   },
+   "must_include": [
+    [
+     "cà phê"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-08",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: ngôn ngữ lập trình",
+   "text": "Java",
+   "context": "He built the backend in Java.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Ngôn ngữ lập trình Java.",
+    "explanation": "Ở đây Java là ngôn ngữ lập trình."
+   },
+   "must_include": [
+    [
+     "lập trình",
+     "ngôn ngữ"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-09",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: phòng giam",
+   "text": "cell",
+   "context": "The prisoner was moved to a different cell.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Phòng giam.",
+    "explanation": "Ở đây cell là phòng giam."
+   },
+   "must_include": [
+    [
+     "phòng giam",
+     "buồng giam",
+     "nhà tù",
+     "phòng tù"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-10",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: tế bào",
+   "text": "cell",
+   "context": "Each cell contains a nucleus.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Tế bào.",
+    "explanation": "Ở đây cell là tế bào sinh học."
+   },
+   "must_include": [
+    [
+     "tế bào"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-11",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: lò xo",
+   "text": "spring",
+   "context": "The spring in the pen broke.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Lò xo.",
+    "explanation": "Ở đây spring là lò xo."
+   },
+   "must_include": [
+    [
+     "lò xo"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-12",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: mùa xuân",
+   "text": "spring",
+   "context": "Flowers bloom in spring.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Mùa xuân.",
+    "explanation": "Ở đây spring là mùa xuân."
+   },
+   "must_include": [
+    [
+     "mùa xuân",
+     "xuân"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-13",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: con dơi",
+   "text": "bat",
+   "context": "A bat flew out of the cave at night.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Con dơi.",
+    "explanation": "Ở đây bat là con dơi."
+   },
+   "must_include": [
+    [
+     "dơi"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-14",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: gậy",
+   "text": "bat",
+   "context": "He swung the bat and hit the ball.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Cây gậy.",
+    "explanation": "Ở đây bat là gậy đánh bóng."
+   },
+   "must_include": [
+    [
+     "gậy"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-15",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: máy tính",
+   "text": "virus",
+   "context": "A virus infected her laptop.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Phần mềm độc hại.",
+    "explanation": "Ở đây virus là virus máy tính."
+   },
+   "must_include": [
+    [
+     "máy tính",
+     "phần mềm độc hại",
+     "mã độc"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-16",
+   "variant": "tiếng Anh đa nghĩa",
+   "sense": "Ngữ cảnh: bệnh",
+   "text": "virus",
+   "context": "The flu virus spreads through the air.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Vi rút gây bệnh.",
+    "explanation": "Ở đây virus là tác nhân gây bệnh cúm."
+   },
+   "must_include": [
+    [
+     "cúm",
+     "bệnh",
+     "cơ thể",
+     "sinh học"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-17",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: chất ngọt",
+   "text": "đường",
+   "context": "Cho thêm một thìa đường vào cà phê.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Chất ngọt.",
+    "explanation": "Ở đây đường là đường ăn."
+   },
+   "must_include": [
+    [
+     "ngọt",
+     "gia vị"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-18",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: con đường",
+   "text": "đường",
+   "context": "Xe chạy trên đường cao tốc.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Con đường.",
+    "explanation": "Ở đây đường là lối đi cho xe."
+   },
+   "must_include": [
+    [
+     "con đường",
+     "lối đi",
+     "giao thông"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-19",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: thảo luận",
+   "text": "bàn",
+   "context": "Cả nhóm ngồi bàn kế hoạch cho dự án.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Thảo luận.",
+    "explanation": "Ở đây bàn là bàn bạc."
+   },
+   "must_include": [
+    [
+     "thảo luận",
+     "trao đổi",
+     "bàn bạc"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-20",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: đồ vật",
+   "text": "bàn",
+   "context": "Cô ấy đặt cốc nước lên bàn.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Cái bàn.",
+    "explanation": "Ở đây bàn là đồ nội thất."
+   },
+   "must_include": [
+    [
+     "đồ vật",
+     "đồ nội thất",
+     "vật dụng",
+     "mặt phẳng",
+     "cái bàn"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-21",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: internet",
+   "text": "mạng",
+   "context": "Máy tính bị mất mạng nên không gửi được email.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Mạng internet.",
+    "explanation": "Ở đây mạng là kết nối internet."
+   },
+   "must_include": [
+    [
+     "internet",
+     "kết nối",
+     "mạng máy tính",
+     "mạng lưới"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-22",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: sinh mạng",
+   "text": "mạng",
+   "context": "Người lính đã hy sinh mạng sống để cứu đồng đội.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Tính mạng.",
+    "explanation": "Ở đây mạng là sinh mạng."
+   },
+   "must_include": [
+    [
+     "sinh mạng",
+     "tính mạng",
+     "sự sống",
+     "cuộc sống"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-23",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: quả chín",
+   "text": "chín",
+   "context": "Quả xoài đã chín vàng.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Quả đã đủ độ, ăn được.",
+    "explanation": "Ở đây chín là trạng thái quả đã chín muồi."
+   },
+   "must_include": [
+    [
+     "muồi",
+     "ăn được",
+     "trưởng thành",
+     "đủ độ"
+    ]
+   ],
+   "must_not_include": []
+  },
+  {
+   "id": "g-ctx-24",
+   "variant": "tiếng Việt đa nghĩa",
+   "sense": "Ngữ cảnh: số 9",
+   "text": "chín",
+   "context": "Cô bé lên chín tuổi.",
+   "language": "vi",
+   "reference": {
+    "meaning": "Số chín.",
+    "explanation": "Ở đây chín là số 9."
+   },
+   "must_include": [
+    [
+     "số 9",
+     "số chín",
+     "con số",
+     "9"
+    ]
+   ],
+   "must_not_include": []
+  }
+ ]
+}

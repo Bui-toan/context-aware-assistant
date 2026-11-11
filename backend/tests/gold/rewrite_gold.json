@@ -1,0 +1,105 @@
+{
+ "version": 1,
+ "author": "BẢN NHÁP do trợ lý AI soạn tay. CHƯA có người duyệt. Phải được 2 thành viên đối chiếu từng ca (python gold_tool.py sheet) rồi mới chốt (python gold_tool.py freeze).",
+ "rule": "Tuyệt đối không sửa file này để 'cho test qua'. Sửa là mất dấu chốt (hash đổi) và kết quả sẽ bị đánh dấu TAMPERED.",
+ "cases": [
+  {
+   "id": "g-rew-01",
+   "language": "vi",
+   "mode": "formal",
+   "text": "Mai họp lúc 9 giờ nha, mọi người nhớ đến sớm ở phòng 301 nhé.",
+   "context": "",
+   "length": "câu",
+   "reference": "Cuộc họp diễn ra lúc 9 giờ ngày mai tại phòng 301, đề nghị mọi người có mặt sớm.",
+   "must_keep": [
+    "9",
+    "301"
+   ],
+   "must_not_contain": [
+    "nha",
+    "nhé"
+   ]
+  },
+  {
+   "id": "g-rew-02",
+   "language": "vi",
+   "mode": "casual",
+   "text": "Kính mời quý khách đến dự buổi hội thảo vào ngày 15 tháng 3 tại Hà Nội.",
+   "context": "",
+   "length": "câu",
+   "reference": "Mời bạn đến dự hội thảo ngày 15 tháng 3 ở Hà Nội nha.",
+   "must_keep": [
+    "15",
+    "Hà Nội"
+   ],
+   "must_not_contain": [
+    "kính mời",
+    "quý khách"
+   ]
+  },
+  {
+   "id": "g-rew-03",
+   "language": "en",
+   "mode": "academic",
+   "text": "The AI thing got way better after they used 3 million training examples.",
+   "context": "",
+   "length": "câu",
+   "reference": "Model performance improved substantially after training on 3 million examples.",
+   "must_keep": [
+    [
+     "3 million",
+     "three million",
+     "3,000,000"
+    ]
+   ],
+   "must_not_contain": [
+    "thing",
+    "way better"
+   ]
+  },
+  {
+   "id": "g-rew-04",
+   "language": "vi",
+   "mode": "shorten",
+   "text": "Năm 2019, công ty đã mở rộng sang ba tỉnh mới, tuyển thêm hơn hai trăm nhân viên và đồng thời đầu tư vào một hệ thống quản lý kho hiện đại để tăng tốc độ giao hàng cho khách.",
+   "context": "",
+   "length": "đoạn",
+   "reference": "Năm 2019, công ty mở rộng sang ba tỉnh, tuyển thêm hơn hai trăm nhân viên và đầu tư hệ thống quản lý kho.",
+   "must_keep": [
+    "2019"
+   ],
+   "must_not_contain": []
+  },
+  {
+   "id": "g-rew-05",
+   "language": "en",
+   "mode": "shorten",
+   "text": "In 2021 the university opened a new library that has more than ten thousand books, many quiet study rooms, and a large reading hall that students can use from early morning until late at night.",
+   "context": "",
+   "length": "đoạn",
+   "reference": "In 2021 the university opened a library with over ten thousand books and many study rooms.",
+   "must_keep": [
+    "2021"
+   ],
+   "must_not_contain": []
+  },
+  {
+   "id": "g-rew-06",
+   "language": "en",
+   "mode": "improve",
+   "text": "Me and him goes to the market on 5 May.",
+   "context": "",
+   "length": "câu",
+   "reference": "He and I go to the market on 5 May.",
+   "must_keep": [
+    [
+     "5 May",
+     "May 5"
+    ]
+   ],
+   "must_not_contain": [
+    "me and him goes"
+   ]
+  }
+ ]
+}

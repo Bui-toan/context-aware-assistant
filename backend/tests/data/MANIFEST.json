@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "generated_at": "2026-11-11T09:48:49",
+  "testbank_sha256": "e933efb82dbf150310601a269e6f3d7aa72098bc61718824578c303fc90ea68a",
+  "generator_sha256": "c5f858fe5e1eb75f70bf39ffea2bf9f97afc887b4b981fb3d277df101da228d3",
+  "files": {
+    "explain_cases.json": "66e292852180f48bb317b3853ca67f26aa916caa00ebfef080f7e2188b1702db",
+    "grammar_cases.json": "a977844505b60f44ae0725634b521d6db20d1a9ee8c6a3e3b7cc640775b817a7",
+    "rewrite_cases.json": "155afe70ad6448d1e36eef7ef56868996fa75b7f14f498a22eda48979aca2029",
+    "robustness_cases.json": "784ab4f00d7e70b98fb23e7354f3adcfedddb065b18b6d325b62d7e1ff022ca6",
+    "search_cases.json": "d15441f8ce64deb793d0124f4bfd6694f7af250baae9a8489754e703d8f7564c",
+    "threshold_pairs.json": "38468c505fb54d014e7a4917101431bef9dc4b33fdc09e9bf02332ca5c951e70"
+  }
+}

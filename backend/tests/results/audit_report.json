@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-11-11T09:48:59",
+  "data_status": {
+    "state": "GENERATED",
+    "seed": 42,
+    "generated_at": "2026-11-11T09:48:49",
+    "testbank_sha256": "e933efb82dbf"
+  },
+  "tổng ca sai": 0,
+  "chi tiết": {
+    "search": {
+      "số ca": 426,
+      "số ca sai": 0,
+      "ví dụ lỗi": []
+    },
+    "grammar": {
+      "số ca": 190,
+      "số ca sai": 0,
+      "ví dụ lỗi": []
+    },
+    "explain": {
+      "số ca": 83,
+      "số ca sai": 0,
+      "ví dụ lỗi": []
+    },
+    "rewrite": {
+      "số ca": 220,
+      "số ca sai": 0,
+      "ví dụ lỗi": []
+    },
+    "robustness": {
+      "số ca": 86,
+      "số ca sai": 0,
+      "ví dụ lỗi": []
+    },
+    "threshold_pairs": {
+      "số ca": 80,
+      "số ca sai": 0,
+      "ví dụ lỗi": []
+    }
+  }
+}

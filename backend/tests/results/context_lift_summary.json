@@ -1,0 +1,30 @@
+{
+  "n_cases": 24,
+  "pass_with_context": 23,
+  "pass_without_context": 20,
+  "rate_with": 0.9583,
+  "rate_without": 0.8333,
+  "lift_points": 12.5,
+  "chỉ_đúng_khi_có_ngữ_cảnh": 4,
+  "chỉ_đúng_khi_không_ngữ_cảnh": 1,
+  "cả_hai_đúng": 19,
+  "cả_hai_sai": 0,
+  "ci_with": [
+    0.798,
+    0.993
+  ],
+  "ci_without": [
+    0.641,
+    0.933
+  ],
+  "generated_at": "2026-11-11T21:24:28",
+  "reference_status": {
+    "state": "APPROVED",
+    "reviewers": [
+      "Bùi Khánh Toàn",
+      "Nguyễn Hoàng Phú"
+    ],
+    "approved_at": "2026-11-11T10:24:31",
+    "cases": 69
+  }
+}

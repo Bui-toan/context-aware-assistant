@@ -1,0 +1,16 @@
+{
+  "approved_at": "2026-11-11T10:24:31",
+  "reviewers": [
+    "Bùi Khánh Toàn",
+    "Nguyễn Hoàng Phú"
+  ],
+  "cases": 69,
+  "files": {
+    "grammar_gold.json": "aed3f9ae923b76128d83a7aac1538eb63efaa74ba21a895d7f2c6d6199328981",
+    "explain_gold.json": "0315922299f71ec1e1e56d145c37659ccdd66c3c6700ac1b7466b3a45b3d784f",
+    "rewrite_gold.json": "c01656efddf8fd78288a10371d9887774c8620b27d5b0c5739c1faea7c4c5a6a",
+    "search_gold.json": "90c32ef758d65df60bf9d8a02b5b0f0a2ef2dabc1c612e81b9e0a37c363f700e",
+    "context_gold.json": "f4d4c4fc340a66fd18cbba46210604e79a92d3b848149d67522007b81b7fd081"
+  },
+  "review_sheet_sha256": "db67b93aed12eec938adbdea040414630d9d85643e212c24cecda81c2f7a2cef"
+}

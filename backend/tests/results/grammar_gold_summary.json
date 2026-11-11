@@ -1,0 +1,157 @@
+{
+  "task": "grammar_gold",
+  "n_runs": 57,
+  "n_cases": 19,
+  "pass": 54,
+  "pass_rate": 0.9474,
+  "pass_ci95": [
+    0.8563,
+    0.9819
+  ],
+  "groups": {
+    "mất dấu": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "chính tả": {
+      "n": 12,
+      "pass": 12,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.7575,
+        1.0
+      ]
+    },
+    "lặp từ": {
+      "n": 6,
+      "pass": 6,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.6097,
+        1.0
+      ]
+    },
+    "dính từ": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "không có lỗi": {
+      "n": 12,
+      "pass": 9,
+      "pass_rate": 0.75,
+      "ci95": [
+        0.4677,
+        0.9111
+      ]
+    },
+    "chia động từ": {
+      "n": 12,
+      "pass": 12,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.7575,
+        1.0
+      ]
+    },
+    "nhầm từ": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "nhiều lỗi": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    },
+    "dạng động từ": {
+      "n": 3,
+      "pass": 3,
+      "pass_rate": 1.0,
+      "ci95": [
+        0.4385,
+        1.0
+      ]
+    }
+  },
+  "time": {
+    "mean": 5.27,
+    "median": 3.96,
+    "p95": 9.32,
+    "max": 10.22
+  },
+  "retries": {
+    "tổng số lần thử lại": 0,
+    "số ca phải thử lại": 0
+  },
+  "stability": {
+    "số ca chạy lặp": 19,
+    "ca ổn định (mọi lần cùng kết quả)": 19,
+    "ca DAO ĐỘNG giữa các lần": 0
+  },
+  "extra": {
+    "tỉ lệ phát hiện lỗi": "100.0% (45/45; KTC95% 92%–100%)",
+    "tỉ lệ sửa tốt hơn bản gốc": "100.0% (45/45; KTC95% 92%–100%)",
+    "độ giống TB với câu đúng": 1.0,
+    "tỉ lệ báo nhầm (câu đúng bị sửa)": "25.0% (3/12; KTC95% 9%–53%)"
+  },
+  "versions_in_results": [
+    {
+      "commit": "42b8e0d",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_fp": "0fcf3ea225fe",
+      "ref_sha": "aed3f9ae923b"
+    }
+  ],
+  "failures": [
+    {
+      "id": "g-gram-09#1",
+      "group": "không có lỗi",
+      "reasons": [
+        "báo/sửa nhầm câu đã đúng"
+      ]
+    },
+    {
+      "id": "g-gram-09#2",
+      "group": "không có lỗi",
+      "reasons": [
+        "báo/sửa nhầm câu đã đúng"
+      ]
+    },
+    {
+      "id": "g-gram-09#3",
+      "group": "không có lỗi",
+      "reasons": [
+        "báo/sửa nhầm câu đã đúng"
+      ]
+    }
+  ],
+  "generated_at": "2026-11-11T11:12:32",
+  "reference_status": {
+    "state": "APPROVED",
+    "reviewers": [
+      "Bùi Khánh Toàn",
+      "Nguyễn Hoàng Phú"
+    ],
+    "approved_at": "2026-11-11T10:24:31",
+    "cases": 69
+  },
+  "code_version": "42b8e0d"
+}
